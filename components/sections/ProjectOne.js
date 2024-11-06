@@ -9,8 +9,8 @@ const ProjectOne = ({ addClass }) => {
                     <div className="sec-title">
                         <div className="row">
                             <div className="col-lg-7">
-                                <span className="sub-title">recently Completed work</span>
-                                <h2>Improve &amp; Enhance the <br />Tech Projects</h2>
+                                <span className="sub-title"></span>
+                                <h2>High quality products &amp; services That we stand behind</h2>
                             </div>
                             <div className="col-lg-5">
                                 <div className="text">There are many variations of passages of available but majority have suffered alteration in some form, by humou or randomised words which don't look even slightly believable.</div>

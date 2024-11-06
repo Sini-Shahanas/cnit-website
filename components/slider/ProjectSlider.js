@@ -8,23 +8,28 @@ const ProjectSlider = () => {
 
     const data = [
         {
-            img: "project-1.jpg",
-            title: "Tech Solutions",
-            cat: "DESIGN / IDEAS"
+            img: "serve1.jpg",
+            title: "Cyber Securty",
+            cat: "Information Safety"
         },
         {
-            img: "project-2.jpg",
-            title: "Smart Visions",
+            img: "serve2.jpg",
+            title: "Customized software",
             cat: "Design"
         },
         {
-            img: "project-3.jpg",
-            title: "Platform Integration",
+            img: "serve3.jpg",
+            title: "IOT",
             cat: "Design"
         },
         {
-            img: "project-4.jpg",
-            title: "Web Development",
+            img: "serve4.jpg",
+            title: "IT infrastructure solution",
+            cat: "Design"
+        },
+        {
+            img: "serve5.jpg",
+            title: "Service & Maintainence",
             cat: "Design"
         }
     ];

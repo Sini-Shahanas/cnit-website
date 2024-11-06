@@ -7,6 +7,7 @@ import NavLinks from './NavLinks';
 import LogoWhite from './../../public/images/logo.png';
 import LogoDark from './../../public/images/logo-2.png';
 import cnitWhite from './../../public/images/site-logo-re.png';
+import cnitDark from './../../public/images/site-logo-white.png';
 
 const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll }) => {
 
@@ -89,7 +90,7 @@ const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll 
                     <div className="auto-container">
                         <div className="inner-container">
                             <div className="logo">
-                                <Link href="/" title><Image src={LogoDark} title='Oitech' /></Link>
+                                <Link href="/" title><Image src={cnitDark} title='Oitech' /></Link>
                             </div>
                             <div className="nav-outer">
                                 <nav className="main-menu">

@@ -22,14 +22,15 @@ export default function Home() {
             <Layout HeaderStyle="one">
                 <BannerOne />
                 <AboutOne />
+                <ProjectOne />
                 <ServiceOne />
                 <OfferOne />
                 <CtaOne />
-                <ProjectOne />
+                {/* <ProjectOne /> */}
                 <FunfactOne />
-                <TestimonialOne />
-                <ClientOne />
-                <FaqOne />
+                {/* <TestimonialOne /> */}
+                {/* <ClientOne /> */}
+                {/* <FaqOne /> */}
                 <BlogOne />
                 <CtaTwo />
                 <MapOne />

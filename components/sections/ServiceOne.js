@@ -1,17 +1,93 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 const ServiceOne = () => {
-    return (
-        <>
-            <section className="services-section">
-                <div className="auto-container">
-                    <div className="sec-title text-center">
-                        <span className="sub-title">Services we’re offering</span>
-                        <h2>High quality products and services<br /> that we stand behind</h2>
-                    </div>
-                    <div className="row">
-                        {/* Service Block */}
+  return (
+    <>
+      <section className="services-section">
+        <div className="auto-container">
+          <div className="sec-title text-center">
+            <span className="sub-title">Why choose us</span>
+            <h2>
+              Why Our Customers
+              <br />
+              Choose Working With Us
+            </h2>
+          </div>
+          <div className="row">
+            {/* Counter block*/}
+            <div className="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+              <div className="inner">
+                <i className="icon flaticon-business-060-graph" />
+                <h6 className="counter-title">Innovation</h6>
+
+                {/* <div className="count-box"> */}
+                {/* <CounterUp className="count-text" count={4520} time={3} /> */}
+                <div className="text-choose">
+                  Innovation is at our core. We continually adopt cutting-edge
+                  advancements like serverless computing and microservices to
+                  deliver solutions that drive your business forward.
+                </div>
+                {/* </div> */}
+              </div>
+            </div>
+            {/*Counter block*/}
+            <div
+              className="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
+              data-wow-delay="300ms"
+            >
+              <div className="inner">
+                <i className="icon flaticon-business-035-helpline" />
+                {/* <div className="count-box"> */}
+                {/* <CounterUp className="count-text" count={326} time={3} /> */}
+                {/* </div> */}
+                <h6 className="counter-title">Expertise</h6>
+                <div className="text-choose">
+                  Our team brings deep cloud technology expertise, providing
+                  top-tier solutions. We leverage optimal architectures to
+                  enhance your IT infrastructure.
+                </div>
+              </div>
+            </div>
+            {/*Counter block*/}
+            <div
+              className="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
+              data-wow-delay="600ms"
+            >
+              <div className="inner">
+                <i className="icon flaticon-business-020-hierarchy" />
+                {/* <div className="count-box">
+                                        <CounterUp className="count-text" count={8600} time={3} />
+                                    </div> */}
+                <h6 className="counter-title">Tailored solutions</h6>
+                <div className="text-choose">
+                  We recognize that every business is unique. Our solutions are
+                  crafted to align with your specific goals, helping you achieve
+                  and surpass your objectives.
+                </div>
+              </div>
+            </div>
+            {/*Counter block*/}
+            <div
+              className="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
+              data-wow-delay="900ms"
+            >
+              <div className="inner">
+                <i className="icon flaticon-business-048-coin" />
+                {/* <div className="count-box">
+                                        <CounterUp className="count-text" count={238} time={3} />
+                                    </div> */}
+                <h6 className="counter-title">Sustainability</h6>
+                <div className="text-choose">
+                  We are committed to a sustainable future, embedding
+                  eco-friendly practices in our operations to minimize our
+                  environmental footprint.
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* </div> */}
+          {/* <div className="row">
                         <div className="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                             <div className="inner-box">
                                 <div className="image-box">
@@ -25,7 +101,6 @@ const ServiceOne = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* Service Block */}
                         <div className="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
                             <div className="inner-box">
                                 <div className="image-box">
@@ -39,7 +114,6 @@ const ServiceOne = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* Service Block */}
                         <div className="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
                             <div className="inner-box">
                                 <div className="image-box">
@@ -53,11 +127,11 @@ const ServiceOne = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+                    </div> */}
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default ServiceOne;
