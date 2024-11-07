@@ -85,7 +85,7 @@ const BlogSlider = () => {
                                 </div>
                                 <div className="bottom-box">
                                     <a href="news-details.html" className="read-more">Read More <i className="fa fa-long-arrow-alt-right" /></a>
-                                    <div className="comments"><i className="fa fa-comments" /> 02</div>
+                                    {/* <div className="comments"><i className="fa fa-comments" /> 02</div> */}
                                 </div>
                             </div>
                         </div>

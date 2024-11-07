@@ -81,7 +81,7 @@ const ServiceOne = () => {
                 <div className="text-choose">
                   We are committed to a sustainable future, embedding
                   eco-friendly practices in our operations to minimize our
-                  environmental footprint.
+                  environmental footprint.className
                 </div>
               </div>
             </div>

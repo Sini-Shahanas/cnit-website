@@ -14,6 +14,9 @@ import ProjectOne from "../components/sections/ProjectOne";
 import ServiceOne from "../components/sections/ServiceOne";
 import TeamOne from "../components/sections/TeamOne";
 import TestimonialOne from "../components/sections/TestimonialOne";
+import ProjectFour from "../components/sections/ProjectFour";
+import Industries from '../components/sections/Industries';
+import BlogTwo from '../components/sections/BlogTwo';
 
 export default function Home() {
 
@@ -22,16 +25,18 @@ export default function Home() {
             <Layout HeaderStyle="one">
                 <BannerOne />
                 <AboutOne />
-                <ProjectOne />
+                <ProjectOne  />
+
+                {/* <ProjectFour addClass={"style-two text-white"} /> */}
                 <ServiceOne />
-                <OfferOne />
-                <CtaOne />
+                {/* <OfferOne /> */}
+                <Industries />
                 {/* <ProjectOne /> */}
-                <FunfactOne />
+                {/* <FunfactOne /> */}
                 {/* <TestimonialOne /> */}
                 {/* <ClientOne /> */}
                 {/* <FaqOne /> */}
-                <BlogOne />
+                <BlogTwo />
                 <CtaTwo />
                 <MapOne />
             </Layout>

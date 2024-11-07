@@ -50,6 +50,7 @@ License: copyright commercial
   --theme-color1: #0f224d;
   --theme-color2: #ffaa17;
   --theme-color3: #f4f5f8;
+  --cnit-theme-color2:#29a4e6 ;
   --bg-theme-color1: var(--theme-color1);
   --bg-theme-color2: var(--theme-color2);
   --bg-theme-color3: var(--theme-color3);
@@ -3682,7 +3683,7 @@ Section Title
   height: 100%;
   padding: 30px 20px 25px;
   background-color: #ffffff;
-  background-image: url(../images/icons/shape-1.jpg);
+  background-image: url(../images/icons/waves.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -7850,7 +7851,7 @@ Section Title
 }
 .project-section.style-two {
   background-color: var(--bg-theme-color1);
-  background-image: url(../images/icons/pattern-14.jpg);
+  background-image: url(../images/icons/waves.jpg);
   background-repeat: no-repeat;
   background-position: center top;
 }
@@ -9326,7 +9327,7 @@ Section Title
   left: -10px;
   top: 30px;
   bottom: 30px;
-  background-color: var(--bg-theme-color2);
+  background-color: var(--cnit-theme-color2);
   width: 10px;
   content: "";
 }

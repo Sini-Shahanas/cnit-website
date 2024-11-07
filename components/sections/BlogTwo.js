@@ -12,7 +12,7 @@ const BlogTwo = ({ alternate }) => {
                             <div className="inner-column">
                                 <div className="sec-title">
                                     <span className="sub-title">from the blog</span>
-                                    <h2>Our L atest News &amp; Articles from the Blog</h2>
+                                    <h2>Our Latest News &amp; Articles from the Blog</h2>
                                     <div className="text">There are many variations of passages of ipsum available, but the majority have suffered alteration in form.</div>
                                 </div>
                             </div>
