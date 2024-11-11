@@ -898,7 +898,7 @@ li {
   margin-top: -60px;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(../images/logo-2.png);
+  background-image: url(../images/logo-3.png);
   background-size: 84px;
   content: "";
 }
@@ -3581,10 +3581,10 @@ Section Title
 .feature-block .inner-box:hover:before {
   height: 0;
 }
-.feature-block .inner-box:hover .title,
+/* .feature-block .inner-box:hover .title,
 .feature-block .inner-box:hover .title a {
   /* color: #ffffff; */
-}
+/* } */ */
 .feature-block .inner-box:hover .text {
   color: #8c8f94;
 }

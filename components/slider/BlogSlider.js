@@ -7,17 +7,17 @@ const BlogSlider = () => {
 
     const data = [
         {
-            img: "news-1.jpg",
+            img: "blog1.jpg",
             title: "Tech Solutions",
             cat: "DESIGN / IDEAS"
         },
         {
-            img: "news-2.jpg",
+            img: "blog2.png",
             title: "Smart Visions",
             cat: "Design"
         },
         {
-            img: "news-3.jpg",
+            img: "blog3.jpg",
             title: "Platform Integration",
             cat: "Design"
         }

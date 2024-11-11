@@ -9,7 +9,7 @@ const CtaTwo = () => {
                     <div className="outer-box wow fadeIn">
                         {/* Image Box */}
                         <div className="image-box">
-                            <figure className="image"><img src="/images/resource/image-2.jpg" title='Oitech' /></figure>
+                            <figure className="image"><img src="/images/resource/ready.jpeg" title='Oitech' /></figure>
                         </div>
                         {/* Content Box */}
                         <div className="content-box">
