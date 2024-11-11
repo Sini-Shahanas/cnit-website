@@ -26,7 +26,6 @@ export default function Home() {
                 <BannerOne />
                 <AboutOne />
                 <ProjectOne  />
-
                 {/* <ProjectFour addClass={"style-two text-white"} /> */}
                 <ServiceOne />
                 {/* <OfferOne /> */}
