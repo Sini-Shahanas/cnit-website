@@ -9,7 +9,7 @@ const Footer = () => {
         <>
 
             <footer className="main-footer">
-                <div className="bg-image" style={{ backgroundImage: 'url(./images/background/2.jpg)' }} />
+                <div className="bg-image" style={{ backgroundImage: 'url(./images/background/background2.jpg)' }} />
                 <div className="widgets-section">
                     <div className="auto-container">
                         <div className="row">
@@ -49,7 +49,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            {/* <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
                                 <div className="footer-widget gallery-widget">
                                     <h3 className="widget-title">Gallery</h3>
                                     <div className="widget-content">
@@ -75,18 +75,18 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
-                <div className="footer-bottom">
+                {/* <div className="footer-bottom">
                     <div className="auto-container">
                         <div className="inner-container">
                             <div className="copyright-text">© Copyright 2023 by  <a href="https://themeforest.net/user/thememascot/portfolio">Company.com</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </footer>
 
 

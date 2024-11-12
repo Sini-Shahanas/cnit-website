@@ -81,7 +81,7 @@ const AboutOne = () => {
                                 <figure className="image-1 overlay-anim wow fadeInUp"><img src="/images/resource/disc.jpg" title='Oitech' /></figure>
                                 <figure className="image-2 overlay-anim wow fadeInRight"><img src="/images/resource/bookidea.jpg" title='Oitech' /></figure>
                                 <div className="experience bounce-y">
-                                    <img src="/images/resource/image-1.jpg" title="Oitech" className="icon" />
+                                    <img src="/images/resource/clientSat.jpg" title="Oitech" className="icon" />
                                     <strong>3600+</strong> Satisfied Client
                                 </div>
                             </div>

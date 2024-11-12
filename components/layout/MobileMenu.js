@@ -90,8 +90,11 @@ const MobileMenu = () => {
                     <div className={isActive.key === 2 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(2)}><i className="fa fa-angle-down"></i></div></li>
                 <li className="dropdown"><Link href="/page-services">Services</Link>
                     <ul className={isActive.key === 3 ? "d-block" : "d-none"}>
-                        <li><Link href="/page-services">Services Grid</Link></li>
-                        <li><Link href="/page-service-details">Service Details</Link></li>
+                        <li><Link href="/page-service-details">Software Solution</Link></li>
+                        <li><Link href="/page-service-details">IT Infrastructure Solution</Link></li>
+                        <li><Link href="/page-service-details">Cyber Security</Link></li>
+                        <li><Link href="/page-service-details">Internet of Things(IOT)</Link></li>
+                        <li><Link href="/page-service-details">Service & Maintenance</Link></li>
                     </ul>
                     <div className={isActive.key === 3 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(3)}><i className="fa fa-angle-down"></i></div></li>
                 <li className="dropdown"><Link href="/#">News</Link>

@@ -22,7 +22,7 @@ const MapOne = () => {
                                 </div>
                             </div>
                             {/* Branch Block */}
-                            <div className="branch-block col-lg-4 col-md-12 col-sm-12">
+                            {/* <div className="branch-block col-lg-4 col-md-12 col-sm-12">
                                 <div className="inner-box">
                                     <h5 className="title">Washington DC</h5>
                                     <ul className="info-list">
@@ -31,9 +31,9 @@ const MapOne = () => {
                                         <li><i className="fa fa-map-marker-alt" /> 35 Deerfield Valdosta Road, United Kingdom</li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* Branch Block */}
-                            <div className="branch-block col-lg-4 col-md-12 col-sm-12">
+                            {/* <div className="branch-block col-lg-4 col-md-12 col-sm-12">
                                 <div className="inner-box">
                                     <h5 className="title">Las Vegas</h5>
                                     <ul className="info-list">
@@ -42,7 +42,7 @@ const MapOne = () => {
                                         <li><i className="fa fa-map-marker-alt" /> 35 Deerfield Valdosta Road, United Kingdom</li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
