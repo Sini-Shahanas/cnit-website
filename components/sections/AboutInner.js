@@ -30,9 +30,9 @@ const AboutOne = () => {
                                         <div className="text">We’ve designed a culture that allows our stewards to assimilate.</div>
                                     </div>
                                 </div>
-                                <div className="btm-box">
+                                {/* <div className="btm-box">
                                     <Link href="/page-about" className="theme-btn btn-style-one"><span className="btn-title">Discover more</span></Link>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         {/* Image Column */}

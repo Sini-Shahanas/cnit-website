@@ -38,7 +38,6 @@ const NavLinks = ({ extraClassName }) => {
                     </li>
                 </ul>
             </li> */}
-            <li><Link href="/page-about">About</Link></li>            
             <li className="dropdown"><Link href="/page-services">Services</Link>
                 <ul>
                     <li 
@@ -110,12 +109,11 @@ const NavLinks = ({ extraClassName }) => {
                     </li>
                 </ul>
             </li>
-            <li className="dropdown"><Link href="/page-about">Pages</Link>
+            {/* <li className="dropdown"><Link href="/page-about">Pages</Link>
                 <ul>
                     <li className="dropdown"><Link href="/page-projects">Projects</Link>
-                        <ul>
-                            <li><Link href="/page-projects">Projects Grid</Link></li>
-                            <li><Link href="/page-project-details">Project Details</Link></li>
+                        <ul> */}
+                            {/* <li><Link href="/page-project-details">Project Details</Link></li>
                         </ul>
                     </li>
                     <li className="dropdown"><Link href="/page-team">Team</Link>
@@ -129,13 +127,15 @@ const NavLinks = ({ extraClassName }) => {
                     <li><Link href="/page-faq">FAQ</Link></li>
                     <li><Link href="/page-404">Page 404</Link></li>
                 </ul>
-            </li>
-            <li className="dropdown"><Link href="/news-grid">News</Link>
-                <ul>
-                    <li><Link href="/news-grid">News Grid</Link></li>
-                    <li><Link href="/news-details">News Details</Link></li>
-                </ul>
-            </li>
+            </li> */}
+            {/* <li className="dropdown"><Link href="/news-grid">News</Link>
+                <ul> */}
+                    <li><Link href="/news-grid">Blog</Link></li>
+                    <li><Link href="/page-projects">Careers</Link></li>
+                    {/* <li><Link href="/news-details">News Details</Link></li> */}
+                {/* </ul> */}
+            {/* </li> */}
+            <li><Link href="/page-about">About</Link></li>
             <li><Link href="/page-contact">Contact</Link></li>
         </ul>
     );

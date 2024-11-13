@@ -55,10 +55,10 @@ const AboutOne = () => {
                                     <div className="text">Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.</div>
                                 </div>
                                 <div className="content-box">
-                                    <div className="info-box">
+                                    {/* <div className="info-box">
                                         <h5 className="title">High Quality IT Solutions for Startup</h5>
                                         <Link href="/#" className="read-more">More <i className="fa fa-long-arrow-alt-right" /></Link>
-                                    </div>
+                                    </div> */}
                                     <div className="about-block">
                                         <i className="icon flaticon-business-018-startup" />
                                         <h5 className="title">Manage Tech Services </h5>

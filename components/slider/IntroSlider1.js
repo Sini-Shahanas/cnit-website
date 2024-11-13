@@ -61,6 +61,7 @@ const IntroSlider1 = () => {
                                 <span className="sub-title animate-1">Solutions for your businesses</span>
                                 <h1 className="title animate-2">Innovative Tech <br />Solutions</h1>
                                 <div className="btn-box animate-3">
+                                    <Link href="/page-contact" className="theme-btn btn-style-one"><span className="btn-title">Get Quote</span></Link>
                                     <Link href="/page-about" className="theme-btn btn-style-one"><span className="btn-title">Explore More</span></Link>
                                     {/* <a onClick={() => setOpen(true)} className="play-btn lightbox-image"><i className="icon fa fa-play" /> watch video</a> */}
                                 </div>
@@ -76,6 +77,7 @@ const IntroSlider1 = () => {
                                 <span className="sub-title animate-1">Solutions for your businesses</span>
                                 <h1 className="title animate-2">Innovative Tech <br />Solutions</h1>
                                 <div className="btn-box animate-3">
+                                    <Link href="/page-contact" className="theme-btn btn-style-one"><span className="btn-title">Get Quote</span></Link>
                                     <Link href="/page-about" className="theme-btn btn-style-one"><span className="btn-title">Explore More</span></Link>
                                     {/* <a onClick={() => setOpen(true)} className="play-btn lightbox-image"><i className="icon fa fa-play" /> watch video</a> */}
                                 </div>

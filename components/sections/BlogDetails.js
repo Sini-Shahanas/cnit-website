@@ -19,9 +19,9 @@ const BlogOne = ({ alternate }) => {
                                 <div className="blog-details__content">
                                     <ul className="list-unstyled blog-details__meta">
                                         <li><Link href="/news-details"><i className="fas fa-user-circle"></i> Admin</Link> </li>
-                                        <li><Link href="/news-details"><i className="fas fa-comments"></i> 02
+                                        {/* <li><Link href="/news-details"><i className="fas fa-comments"></i> 02
                                             Comments</Link>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                     <h3 className="blog-details__title font-weight-600">We’re Leader In Tecnology Market</h3>
                                     <p className="blog-details__text-2">Mauris non dignissim purus, ac commodo diam. Donec sit
@@ -44,18 +44,18 @@ const BlogOne = ({ alternate }) => {
                                     </p>
                                 </div>
                                 <div className="blog-details__bottom">
-                                    <p className="blog-details__tags"> <span>Tags</span> <Link href="/news-details">Technology</Link> <Link href="/news-details">Software</Link> </p>
+                                    {/* <p className="blog-details__tags"> <span>Tags</span> <Link href="/news-details">Technology</Link> <Link href="/news-details">Software</Link> </p> */}
                                     <div className="blog-details__social-list"> <Link href="/news-details"><i className="fab fa-twitter"></i></Link> <Link href="/news-details"><i className="fab fa-facebook"></i></Link> <Link href="/news-details"><i className="fab fa-pinterest-p"></i></Link> <Link href="/news-details"><i className="fab fa-instagram"></i></Link> </div>
                                 </div>
-                                <div className="nav-links">
+                                {/* <div className="nav-links">
                                     <div className="prev">
                                         <Link href="/news-details" rel="prev">True factors of the modern healthy lifestyle</Link>
                                     </div>
                                     <div className="next">
                                         <Link href="/news-details" rel="next">How to lead a healthy &amp; well-balanced life</Link>
                                     </div>
-                                </div>
-                                <div className="comment-one">
+                                </div> */}
+                                {/* <div className="comment-one">
                                     <h3 className="comment-one__title">2 Comments</h3>
                                     <div className="comment-one__single">
                                         <div className="comment-one__image"> <img src="/images/resource/testi-thumb-1.jpg" title='Oitech' /> </div>
@@ -104,17 +104,17 @@ const BlogOne = ({ alternate }) => {
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-xl-4 col-lg-5">
                             <div className="sidebar">
-                                <div className="sidebar__single sidebar__search">
+                                {/* <div className="sidebar__single sidebar__search">
                                     <form className="sidebar__search-form" action="#">
                                         <input type="search" placeholder="Search here" />
                                         <button type="submit"><i className="lnr-icon-search"></i></button>
                                     </form>
-                                </div>
+                                </div> */}
                                 <div className="sidebar__single sidebar__post">
                                     <h3 className="sidebar__title">Latest Posts</h3>
                                     <ul className="sidebar__post-list list-unstyled">
@@ -142,7 +142,7 @@ const BlogOne = ({ alternate }) => {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="sidebar__single sidebar__category">
+                                {/* <div className="sidebar__single sidebar__category">
                                     <h3 className="sidebar__title">Categories</h3>
                                     <ul className="sidebar__category-list list-unstyled">
                                         <li><Link href="/news-details">Artifical Intelligence<span
@@ -197,7 +197,7 @@ const BlogOne = ({ alternate }) => {
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

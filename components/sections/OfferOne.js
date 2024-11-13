@@ -29,14 +29,14 @@ const OfferOne = () => {
                             <div className="inner-column">
                                 <div className="image-box">
                                     <figure className="image"><img src="/images/resource/image-3.jpg" title='Oitech' /></figure>
-                                    <div className="caption-box wow slideInRight">
+                                    {/* <div className="caption-box wow slideInRight">
                                         <div className="icon-box">
                                             <a onClick={() => setOpen(true)} className="play-now-two lightbox-image"><i className="icon fa fa-play" /></a>
                                         </div>
                                         <div className="title-box">
                                             <h5 className="title">Professional IT technology services you can trust</h5>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} />
                                 </div>
                             </div>
