@@ -10,27 +10,27 @@ const ProjectSlider = () => {
         {
             img: "serve1.jpg",
             title: "Cyber Securty",
-            cat: "Information Safety"
+            // cat: "Information Safety"
         },
         {
             img: "serve2.jpg",
-            title: "Customized software",
-            cat: "Design"
+            title: "Software Solution",
+            // cat: "Design"
         },
         {
             img: "serve3.jpg",
-            title: "IOT",
-            cat: "Design"
+            title: "Internet of Things",
+            // cat: "Design"
         },
         {
             img: "serve4.jpg",
-            title: "IT infrastructure solution",
-            cat: "Design"
+            title: "IT Infrastructure Solution",
+            // cat: "Design"
         },
         {
             img: "serve5.jpg",
-            title: "Service & Maintainence",
-            cat: "Design"
+            title: "Service & Maintenance",
+            // cat: "Design"
         }
     ];
 
