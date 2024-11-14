@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="row">
                             <div className="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
                                 <div className="footer-widget about-widget">
-                                    <div className="logo"><a href="/"><Image src={LogoWhite} title='Oitech' /></a></div>
+                                    <div className="logo"><Link href="/"><Image src={LogoWhite} alt="block" title='Oitech' /></Link></div>
                                     <div className="text">Desires to obtain pain of itself, because it is pain, but occasionally circumstances.</div>
                                     <ul className="social-icon-two">
                                         <li><a href="#"><i className="fab fa-twitter" /></a></li>

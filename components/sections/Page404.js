@@ -13,7 +13,7 @@ const AboutFive = () => {
                                 <img src="/images/resource/404.jpg" title='Oitech' />
                                 <h3 className="error-page__sub-title">Page not found!</h3>
                             </div>
-                            <p className="error-page__text">Sorry we can't find that page! The page you are looking  for
+                            <p className="error-page__text">Sorry we can&apos;t find that page! The page you are looking  for
                                 was never existed.</p>
                             <form className="error-page__form" action="#">
                                 <div className="error-page__form-input">

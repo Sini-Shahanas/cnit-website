@@ -22,8 +22,8 @@ const Serviceone = ({ alternate }) => {
 									<h3 className="">Here to Know About This Project</h3>
 									<p className="">There are many variations of passages of psum
 										available, but the majority have suffered alteration in some form, by injected
-										humour, or randomised words which don't look even slightly believable. If you are
-										going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+										humour, or randomised words which don&apos;t look even slightly believable. If you are
+										going to use a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything
 										embarrassing hidden in the middle of text. Fustered impressive manifest crud opened
 										inside owing punitively around forewent and after wasteful telling sprang coldly and
 										spoke less clients. Squid hesitantly preparatory gibbered some tyran nically

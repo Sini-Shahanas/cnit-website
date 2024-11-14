@@ -13,7 +13,7 @@ const ProjectOne = ({ addClass }) => {
                                 <h2>High quality products &amp; services That we stand behind</h2>
                             </div>
                             <div className="col-lg-5">
-                                <div className="text">There are many variations of passages of available but majority have suffered alteration in some form, by humou or randomised words which don't look even slightly believable.</div>
+                                <div className="text">There are many variations of passages of available but majority have suffered alteration in some form, by humou or randomised words which don&apos;t look even slightly believable.</div>
                             </div>
                         </div>
                     </div>
