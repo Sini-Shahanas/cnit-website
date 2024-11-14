@@ -59,7 +59,7 @@ const NavLinks = ({ extraClassName }) => {
                         onMouseEnter={() => toggleDropdown('itInfrastructure')}
                         onMouseLeave={() => toggleDropdown('itInfrastructure')}
                     >
-                        <Link href="/page-service-details">IT Infrastructure Solution</Link>
+                        <Link href="/infrastructure">IT Infrastructure Solution</Link>
                         {dropdowns.itInfrastructure && (
                             <ul className="sub-dropdown">
                                 <li><Link href="/page-sub-service-details">NFVI</Link></li>
@@ -73,7 +73,7 @@ const NavLinks = ({ extraClassName }) => {
                         onMouseEnter={()=> toggleDropdown('cyberSecurity')}
                         onMouseLeave={()=> toggleDropdown('cyberSecurity')}
                     >
-                    <Link href="/page-service-details">Cyber Security</Link>
+                    <Link href="/cyber-security">Cyber Security</Link>
                     {dropdowns.cyberSecurity && (
                             <ul className='sub-dropdown'>
                                 <li><Link href="/page-sub-service-details">EDR</Link></li>
@@ -87,7 +87,7 @@ const NavLinks = ({ extraClassName }) => {
                         onMouseEnter={() => toggleDropdown('iot')}
                         onMouseLeave={() => toggleDropdown('iot')}
                     >
-                        <Link href="/page-service-details">Internet of Things(IOT)</Link>
+                        <Link href="/internet-of-things">Internet of Things(IOT)</Link>
                         {dropdowns.iot && (
                             <ul className='sub-dropdown'>
                                 <li><Link href="/page-sub-service-details">Innovo</Link></li>

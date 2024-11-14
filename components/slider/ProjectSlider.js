@@ -86,7 +86,7 @@ const ProjectSlider = () => {
                                         <img src={`/images/resource/${item.img}`} title='Oitech' />
                                     </Link>
                                 </figure>
-                                <Link href="/page-project-details" className="icon"><i className="fa fa-long-arrow-alt-right" /></Link>
+                                {/* <Link href="/page-project-details" className="icon"><i className="fa fa-long-arrow-alt-right" /></Link> */}
                             </div>
                             <div className="content-box">
                                 <h4 className="title"><Link href="/page-project-details">{item.title}</Link></h4>

@@ -5,15 +5,15 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "ERP",
-		linkurl: "page-service-details"
+		linkurl: ""
 	},
 	{
 		title: "CRM",
-		linkurl: "page-service-details"
+		linkurl: ""
 	},
 	{
 		title: "HRMS",
-		linkurl: "page-service-details"
+		linkurl: ""
 	},
 	// {
 	// 	title: "Data Analysis",

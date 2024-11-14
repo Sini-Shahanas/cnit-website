@@ -83,7 +83,7 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("it-infrastructure")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/page-service-details">IT Infrastructure Solution</Link>
+                            <Link href="/infrastructure">IT Infrastructure Solution</Link>
                             <ul className={hoverKey === "it-infrastructure" ? "d-block" : "d-none"}>
                                 <li><Link href="/page-sub-service-details">NFVI</Link></li>
                                 <li><Link href="/page-sub-service-details">Cloud Native Network Solution</Link></li>
@@ -95,7 +95,7 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("cyber-security")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/page-service-details">Cyber Security</Link>
+                            <Link href="/cyber-security">Cyber Security</Link>
                             <ul className={hoverKey === "cyber-security" ? "d-block" : "d-none"}>
                                 <li><Link href="/page-sub-service-details">EDR</Link></li>
                                 <li><Link href="/page-sub-service-details">NDR</Link></li>
@@ -107,7 +107,7 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("iot")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/page-service-details">Internet of Things (IoT)</Link>
+                            <Link href="/internet-of-things">Internet of Things (IoT)</Link>
                             <ul className={hoverKey === "iot" ? "d-block" : "d-none"}>
                                 <li><Link href="/page-sub-service-details">Innovo</Link></li>
                             </ul>
