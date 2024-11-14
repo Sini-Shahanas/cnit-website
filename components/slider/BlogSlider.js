@@ -8,18 +8,21 @@ const BlogSlider = () => {
     const data = [
         {
             img: "blog1.jpg",
-            title: "Tech Solutions",
-            cat: "DESIGN / IDEAS"
+            // title: "Tech Solutions",
+            // cat: "DESIGN / IDEAS",
+            linkurl: "/news-details"
         },
         {
             img: "blog2.png",
-            title: "Smart Visions",
-            cat: "Design"
+            // title: "Smart Visions",
+            // cat: "Design",
+            linkurl: "/bog-erp"
         },
         {
             img: "blog3.jpg",
-            title: "Platform Integration",
-            cat: "Design"
+            // title: "Platform Integration",
+            // cat: "Design",
+            linkurl: "blog-education"
         }
     ];
 
@@ -67,11 +70,11 @@ const BlogSlider = () => {
                 className="news-carousel"
             >
                 {data.map((item, i) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={i}>
                         <div className="news-block">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <figure className="image"><a href="news-details.html">
+                                    <figure className="image"><a href={item.linkurl}>
                                         <img src={`/images/resource/${item.img}`} title='Oitech' />
                                     </a></figure>
                                     <span className="date"><b>28</b> OCT</span>
@@ -81,10 +84,10 @@ const BlogSlider = () => {
                                         <li><i className="fa fa-user" /> by Admin</li>
                                         <li><i className="fa fa-tag" /> Technology</li>
                                     </ul>
-                                    <h4 className="title"><a href="/news-details">Professional technology information &amp; solutions are just like…</a></h4>
+                                    <h4 className="title"><a href={item.linkurl}>Professional technology information &amp; solutions are just like…</a></h4>
                                 </div>
                                 <div className="bottom-box">
-                                    <a href="news-details.html" className="read-more">Read More <i className="fa fa-long-arrow-alt-right" /></a>
+                                    <a href={item.linkurl} className="read-more">Read More <i className="fa fa-long-arrow-alt-right" /></a>
                                     {/* <div className="comments"><i className="fa fa-comments" /> 02</div> */}
                                 </div>
                             </div>
