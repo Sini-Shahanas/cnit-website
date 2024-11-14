@@ -10,7 +10,7 @@ const BlogOne = ({ alternate }) => {
                         <div className="col-xl-8 col-lg-7">
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
-                                    <img src="/images/resource/news-details.jpg" title='Oitech' />
+                                    <img src="/images/resource/nfvi.jpg" title='Oitech' />
                                     <div className="blog-details__date">
                                         <span className="day">28</span>
                                         <span className="month">Aug</span>
@@ -130,14 +130,14 @@ const BlogOne = ({ alternate }) => {
                                             <div className="sidebar__post-image"> <img src="/images/resource/blog2.png" title='Oitech' /> </div>
                                             <div className="sidebar__post-content">
                                                 <h3> <span className="sidebar__post-content-meta"><i
-                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/news-details">Necessity may give us best virtual court</Link> </h3>
+                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/blog-erp">Necessity may give us best virtual court</Link> </h3>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="sidebar__post-image"> <img src="/images/resource/blog3.jpg" title='Oitech' /> </div>
                                             <div className="sidebar__post-content">
                                                 <h3> <span className="sidebar__post-content-meta"><i
-                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/news-details">You should know about business plan</Link> </h3>
+                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/blog-education">You should know about business plan</Link> </h3>
                                             </div>
                                         </li>
                                     </ul>

@@ -45,7 +45,7 @@ const NavLinks = ({ extraClassName }) => {
                         onMouseEnter={() => toggleDropdown('softwareSolution')}
                         onMouseLeave={() => toggleDropdown('softwareSolution')}
                     >
-                        <Link href="/page-service-details">Software Solution</Link>
+                        <Link href="/software-solution">Software Solution</Link>
                         {dropdowns.softwareSolution && (
                             <ul className="sub-dropdown">
                                 <li><Link href="/page-sub-service-details">ERP</Link></li>

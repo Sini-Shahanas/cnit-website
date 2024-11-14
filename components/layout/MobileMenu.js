@@ -71,7 +71,7 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("software-solution")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/page-service-details">Software Solution</Link>
+                            <Link href="/software-solution">Software Solution</Link>
                             <ul className={hoverKey === "software-solution" ? "d-block" : "d-none"}>
                                 <li><Link href="/page-sub-service-details">ERP</Link></li>
                                 <li><Link href="/page-sub-service-details">CRM</Link></li>
