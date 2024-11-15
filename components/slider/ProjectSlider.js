@@ -9,28 +9,33 @@ const ProjectSlider = () => {
     const data = [
         {
             img: "serve1.jpg",
-            title: "Cyber Securty",
-            // cat: "Information Safety"
+            title: "Cyber Security",
+            // cat: "Information Safety",
+            linkurl:"/cyber-security"
         },
         {
             img: "serve2.jpg",
             title: "Software Solution",
-            // cat: "Design"
+            // cat: "Design",
+            linkurl:"/software-solution"
         },
         {
             img: "serve3.jpg",
             title: "Internet of Things",
-            // cat: "Design"
+            // cat: "Design",
+            linkurl:"/internet-of-things"
         },
         {
             img: "serve4.jpg",
             title: "IT Infrastructure Solution",
-            // cat: "Design"
+            // cat: "Design",
+            linkurl:"/infrastructure"
         },
         {
             img: "serve5.jpg",
             title: "Service & Maintenance",
-            // cat: "Design"
+            // cat: "Design",
+            linkurl:"/service-details"
         }
     ];
 
@@ -77,8 +82,8 @@ const ProjectSlider = () => {
                 }}
                 className="project-carousel"
             >
-                {data.map((item, index) => (
-                    <SwiperSlide key={index} className="project-block">
+                {data.map((item, i) => (
+                    <SwiperSlide key={i} className="project-block">
                         <div className="inner-box">
                             <div className="image-box">
                                 <figure className="image">
@@ -86,10 +91,10 @@ const ProjectSlider = () => {
                                         <img src={`/images/resource/${item.img}`} title='Oitech' />
                                     </Link>
                                 </figure>
-                                {/* <Link href="/page-project-details" className="icon"><i className="fa fa-long-arrow-alt-right" /></Link> */}
+                                <Link href={item.linkurl} className="icon"><i className="fa fa-long-arrow-alt-right" /></Link>
                             </div>
                             <div className="content-box">
-                                <h4 className="title"><Link href="/page-project-details">{item.title}</Link></h4>
+                                <h4 className="title"><Link href={item.linkurl}>{item.title}</Link></h4>
                                 <span className="cat">{item.cat}</span>
                             </div>
                         </div>

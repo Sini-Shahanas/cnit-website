@@ -4,17 +4,17 @@ import React from 'react';
 
 const serviceListData = [
 	{
-		title: "EDR",
-		linkurl: "/service-edr"
-	},
-	{
-		title: "NDR",
-		linkurl: "/service-ndr"
-	},
-	{
-		title: "Full Stack Solution",
+		title: "Chip Level Management",
 		linkurl: ""
 	},
+	{
+		title: "E-Waste Management",
+		linkurl: "/service-e-waste"
+	},
+	// {
+	// 	title: "Network Monitoring Tool",
+	// 	linkurl: ""
+	// },
 	// {
 	// 	title: "Data Analysis",
 	// 	linkurl: "page-service-details"
@@ -32,7 +32,6 @@ const serviceListData = [
 const Serviceone = ({ alternate }) => {
 	return (
 		<>
-
 			<section className="services-details">
 				<div className="container">
 					<div className="row">
@@ -55,7 +54,7 @@ const Serviceone = ({ alternate }) => {
 
 						<div className="col-xl-8 col-lg-8">
 							<div className="services-details__content">
-								<img src="/images/resource/cyber.jpg" title='Oitech' />
+								<img src="/images/resource/serviceChip.jpg" title='Oitech' />
 								<h2 className="mt-4">Service Overview</h2>
 								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ndustry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
