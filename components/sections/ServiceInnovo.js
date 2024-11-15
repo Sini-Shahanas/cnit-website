@@ -5,7 +5,7 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "Innovo",
-		linkurl: "/service-innovo"
+		linkurl: ""
 	},
 	// {
 	// 	title: "Cloud Native Network Solution",
@@ -55,7 +55,7 @@ const Serviceone = ({ alternate }) => {
 
 						<div className="col-xl-8 col-lg-8">
 							<div className="services-details__content">
-								<img src="/images/resource/iot.jpg" title='Oitech' />
+								<img src="/images/resource/serviceInnovo.jpg" title='Oitech' />
 								<h2 className="mt-4">Service Overview</h2>
 								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ndustry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>

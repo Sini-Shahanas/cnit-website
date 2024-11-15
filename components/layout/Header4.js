@@ -28,7 +28,7 @@ const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll 
                         <div className="outer-box">
                             <Link href="tel:+92(8800)9806" className="info-btn">
                                 <i className="icon fa fa-phone" />
-                                <small>Call Anytime</small><br /> + 88 ( 9800 ) 6802
+                                <small>Call Anytime</small><br />  + 971 48347705
                             </Link>
                             <div className="mobile-nav-toggler" onClick={handleOpen}><span className="icon lnr-icon-bars" /></div>
                         </div>

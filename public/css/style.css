@@ -47,10 +47,15 @@ License: copyright commercial
 @import url("tm-bs-mp.css");
 @import url("tm-utility-classes.css");
 :root {
-  --theme-color1: #0f224d;
+   --theme-color1: #0f224d;
   /* --theme-color2: #ffaa17; */
   --theme-color2: #3a92c6;
-  --theme-color3: #f4f5f8;
+  --theme-color3: #f4f5f8; 
+
+  /* --theme-color1: #0d1e4c;
+  --theme-color2: #83a6ce;
+  --theme-color3: #f4f5f8; */
+
   --cnit-theme-color2:#29a4e6 ;
   --bg-theme-color1: var(--theme-color1);
   --bg-theme-color2: var(--theme-color2);
@@ -893,10 +898,10 @@ li {
   position: absolute;
   left: 50%;
   top: 40%;
-  height: 200px;
-  width: 200px;
-  margin-left: -75px;
-  margin-top: -75px;
+  height: 300px;
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(../images/logo-3.png);

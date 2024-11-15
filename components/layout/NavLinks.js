@@ -90,7 +90,7 @@ const NavLinks = ({ extraClassName }) => {
                         <Link href="/internet-of-things">Internet of Things(IOT)</Link>
                         {dropdowns.iot && (
                             <ul className='sub-dropdown'>
-                                <li><Link href="/page-sub-service-details">Innovo</Link></li>
+                                <li><Link href="/service-innovo">Innovo</Link></li>
                             </ul>
                         )}
                     </li>
