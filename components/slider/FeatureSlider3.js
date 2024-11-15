@@ -72,7 +72,7 @@ const FeatureSlider3 = () => {
                         <div className="feature-block-three">
                             <div className="inner-box ">
                                 <figure className="image">
-                                    <Link to="/page-about">
+                                    <Link href="/page-about">
                                     <img src={`/images/resource/${item.img}`} title='Oitech' />
                                     </Link>
                                     <span className="icon">G</span>
