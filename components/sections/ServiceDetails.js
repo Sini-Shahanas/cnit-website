@@ -141,7 +141,6 @@
 
 // export default Serviceone;
 
-
 import Link from 'next/link';
 import React from 'react';
 // import Accordion from '../elements/Accordion';
@@ -149,11 +148,11 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "Chip Level Management",
-		linkurl: ""
+		linkurl: "/service-chip"
 	},
 	{
 		title: "E-Waste Management",
-		linkurl: ""
+		linkurl: "/service-e-waste"
 	},
 	// {
 	// 	title: "Network Monitoring Tool",
@@ -176,7 +175,6 @@ const serviceListData = [
 const Serviceone = ({ alternate }) => {
 	return (
 		<>
-
 			<section className="services-details">
 				<div className="container">
 					<div className="row">
@@ -188,7 +186,7 @@ const Serviceone = ({ alternate }) => {
 										<div className="service-list">
 										<ul>
 											{serviceListData.map((eachitem, index) => (
-												<li><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
+												<li key={index}><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
 											))}
 										</ul>
 										</div>

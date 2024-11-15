@@ -13,7 +13,7 @@ const serviceListData = [
 	},
 	{
 		title: "HRMS",
-		linkurl: ""
+		linkurl: "/service-hrms"
 	},
 	// {
 	// 	title: "Data Analysis",
@@ -32,7 +32,6 @@ const serviceListData = [
 const Serviceone = ({ alternate }) => {
 	return (
 		<>
-
 			<section className="services-details">
 				<div className="container">
 					<div className="row">

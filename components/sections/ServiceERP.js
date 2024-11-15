@@ -13,7 +13,7 @@ const serviceListData = [
 	},
 	{
 		title: "HRMS",
-		linkurl: ""
+		linkurl: "/service-hrms"
 	},
 	// {
 	// 	title: "Data Analysis",

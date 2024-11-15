@@ -5,15 +5,15 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "NFVi",
-		linkurl: ""
+		linkurl: "/service-nfvi"
 	},
 	{
 		title: "Cloud Native Network Solution",
-		linkurl: ""
+		linkurl: "/service-cnn"
 	},
 	{
 		title: "Network Monitoring Tool",
-		linkurl: ""
+		linkurl: "service-network-tool"
 	},
 	// {
 	// 	title: "Data Analysis",
