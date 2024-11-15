@@ -60,8 +60,8 @@ const Testimonial4 = () => {
                 }}
                 className="testimonial-carousel"
             >
-                {data.map((item, i) => (
-                    <SwiperSlide className="testimonial-block-four">
+                {data.map((item, index) => (
+                    <SwiperSlide key={index} className="testimonial-block-four">
                         <div className="inner-box">
                             <div className="content-box">
                                 <span className="icon icon-quote" />

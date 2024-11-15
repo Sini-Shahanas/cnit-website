@@ -66,8 +66,8 @@ const Testimonial = () => {
                 }}
                 className="testimonial-carousel"
             >
-                {data.map((item, i) => (
-                    <SwiperSlide className="testimonial-block-two">
+                {data.map((item, index) => (
+                    <SwiperSlide key={index} className="testimonial-block-two">
                         <div className="inner-box">
                             <div className="content-box">
                                 <div className="rating"><i className="fa fa-star" /><i className="fa fa-star" /><i className="fa fa-star" /><i className="fa fa-star" /><i className="fa fa-star" /></div>

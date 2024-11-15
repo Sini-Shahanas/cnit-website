@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -66,17 +67,17 @@ const FeatureSlider3 = () => {
                 }}
                 className="features-carousel"
             >
-                {data.map((item, i) => (
-                    <SwiperSlide>
+                {data.map((item, index) => (
+                    <SwiperSlide key={index}>
                         <div className="feature-block-three">
                             <div className="inner-box ">
                                 <figure className="image">
-                                    <a href="/page-about">
+                                    <Link to="/page-about">
                                     <img src={`/images/resource/${item.img}`} title='Oitech' />
-                                    </a>
+                                    </Link>
                                     <span className="icon">G</span>
                                 </figure>
-                                <h4 className="title"><a href="/page-about">{item.title}</a></h4>
+                                <h4 className="title"><Link href="/page-about">{item.title}</Link></h4>
                                 <div className="text">There are many variations of passages of ipsum available, but the majority have suffered alteration in form.</div>
                             </div>
                         </div>

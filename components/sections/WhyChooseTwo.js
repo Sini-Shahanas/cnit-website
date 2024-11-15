@@ -13,7 +13,7 @@ const WhyChooseTwo = () => {
                                 <div className="sec-title">
                                     <span className="sub-title">why choose our company</span>
                                     <h2>Why you Should Choose Our Services?</h2>
-                                    <div className="text">There are many variations of passages of but the majority have in some form, by injected humou or words which don't look even slightly believable of but the majority have suffered.</div>
+                                    <div className="text">There are many variations of passages of but the majority have in some form, by injected humou or words which don&apos;t look even slightly believable of but the majority have suffered.</div>
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 col-sm-12">

@@ -72,8 +72,8 @@ const ProjectSlider3 = () => {
                 }}
                 className="project-carousel-three"
             >
-                {data.map((item, i) => (
-                    <SwiperSlide className="project-block-three">
+                {data.map((item, index) => (
+                    <SwiperSlide key={index} className="project-block-three">
                         <div className="inner-box">
                             <div className="image-box">
                                 <figure className="image">

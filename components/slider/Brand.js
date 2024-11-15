@@ -66,8 +66,8 @@ const Brand = () => {
                 }}
                 className="project-carousel"
             >
-                {data.map((item, i) => (
-                    <SwiperSlide>
+                {data.map((item, index) => (
+                    <SwiperSlide key={index}>
                         <div className="slide-item"> <a href="#"><img src="/images/resource/client.png" title='Oitech' /></a> </div>
                     </SwiperSlide>
                 ))}
