@@ -48,9 +48,9 @@ const NavLinks = ({ extraClassName }) => {
                         <Link href="/software-solution">Software Solution</Link>
                         {dropdowns.softwareSolution && (
                             <ul className="sub-dropdown">
-                                <li><Link href="/page-sub-service-details">ERP</Link></li>
-                                <li><Link href="/page-sub-service-details">CRM</Link></li>
-                                <li><Link href="/page-sub-service-details">HRMS</Link></li>
+                                <li><Link href="/service-erp">ERP</Link></li>
+                                <li><Link href="/service-crm">CRM</Link></li>
+                                <li><Link href="/service-hrms">HRMS</Link></li>
                             </ul>
                         )}
                     </li>
@@ -62,9 +62,9 @@ const NavLinks = ({ extraClassName }) => {
                         <Link href="/infrastructure">IT Infrastructure Solution</Link>
                         {dropdowns.itInfrastructure && (
                             <ul className="sub-dropdown">
-                                <li><Link href="/page-sub-service-details">NFVI</Link></li>
-                                <li><Link href="/page-sub-service-details">Cloud Native Network Solution</Link></li>
-                                <li><Link href="/page-sub-service-details">Network Monitoring Tool</Link></li>
+                                <li><Link href="/service-nfvi">NFVI</Link></li>
+                                <li><Link href="/service-cnn">Cloud Native Network Solution</Link></li>
+                                <li><Link href="/service-network-tool">Network Monitoring Tool</Link></li>
                             </ul>
                         )}
                     </li>
@@ -76,8 +76,8 @@ const NavLinks = ({ extraClassName }) => {
                     <Link href="/cyber-security">Cyber Security</Link>
                     {dropdowns.cyberSecurity && (
                             <ul className='sub-dropdown'>
-                                <li><Link href="/page-sub-service-details">EDR</Link></li>
-                                <li><Link href="/page-sub-service-details">NDR</Link></li>
+                                <li><Link href="/service-edr">EDR</Link></li>
+                                <li><Link href="/service-ndr">NDR</Link></li>
                                 <li><Link href="/page-sub-service-details">Full Stack Solution</Link></li>
                             </ul>
                         )}
@@ -102,8 +102,8 @@ const NavLinks = ({ extraClassName }) => {
                         <Link href="/page-service-details">Service & Maintenance</Link>
                         {dropdowns.serviceMaintenance && (
                             <ul className='sub-dropdown'>
-                                <li><Link href="/page-sub-service-details">Chip Level Service</Link></li>
-                                <li><Link href="/page-sub-service-details">E-waste Management</Link></li>
+                                <li><Link href="/service-chip">Chip Level Service</Link></li>
+                                <li><Link href="/service-e-waste">E-waste Management</Link></li>
                             </ul>
                         )}
                     </li>
@@ -131,7 +131,7 @@ const NavLinks = ({ extraClassName }) => {
             {/* <li className="dropdown"><Link href="/news-grid">News</Link>
                 <ul> */}
                     <li><Link href="/news-grid">Blog</Link></li>
-                    <li><Link href="/page-projects">Careers</Link></li>
+                    <li><Link href="">Careers</Link></li>
                     {/* <li><Link href="/news-details">News Details</Link></li> */}
                 {/* </ul> */}
             {/* </li> */}

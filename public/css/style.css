@@ -9335,7 +9335,7 @@ Section Title
   left: -10px;
   top: 30px;
   bottom: 30px;
-  background-color: var(--cnit-theme-color2);
+  /* background-color: var(--cnit-theme-color2); */
   width: 10px;
   content: "";
 }
