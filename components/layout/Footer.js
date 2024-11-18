@@ -18,10 +18,10 @@ const Footer = () => {
                                     <div className="logo"><Link href="/"><Image src={LogoWhite} alt="block" title='Oitech' /></Link></div>
                                     <div className="text">Desires to obtain pain of itself, because it is pain, but occasionally circumstances.</div>
                                     <ul className="social-icon-two">
-                                        <li><a href="#"><i className="fab fa-twitter" /></a></li>
-                                        <li><a href="#"><i className="fab fa-facebook" /></a></li>
-                                        <li><a href="#"><i className="fab fa-pinterest" /></a></li>
-                                        <li><a href="#"><i className="fab fa-instagram" /></a></li>
+                                        <li><a href="https://twitter.com/cloudnativeits"><i className="fab fa-twitter" /></a></li>
+                                        <li><a href="https://www.facebook.com/cloud.native.it.solutions"><i className="fab fa-facebook" /></a></li>
+                                        <li><a href="https://www.linkedin.com/company/cloud-native-it-solutions"><i className="fab fa-linkedin-in" /></a></li>
+                                        <li><a href="https://www.instagram.com/cloudnativeits/"><i className="fab fa-instagram" /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -29,7 +29,7 @@ const Footer = () => {
                                 <div className="footer-widget">
                                     <h3 className="widget-title">Explore</h3>
                                     <ul className="user-links">
-                                        <li><a href="#">About Company</a></li>
+                                        <li><a href="/page-about">About Company</a></li>
                                         <li><a href="#">Meet the Team</a></li>
                                         <li><a href="#">News &amp; Media</a></li>
                                         <li><a href="#">Our Projects</a></li>

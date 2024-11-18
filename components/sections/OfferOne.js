@@ -29,7 +29,7 @@ const OfferOne = () => {
                         <div className="image-column col-lg-6 col-md-12 col-sm-12">
                             <div className="inner-column">
                                 <div className="image-box">
-                                    <figure className="image"><img src="/images/resource/image-3.jpg" title='Oitech' /></figure>
+                                    <figure className="image"><img src="/images/resource/aboutFooter.jpg" title='Oitech' /></figure>
                                     {/* <div className="caption-box wow slideInRight">
                                         <div className="icon-box">
                                             <a onClick={() => setOpen(true)} className="play-now-two lightbox-image"><i className="icon fa fa-play" /></a>

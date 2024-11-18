@@ -8,6 +8,10 @@ const serviceListData = [
 		linkurl: "/service-erp"
 	},
 	{
+		title: "E-Commerce",
+		linkurl: "/service-e-commerce"
+	},
+	{
 		title: "CRM",
 		linkurl: "/service-crm"
 	},

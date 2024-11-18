@@ -74,6 +74,7 @@ const MobileMenu = () => {
                             <Link href="/software-solution">Software Solution</Link>
                             <ul className={hoverKey === "software-solution" ? "d-block" : "d-none"}>
                                 <li><Link href="/service-erp">ERP</Link></li>
+                                <li><Link href="/service-e-commerce">E-Commerce</Link></li>
                                 <li><Link href="/service-crm">CRM</Link></li>
                                 <li><Link href="/service-hrms">HRMS</Link></li>
                             </ul>
@@ -99,6 +100,8 @@ const MobileMenu = () => {
                             <ul className={hoverKey === "cyber-security" ? "d-block" : "d-none"}>
                                 <li><Link href="/service-edr">EDR</Link></li>
                                 <li><Link href="/service-ndr">NDR</Link></li>
+                                <li><Link href="/service-soar">SOAR</Link></li>
+                                <li><Link href="/service-siem">SIEM</Link></li>
                                 <li><Link href="/page-sub-service-details">Full Stack Solution</Link></li>
                             </ul>
                         </li>
@@ -150,7 +153,7 @@ const MobileMenu = () => {
                 {/* <li className="dropdown"><Link href="/#">News</Link>
                     <ul className={isActive.key === 5 ? "d-block" : "d-none"}> */}
                         <li><Link href="/news-grid">Blog</Link></li>
-                        <li><Link href="/">Careers</Link></li>
+                        <li><Link href="/page-careers">Careers</Link></li>
                         {/* <li><Link href="/news-details">News Details</Link></li>
                     </ul> */}
                     {/* <div className={isActive.key === 5 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(5)}><i className="fa fa-angle-down"></i></div></li> */}

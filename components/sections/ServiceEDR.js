@@ -12,6 +12,14 @@ const serviceListData = [
 		linkurl: "/service-ndr"
 	},
 	{
+		title: "SOAR",
+		linkurl: "/service-soar"
+	},
+	{
+		title: "SIEM",
+		linkurl: "/service-siem"
+	},
+	{
 		title: "Full Stack Solution",
 		linkurl: ""
 	},

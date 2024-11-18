@@ -1466,6 +1466,8 @@ Scroll To Top style
   text-transform: uppercase;
   color: #ffffff;
   background: var(--bg-theme-color1);
+  border-radius: 50px;
+  width: 150px;
 }
 .btn-style-two:before {
   position: absolute;
@@ -5890,8 +5892,9 @@ Section Title
   min-height: 780px;
   width: 100%;
   display: block;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%); */
+  /* filter: grayscale(100%); */
+  /* filter: grayscale(100%) sepia(50%); */
 }
 .map-section .branches-outer {
   position: absolute;
@@ -5908,6 +5911,11 @@ Section Title
 
 .branch-block {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  width: 100%; 
 }
 .branch-block .inner-box {
   position: relative;

@@ -12,17 +12,17 @@ const serviceListData = [
 		linkurl: ""
 	},
 	{
+		title: "SOAR",
+		linkurl: "/service-soar"
+	},
+	{
+		title: "SIEM",
+		linkurl: "/service-siem"
+	},
+	{
 		title: "Full Stack Solution",
 		linkurl: ""
 	},
-	// {
-	// 	title: "Data Analysis",
-	// 	linkurl: "page-service-details"
-	// },
-	// {
-	// 	title: "Security System",
-	// 	linkurl: "page-service-details"
-	// },
 	// {
 	// 	title: "Data Visualization",
 	// 	linkurl: "page-service-details"

@@ -11,9 +11,9 @@ const serviceListData = [
 		title: "NDR",
 		linkurl: "/service-ndr"
 	},
-	{
+    {
 		title: "SOAR",
-		linkurl: "/service-soar"
+		linkurl: ""
 	},
 	{
 		title: "SIEM",
@@ -23,9 +23,11 @@ const serviceListData = [
 		title: "Full Stack Solution",
 		linkurl: ""
 	},
+	
 	// {
-	// 	title: "Data Analysis",
+	// 	title: "Data Visualization",
 	// 	linkurl: "page-service-details"
+	// },
 ];
 
 const Serviceone = ({ alternate }) => {
@@ -43,7 +45,7 @@ const Serviceone = ({ alternate }) => {
 										<div className="service-list">
 										<ul>
 											{serviceListData.map((eachitem, index) => (
-												<li key={index}><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
+												<li><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
 											))}
 										</ul>
 										</div>
@@ -54,7 +56,7 @@ const Serviceone = ({ alternate }) => {
 
 						<div className="col-xl-8 col-lg-8">
 							<div className="services-details__content">
-								<img src="/images/resource/cyber.jpg" title='Oitech' />
+								<img src="/images/resource/serviceEDR.jpg" title='Oitech' />
 								<h2 className="mt-4">Service Overview</h2>
 								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ndustry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
