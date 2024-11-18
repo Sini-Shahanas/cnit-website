@@ -109,7 +109,7 @@ const MobileMenu = () => {
                         >
                             <Link href="/internet-of-things">Internet of Things (IoT)</Link>
                             <ul className={hoverKey === "iot" ? "d-block" : "d-none"}>
-                                <li><Link href="/page-sub-service-details">Innovo</Link></li>
+                                <li><Link href="/service-innovo">Innovo</Link></li>
                             </ul>
                         </li>
                         <li
@@ -119,8 +119,8 @@ const MobileMenu = () => {
                         >
                             <Link href="/page-service-details">Service & Maintenance</Link>
                             <ul className={hoverKey === "service-maintenance" ? "d-block" : "d-none"}>
-                                <li><Link href="/page-sub-service-details">Chip Level Service</Link></li>
-                                <li><Link href="/page-sub-service-details">E-waste Management</Link></li>
+                                <li><Link href="/service-chip">Chip Level Service</Link></li>
+                                <li><Link href="/service-e-waste">E-waste Management</Link></li>
                             </ul>
                         </li>
                     </ul>
