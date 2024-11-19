@@ -1,4 +1,5 @@
 import Head from "next/head";
+import CareerModalForm from './CareerModalForm';
 
 const Careers = () => {
   const jobOpenings = [
@@ -39,8 +40,8 @@ const Careers = () => {
               <p><strong>Location:</strong> {job.location}</p>
               <p><strong>Type:</strong> {job.type}</p>
               <p>{job.description}</p>
-              <a href={job.applyLink} className="theme-btn apply-button">
-                Apply Now
+              <a href={job.applyLink}>
+                <CareerModalForm />                
               </a>
             </div>
           ))}
