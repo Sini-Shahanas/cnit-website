@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import "..//..//public/css"
 
 const Careers = () => {
   const jobOpenings = [
