@@ -18,10 +18,10 @@ const Footer = () => {
                                     <div className="logo"><Link href="/"><Image src={LogoWhite} alt="block" title='Oitech' /></Link></div>
                                     <div className="text">Desires to obtain pain of itself, because it is pain, but occasionally circumstances.</div>
                                     <ul className="social-icon-two">
-                                        <li><a href="https://twitter.com/cloudnativeits"><i className="fab fa-twitter" /></a></li>
-                                        <li><a href="https://www.facebook.com/cloud.native.it.solutions"><i className="fab fa-facebook" /></a></li>
-                                        <li><a href="https://www.linkedin.com/company/cloud-native-it-solutions"><i className="fab fa-linkedin-in" /></a></li>
-                                        <li><a href="https://www.instagram.com/cloudnativeits/"><i className="fab fa-instagram" /></a></li>
+                                        <li><Link href="https://twitter.com/cloudnativeits"><i className="fab fa-twitter" /></Link></li>
+                                        <li><Link href="https://www.facebook.com/cloud.native.it.solutions"><i className="fab fa-facebook" /></Link></li>
+                                        <li><Link href="https://www.linkedin.com/company/cloud-native-it-solutions"><i className="fab fa-linkedin-in" /></Link></li>
+                                        <li><Link href="https://www.instagram.com/cloudnativeits/"><i className="fab fa-instagram" /></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -29,11 +29,11 @@ const Footer = () => {
                                 <div className="footer-widget">
                                     <h3 className="widget-title">Explore</h3>
                                     <ul className="user-links">
-                                        <li><a href="/page-about">About Company</a></li>
-                                        <li><a href="#">Meet the Team</a></li>
-                                        <li><a href="#">News &amp; Media</a></li>
-                                        <li><a href="#">Our Projects</a></li>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><Link href="/page-about">About Company</Link></li>
+                                        <li><Link href="#">Meet the Team</Link></li>
+                                        <li><Link href="#">News &amp; Media</Link></li>
+                                        <li><Link href="#">Our Projects</Link></li>
+                                        <li><Link href="#">Contact</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -43,8 +43,8 @@ const Footer = () => {
                                     <div className="widget-content">
                                         <div className="text">66 Road Broklyn Street, 600 New York, USA</div>
                                         <ul className="contact-info">
-                                            <li><i className="fa fa-envelope" /> <a href="mailto:needhelp@company.com">needhelp@company.com</a><br /></li>
-                                            <li><i className="fa fa-phone-square" /> <a href="tel:+926668880000">+92 666 888 0000</a><br /></li>
+                                            <li><i className="fa fa-envelope" /> <Link href="mailto:needhelp@company.com">needhelp@company.com</Link><br /></li>
+                                            <li><i className="fa fa-phone-square" /> <Link href="tel:+926668880000">+92 666 888 0000</Link><br /></li>
                                         </ul>
                                     </div>
                                 </div>
