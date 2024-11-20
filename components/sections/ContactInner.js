@@ -11,7 +11,7 @@ const ContactInner = () => {
                             <div className="inner-column wow fadeInRight ps-0 pe-4">
                                 <div className="sec-title light">
                                     <div className="sub-title">Get in Touch</div>
-                                    <h2>Get a free quote today</h2>
+                                    <h2>Get a quote today</h2>
                                     <div className="text">Web designing in a powerful way of just not an only professions, however, in a passion for our company</div>
                                 </div>
                                 <div className="contact-info-box-two">

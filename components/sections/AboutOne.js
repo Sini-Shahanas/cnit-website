@@ -52,7 +52,7 @@ const AboutOne = () => {
                                 <div className="sec-title">
                                     <span className="sub-title">About Our Company</span>
                                     <h2>We Execute Our ideas From The Start to Finish</h2>
-                                    <div className="text">Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.</div>
+                                    <div className="text">At Cloud Native IT Solutions, we're at the forefront of the digital revolution, offering innovative IT Solutions tailored to empower your business in the dynamic landscapes of today's tech-driven world. With a commitment to excellence and a passion for cutting-edge technologies, we redefine possibilities to help you thrive in the cloud.</div>
                                 </div>
                                 <div className="content-box">
                                     {/* <div className="info-box">
@@ -62,12 +62,12 @@ const AboutOne = () => {
                                     <div className="about-block">
                                         <i className="icon flaticon-business-018-startup" />
                                         <h5 className="title">Manage Tech Services </h5>
-                                        <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
+                                        <div className="text">Envision a future where your business seamlessly integrates technology for unparalleled efficiency, scalability, and agility.</div>
                                     </div>
                                     <div className="about-block">
                                         <i className="icon flaticon-business-027-world" />
                                         <h5 className="title">Internal Networking</h5>
-                                        <div className="text">We’ve designed a culture that allows our stewards to assimilate.</div>
+                                        <div className="text">At Cloud Native IT Solutions, our vision is to lead the way in providing IT Solutions that not only meet but exceed your evolving business needs.</div>
                                     </div>
                                 </div>
                                 <div className="btm-box">

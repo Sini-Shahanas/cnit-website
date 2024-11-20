@@ -33,7 +33,6 @@ const serviceListData = [
 const Serviceone = ({ alternate }) => {
 	return (
 		<>
-
 			<section className="services-details">
 				<div className="container">
 					<div className="row">
