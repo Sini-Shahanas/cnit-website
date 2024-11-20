@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="ERP" />
+                <PageTitle pageName="IBS ERP" />
                 <BlogOne />
             </Layout>
         </>

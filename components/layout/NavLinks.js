@@ -48,7 +48,7 @@ const NavLinks = ({ extraClassName }) => {
                         <Link href="/software-solution">Software Solution</Link>
                         {dropdowns.softwareSolution && (
                             <ul className="sub-dropdown">
-                                <li><Link href="/service-erp">ERP</Link></li>
+                                <li><Link href="/service-erp">IBS ERP</Link></li>
                                 <li><Link href="/service-e-commerce">E-Commerce</Link></li>
                                 <li><Link href="/service-crm">CRM</Link></li>
                                 <li><Link href="/service-hrms">HRMS</Link></li>

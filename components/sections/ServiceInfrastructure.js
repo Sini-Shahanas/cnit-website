@@ -13,7 +13,7 @@ const serviceListData = [
 	},
 	{
 		title: "Network Monitoring Tool",
-		linkurl: "service-network-tool"
+		linkurl: "/service-network-tool"
 	},
 	// {
 	// 	title: "Data Analysis",
@@ -44,7 +44,7 @@ const Serviceone = ({ alternate }) => {
 										<div className="service-list">
 										<ul>
 											{serviceListData.map((eachitem, index) => (
-												<li key={index}><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
+												<li key={index}><Link className={(index === 0)} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
 											))}
 										</ul>
 										</div>

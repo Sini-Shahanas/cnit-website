@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="IT Infrastructure" />
+                <PageTitle pageName="Infrastructure Solutions" />
                 <Serviceone />
             </Layout>
         </>

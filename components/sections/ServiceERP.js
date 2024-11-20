@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
+// import { useRouter } from 'next/router';
 // import Accordion from '../elements/Accordion';
 
 const serviceListData = [
 	{
-		title: "ERP",
+		title: "IBS ERP",
 		linkurl: ""
 	},
 	{
@@ -34,6 +35,9 @@ const serviceListData = [
 ];
 
 const Serviceone = ({ alternate }) => {
+	// const [activeMenu, setActiveMenu] = useState("IBS ERP");
+	// const router = useRouter(); // Hook to get the current path
+  	// const currentPath = router.pathname;
 	return (
 		<>
 
@@ -49,6 +53,17 @@ const Serviceone = ({ alternate }) => {
 										<ul>
 											{serviceListData.map((eachitem, index) => (
 												<li key={index}><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
+												// <li
+												// 	key={index}
+												// 	className={
+												// 	currentPath === eachitem.linkurl ? "active-menu" : ""
+												// 	}
+												// >
+												// 	<Link href={eachitem.linkurl}>
+												// 	<i className="fas fa-angle-right"></i>
+												// 	<span>{eachitem.title}</span>
+												// 	</Link>
+												// </li>
 											))}
 										</ul>
 										</div>
@@ -138,7 +153,7 @@ const Serviceone = ({ alternate }) => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>			
 		</>
 	);
 };

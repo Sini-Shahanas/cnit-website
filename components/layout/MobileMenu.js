@@ -73,7 +73,7 @@ const MobileMenu = () => {
                         >
                             <Link href="/software-solution">Software Solution</Link>
                             <ul className={hoverKey === "software-solution" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-erp">ERP</Link></li>
+                                <li><Link href="/service-erp">IBS ERP</Link></li>
                                 <li><Link href="/service-e-commerce">E-Commerce</Link></li>
                                 <li><Link href="/service-crm">CRM</Link></li>
                                 <li><Link href="/service-hrms">HRMS</Link></li>

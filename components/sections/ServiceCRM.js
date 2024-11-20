@@ -4,11 +4,11 @@ import React from 'react';
 
 const serviceListData = [
 	{
-		title: "ERP",
+		title: "IBS ERP",
 		linkurl: "/service-erp"
 	},
 	{
-		title: "E-commerce",
+		title: "E-Commerce",
 		linkurl: "/service-e-commerce"
 	},
 	{
@@ -47,7 +47,7 @@ const Serviceone = ({ alternate }) => {
 										<div className="service-list">
 										<ul>
 											{serviceListData.map((eachitem, index) => (
-												<li key={index}><Link className={(index === 0) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
+												<li key={index}><Link className={(index === 2) ? 'current': ''} href={eachitem.linkurl}><i className="fas fa-angle-right"></i><span>{eachitem.title}</span></Link></li>
 											))}
 										</ul>
 										</div>

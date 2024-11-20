@@ -4185,7 +4185,7 @@ Section Title
   height: 480px;
   width: 480px;
   border-radius: 0 0 0 500px;
-  background-color: var(--bg-theme-color3);
+  /* background-color: var(--bg-theme-color3); */
   content: "";
 }
 
