@@ -35,7 +35,7 @@ const Footer = () => {
                                         <li><Link href="/page-services">Our Services</Link></li>
                                         <li><Link href="/page-contact">Contact</Link></li>
                                     </ul>
-                                </div>
+                                </div> 
                             </div>
                             <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
                                 <div className="footer-widget contact-widget">

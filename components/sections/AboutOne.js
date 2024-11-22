@@ -52,7 +52,7 @@ const AboutOne = () => {
                                 <div className="sec-title">
                                     <span className="sub-title">About Our Company</span>
                                     <h2>We Execute Our ideas From The Start to Finish</h2>
-                                    <div className="text">At Cloud Native IT Solutions, we're at the forefront of the digital revolution, offering innovative IT Solutions tailored to empower your business in the dynamic landscapes of today's tech-driven world.</div>
+                                    <div className="text">At Cloud Native IT Solutions, we&apos;re at the forefront of the digital revolution, offering innovative IT Solutions tailored to empower your business in the dynamic landscapes of today&apos;s tech-driven world.</div>
                                 </div>
                                 <div className="content-box">
                                     {/* <div className="info-box">
