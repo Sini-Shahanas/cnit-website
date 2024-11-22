@@ -9,7 +9,7 @@ const serviceListData = [
 	},
 	{
 		title: "E-Waste Management",
-		linkurl: "/service-e-waste"
+		linkurl: "/service-e-waste-management"
 	},
 	// {
 	// 	title: "Network Monitoring Tool",

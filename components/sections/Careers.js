@@ -1,25 +1,24 @@
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import CareerModalForm from './CareerModalForm';
 
 const Careers = () => {
-  const jobOpenings = [
-    {
-      title: "Frontend Developer",
-      location: "Remote",
-      type: "Full-Time",
-      description:
-        "We are looking for a skilled Frontend Developer to build and maintain user-friendly web interfaces.",
-      applyLink: "#",
-    },
-    {
-      title: "Backend Developer",
-      location: "San Francisco, CA",
-      type: "Full-Time",
-      description:
-        "Join our team to design, develop, and maintain server-side logic and APIs.",
-      applyLink: "#",
-    },
-  ];
+  const [jobOpenings, setJobOpenings] = useState([]);
+  
+  useEffect(() => {
+    // Fetch job openings from API
+    const fetchJobOpenings = async () => {
+      try {
+        const response = await fetch('http://localhost:1337/api/careers?populate=*');  // Replace with your API URL
+        const data = await response.json();
+        setJobOpenings(data.data); // Set the job openings in the state
+      } catch (error) {
+        console.error("Error fetching job openings:", error);
+      }
+    };
+
+    fetchJobOpenings();
+  }, []);  // Empty dependency array to fetch only once when component mounts
 
   return (
     <>
@@ -34,17 +33,21 @@ const Careers = () => {
           <p>Join our innovative team and help us build cutting-edge technology!</p>
         </header>
         <section className="job-listings">
-          {jobOpenings.map((job, index) => (
-            <div key={index} className="job-card">
-              <h2>{job.title}</h2>
-              <p><strong>Location:</strong> {job.location}</p>
-              <p><strong>Type:</strong> {job.type}</p>
-              <p>{job.description}</p>
-              <a href={job.applyLink}>
-                <CareerModalForm />                
-              </a>
-            </div>
-          ))}
+          {jobOpenings.length > 0 ? (
+            jobOpenings.map((job, index) => (
+              <div key={job.id} className="job-card">
+                <h2>{job.heading}</h2>
+                <p><strong>Location:</strong> {job.location}</p>
+                <p><strong>Type:</strong> {job.type}</p>
+                <p>{job.description}</p>
+                <a href={job.buttonLink}>
+                  <CareerModalForm />                
+                </a>
+              </div>
+            ))
+          ) : (
+            <p>Loading job openings...</p>
+          )}
         </section>
       </div>
     </>

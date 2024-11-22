@@ -11,13 +11,13 @@ const ProjectSlider = () => {
             img: "serve1.jpg",
             title: "Cyber Security",
             // cat: "Information Safety",
-            linkurl:"/cyber-security"
+            linkurl:"/service-cyber-x"
         },
         {
             img: "serve2.jpg",
             title: "Software Solution",
             // cat: "Design",
-            linkurl:"/software-solution"
+            linkurl:"/service-software-solutions"
         },
         {
             img: "serve3.jpg",
@@ -29,7 +29,7 @@ const ProjectSlider = () => {
             img: "serve4.jpg",
             title: "IT Infrastructure Solution",
             // cat: "Design",
-            linkurl:"/infrastructure"
+            linkurl:"/service-infrastructure-solution"
         },
         {
             img: "serve5.jpg",

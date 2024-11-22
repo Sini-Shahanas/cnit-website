@@ -5,7 +5,7 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "IBS ERP",
-		linkurl: "/service-erp"
+		linkurl: "/service-ibs-erp"
 	},
 	{
 		title: "E-Commerce",
@@ -17,7 +17,7 @@ const serviceListData = [
 	},
 	{
 		title: "HRMS",
-		linkurl: "/service-hrms"
+		linkurl: "/service-cloud-hrms"
 	},
 	// {
 	// 	title: "Data Analysis",

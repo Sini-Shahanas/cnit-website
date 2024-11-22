@@ -5,7 +5,7 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "IBS ERP",
-		linkurl: "/service-erp"
+		linkurl: "/service-ibs-erp"
 	},
 	{
 		title: "E-commerce",

@@ -5,7 +5,7 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "Chip Level Management",
-		linkurl: "/service-chip"
+		linkurl: "/service-chip-level-management"
 	},
 	{
 		title: "E-Waste Management",

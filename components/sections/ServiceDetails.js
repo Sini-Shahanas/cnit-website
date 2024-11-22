@@ -148,11 +148,11 @@ import React from 'react';
 const serviceListData = [
 	{
 		title: "Chip Level Management",
-		linkurl: "/service-chip"
+		linkurl: "/service-chip-level-management"
 	},
 	{
 		title: "E-Waste Management",
-		linkurl: "/service-e-waste"
+		linkurl: "/service-e-waste-management"
 	},
 	// {
 	// 	title: "Network Monitoring Tool",

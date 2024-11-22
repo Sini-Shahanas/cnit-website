@@ -71,12 +71,12 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("software-solution")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/software-solution">Software Solution</Link>
+                            <Link href="/service-software-solutions">Software Solution</Link>
                             <ul className={hoverKey === "software-solution" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-erp">IBS ERP</Link></li>
+                                <li><Link href="/service-ibs-erp">IBS ERP</Link></li>
                                 <li><Link href="/service-e-commerce">E-Commerce</Link></li>
                                 <li><Link href="/service-crm">CRM</Link></li>
-                                <li><Link href="/service-hrms">HRMS</Link></li>
+                                <li><Link href="/service-cloud-hrms">HRMS</Link></li>
                             </ul>
                         </li>
                         <li
@@ -84,11 +84,11 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("it-infrastructure")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/infrastructure">IT Infrastructure Solution</Link>
+                            <Link href="/service-infrastructure-solution">IT Infrastructure Solution</Link>
                             <ul className={hoverKey === "it-infrastructure" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-nfvi">NFVI</Link></li>
-                                <li><Link href="/service-cnn">Cloud Native Network Solution</Link></li>
-                                <li><Link href="/service-network-tool">Network Monitoring Tool</Link></li>
+                                <li><Link href="/service-micro-infra-nfvi">Micro Infra-NFVI</Link></li>
+                                <li><Link href="/service-cloud-native-network-solution">Cloud Native Network Solution</Link></li>
+                                <li><Link href="/service-it-infrastructure-monitoring-tool">IT Infrastructure Monitoring Tool</Link></li>
                             </ul>
                         </li>
                         <li
@@ -96,7 +96,7 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("cyber-security")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/cyber-security">Cyber Security</Link>
+                            <Link href="/service-cyber-x">Cyber Security</Link>
                             <ul className={hoverKey === "cyber-security" ? "d-block" : "d-none"}>
                                 <li><Link href="/service-edr">EDR</Link></li>
                                 <li><Link href="/service-ndr">NDR</Link></li>
@@ -120,10 +120,10 @@ const MobileMenu = () => {
                             onMouseEnter={() => setHoverKey("service-maintenance")}
                             onMouseLeave={() => setHoverKey("")}
                         >
-                            <Link href="/page-service-details">Service & Maintenance</Link>
+                            <Link href="/service-details">Service & Maintenance</Link>
                             <ul className={hoverKey === "service-maintenance" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-chip">Chip Level Service</Link></li>
-                                <li><Link href="/service-e-waste">E-waste Management</Link></li>
+                                <li><Link href="/service-chip-level-management">Chip Level Service</Link></li>
+                                <li><Link href="/service-e-waste-management">E-waste Management</Link></li>
                             </ul>
                         </li>
                     </ul>

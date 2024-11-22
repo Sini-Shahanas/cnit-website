@@ -4,16 +4,16 @@ import React from 'react';
 
 const serviceListData = [
 	{
-		title: "NFVi",
-		linkurl: "/service-nfvi"
+		title: "Micro Infra - NFVi",
+		linkurl: "/service-micro-infra-nfvi"
 	},
 	{
 		title: "Cloud Native Network Solution",
-		linkurl: "/service-cnn"
+		linkurl: "/service-cloud-native-network-solution"
 	},
 	{
-		title: "Network Monitoring Tool",
-		linkurl: "/service-network-tool"
+		title: "IT Infrastructure Monitoring Tool",
+		linkurl: "/service-it-infrastructure-monitoring-tool"
 	},
 	// {
 	// 	title: "Data Analysis",

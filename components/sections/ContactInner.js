@@ -12,22 +12,22 @@ const ContactInner = () => {
                                 <div className="sec-title light">
                                     <div className="sub-title">Get in Touch</div>
                                     <h2>Get a quote today</h2>
-                                    <div className="text">Web designing in a powerful way of just not an only professions, however, in a passion for our company</div>
+                                    <div className="text">Unlock tailored solutions for your business. Contact us today for a personalized quote!</div>
                                 </div>
                                 <div className="contact-info-box-two">
                                     <span className="icon fa fa-map-marker-alt" />
                                     <h6 className="title">Visit Us</h6>
-                                    <div className="text">66 Road Broklyn Street, 600 New York, USA</div>
+                                    <div className="text">Office No 203, Crystal Building, Al Karama, Dubai, UAE</div>
                                 </div>
                                 <div className="contact-info-box-two">
                                     <span className="icon fa fa-envelope" />
                                     <h6 className="title">Email address</h6>
-                                    <div className="text"><Link href="mailto:needhelp@company.com">needhelp@company.com</Link></div>
+                                    <div className="text"><Link href="mailto:info@cnitsolution.com">info@cnitsolution.com</Link></div>
                                 </div>
                                 <div className="contact-info-box-two">
                                     <span className="icon fa fa-phone" />
                                     <h6 className="title">Call now</h6>
-                                    <div className="text"><Link href="tel:+999000111222">+999 000 111 222</Link></div>
+                                    <div className="text"><Link href="tel:+999000111222">+971 4 834 7705</Link></div>
                                 </div>
                             </div>
                         </div>

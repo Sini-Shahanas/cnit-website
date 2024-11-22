@@ -18,7 +18,7 @@ const serviceListData = [
 	},
 	{
 		title: "HRMS",
-		linkurl: "/service-hrms"
+		linkurl: "/service-cloud-hrms"
 	},
 	// {
 	// 	title: "Data Analysis",
