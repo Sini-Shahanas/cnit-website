@@ -15,9 +15,9 @@ const NavLinks = ({ extraClassName }) => {
     useEffect(() => {
         const fetchNavbar = async () => {
             try {
-                const res = await fetch('http://localhost:1337/api/header-navbar?populate=*');
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/header-navbar?populate=*`);
                 const data = await res.json();
-                setNavbarData(data?.data?.HeaderNav?.HeaderData?.menu); // Adjust based on actual API structure
+                setNavbarData(data?.data?.HeaderNav?.HeaderData?.menu);
             } catch (error) {
                 console.error('Error fetching navbar data:', error);
             }
@@ -26,13 +26,12 @@ const NavLinks = ({ extraClassName }) => {
         fetchNavbar();
     }, []);
 
-    if (!navbarData) return <p>Loading...</p>; // Display loading state
+    if (!navbarData) return <></>;
 
     return (
         <ul className={`navigation ${extraClassName}`}>
             {navbarData.map((menuItem) => (
                 <li key={menuItem.id} className={menuItem.subMenu.length > 0 ? 'dropdown' : ''}>
-                    {/* Check if the menuItem is "Home", link to "/" directly */}
                     <Link href={
                         menuItem.menuItem === "Home" ? "/" :
                         menuItem.menuItem === "Blog" ? "/news-grid" :
@@ -40,7 +39,6 @@ const NavLinks = ({ extraClassName }) => {
                         {menuItem.menuItem}
                     </Link>
 
-                    {/* Handle Submenu */}
                     {menuItem.subMenu.length > 0 && (
                         <ul>
                             {menuItem.subMenu.map((subMenuItem) => (
@@ -78,7 +76,6 @@ const NavLinks = ({ extraClassName }) => {
                                     {subMenuItem.subChild && (
                                         <ul className="sub-dropdown">
                                             {subMenuItem.subChild.map((childItem) => {
-                                                // Custom mapping for childList items
                                                 const customRoutes = {
                                                     "Endpoint Detection & Response": "edr",
                                                     "Network Detection & Response": "ndr",
@@ -86,7 +83,6 @@ const NavLinks = ({ extraClassName }) => {
                                                     "Security Information & Event Management": "siem"
                                                 };
 
-                                                // Check if a custom route exists for this childList
                                                 const route = customRoutes[childItem.childList] 
                                                     ? `/service-${customRoutes[childItem.childList]}` 
                                                     : `/service-${childItem.childList.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, 'and')}`;

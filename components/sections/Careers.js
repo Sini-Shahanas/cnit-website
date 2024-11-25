@@ -1,24 +1,24 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import CareerModalForm from './CareerModalForm';
+import Link from "next/link";
 
 const Careers = () => {
   const [jobOpenings, setJobOpenings] = useState([]);
   
   useEffect(() => {
-    // Fetch job openings from API
     const fetchJobOpenings = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/careers?populate=*');  // Replace with your API URL
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/careers?populate=*`);
         const data = await response.json();
-        setJobOpenings(data.data); // Set the job openings in the state
+        setJobOpenings(data.data);
       } catch (error) {
         console.error("Error fetching job openings:", error);
       }
     };
 
     fetchJobOpenings();
-  }, []);  // Empty dependency array to fetch only once when component mounts
+  }, []);
 
   return (
     <>
@@ -38,11 +38,11 @@ const Careers = () => {
               <div key={job.id} className="job-card">
                 <h2>{job.heading}</h2>
                 <p><strong>Location:</strong> {job.location}</p>
-                <p><strong>Type:</strong> {job.type}</p>
-                <p>{job.description}</p>
-                <a href={job.buttonLink}>
+                <p><strong>Qualification:</strong> {job.qualification}</p>
+                <p>{job.experience}</p>
+                <Link href={job.buttonLink}>
                   <CareerModalForm />                
-                </a>
+                </Link>
               </div>
             ))
           ) : (

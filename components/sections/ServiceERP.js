@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-// import { useRouter } from 'next/router';
-// import Accordion from '../elements/Accordion';
 
 const serviceListData = [
 	{
@@ -35,9 +33,6 @@ const serviceListData = [
 ];
 
 const Serviceone = ({ alternate }) => {
-	// const [activeMenu, setActiveMenu] = useState("IBS ERP");
-	// const router = useRouter(); // Hook to get the current path
-  	// const currentPath = router.pathname;
 	return (
 		<>
 
@@ -82,13 +77,6 @@ const Serviceone = ({ alternate }) => {
 									</div>
 								  </div>
 								</div> */}
-
-								{/* <div className="sidebar-widget service-sidebar-single mt-5">
-									<div className="service-sidebar-single-btn wow fadeInUp"
-										data-wow-delay="0.5s" data-wow-duration="1200m">
-										<Link href="#" className="theme-btn btn-style-one d-grid"><span className="btn-title"><span className="fas fa-file-pdf"></span> download pdf file</span></Link>
-									</div>
-								</div> */}
 							</div>
 						</div>
 
@@ -99,10 +87,10 @@ const Serviceone = ({ alternate }) => {
 								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ndustry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 								{/* <div className="content mt-40"> */}
-									{/* <div className="text">
+									<div className="text">
 										<h3>Service Center</h3>
 										<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-									</div> */}
+									</div>
 									{/* <div className="feature-list">
 										<div className="row clearfix">
 											<div className="col-lg-6 col-md-6 col-sm-12 column">

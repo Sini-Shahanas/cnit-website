@@ -1,98 +1,88 @@
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import ModalVideo from 'react-modal-video';
-import SwiperCore, { Autoplay, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 SwiperCore.use([Autoplay, Navigation]);
+
 const IntroSlider1 = () => {
+  const [isOpen, setOpen] = useState(false);
+  const [banners, setBanners] = useState([]);
 
-    const [isOpen, setOpen] = useState(false)
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/home-pages?populate[homeBanner][populate]=*`);
+      const data = await response.json();
+      setBanners(data.data);
+    };
 
+    fetchData();
+  }, []);
 
-    return (
-        <>
-            <Swiper
-                slidesPerView={1}
-                spaceBetween={30}
-                loop={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false
-                }}
-                navigation={{
-                    prevEl: ".swiper-button-prev-style-3",
-                    nextEl: ".swiper-button-next-style-3",
-                }}
-                // breakpoints={{
-                //     320: {
-                //         slidesPerView: 1,
-                //         spaceBetween: 30,
-                //     },
-                //     575: {
-                //         slidesPerView: 1,
-                //         spaceBetween: 30,
-                //     },
-                //     767: {
-                //         slidesPerView: 1,
-                //         spaceBetween: 30,
-                //     },
-                //     991: {
-                //         slidesPerView: 2,
-                //         spaceBetween: 30,
-                //     },
-                //     1199: {
-                //         slidesPerView: 4,
-                //         spaceBetween: 30,
-                //     },
-                //     1350: {
-                //         slidesPerView: 5,
-                //         spaceBetween: 30,
-                //     },
-                // }}
-                className="project-carousel"
-            >
-                {/* {data.map((item, i) => ( */}
-                <SwiperSlide>
-                    <div className="slide-item">
-                        <div className="bg-image" style={{ backgroundImage: 'url(images/main-slider/slide-1.jpg)' }} />
-                        <div className="auto-container">
-                            <div className="content-box">
-                                <span className="sub-title animate-1">Solutions for your businesses</span>
-                                <h1 className="title animate-2">Innovative Tech <br />Solutions</h1>
-                                <div className="btn-box animate-3">
-                                    <Link href="/page-contact" className="theme-btn btn-style-one"><span className="btn-title">Get Quote</span></Link>
-                                    <Link href="/page-about" className="theme-btn btn-style-one"><span className="btn-title">Explore More</span></Link>
-                                    {/* <a onClick={() => setOpen(true)} className="play-btn lightbox-image"><i className="icon fa fa-play" /> watch video</a> */}
-                                </div>
-                            </div>
-                        </div>
+  return (
+    <>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        navigation={{
+          prevEl: '.swiper-button-prev-style-3',
+          nextEl: '.swiper-button-next-style-3',
+        }}
+        className="project-carousel"
+      >
+        {banners.map((banner, i) => (
+          banner.homeBanner && banner.homeBanner.backgroundImage && (
+            <SwiperSlide key={i}>
+              <div className="slide-item">
+                <div
+                  className="bg-image"
+                  style={{
+                    backgroundImage: `url(${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${banner.homeBanner.backgroundImage[0].url})`,
+                  }}
+                />
+                <div className="auto-container">
+                  <div className="content-box">
+                    {banner.homeBanner.title && (
+                      <span className="sub-title animate-1">{banner.homeBanner.title}</span>
+                    )}
+                    {banner.homeBanner.subtitle && (
+                      <h1 className="title animate-2">{banner.homeBanner.subtitle}</h1>
+                    )}
+                    <div className="btn-box animate-3">
+                      {banner.homeBanner.button1Text && banner.homeBanner.button1Link && (
+                        <Link href={banner.homeBanner.button1Link} className="theme-btn btn-style-one">
+                          <span className="btn-title">{banner.homeBanner.button1Text}</span>
+                        </Link>
+                      )}
+                      {banner.homeBanner.button2Text && banner.homeBanner.button2Link && (
+                        <Link href={banner.homeBanner.button2Link} className="theme-btn btn-style-one">
+                          <span className="btn-title">{banner.homeBanner.button2Text}</span>
+                        </Link>
+                      )}
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide-item">
-                        <div className="bg-image" style={{ backgroundImage: 'url(images/main-slider/slide-1.jpg)' }} />
-                        <div className="auto-container">
-                            <div className="content-box">
-                                <span className="sub-title animate-1">Solutions for your businesses</span>
-                                <h1 className="title animate-2">Innovative Tech <br />Solutions</h1>
-                                <div className="btn-box animate-3">
-                                    <Link href="/page-contact" className="theme-btn btn-style-one"><span className="btn-title">Get Quote</span></Link>
-                                    <Link href="/page-about" className="theme-btn btn-style-one"><span className="btn-title">Explore More</span></Link>
-                                    {/* <a onClick={() => setOpen(true)} className="play-btn lightbox-image"><i className="icon fa fa-play" /> watch video</a> */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                {/* ))} */}
-            </Swiper>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          )
+        ))}
+      </Swiper>
 
-
-            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} />
-        </>
-    );
+      <ModalVideo
+        channel="youtube"
+        autoplay
+        isOpen={isOpen}
+        videoId="L61p2uyiMSo"
+        onClose={() => setOpen(false)}
+      />
+    </>
+  );
 };
 
 export default IntroSlider1;
-

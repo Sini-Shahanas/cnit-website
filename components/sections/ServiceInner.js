@@ -1,90 +1,56 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ServiceOne = () => {
+    const [data, setData] = useState(null);
+
+    useEffect(()=>{
+        const fetchData = async () =>{
+            try {
+                const response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/sliders?populate[services][populate]=*`);
+                const result=await response.json();
+                setData(result.data)
+            }
+            catch(error) {
+                console.log("Error", error);
+            }
+        };
+        fetchData();
+    }, [])
+
+    if (!data) {
+        return <></>;
+    }
+
     return (
         <>
             <section className="services-section">
                 <div className="auto-container">
                     <div className="row">
-                        <div className="service-block col-lg-4 col-md-6 col-sm-12">
+                        <h2 className="service-heading">{data[0].heading}</h2>
+                        <h4 className="service-heading">{data[0].shortheading}</h4>
+                        
+                        {data[0].services.map((service,index) =>(
+                        <div className="service-block col-lg-4 col-md-6 col-sm-12" key={index}>
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <figure className="image"><Link href="/service-software-solutions"><img src="/images/resource/serve2.jpg" title='Oitech' /></Link></figure>
-                                    {/* <div className="icon-box"><i className="icon flaticon-business-010-startup" /></div> */}
+                                    <figure className="image">
+                                        <Link href={service.link}>
+                                            <img 
+                                                src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${service.image.url}`}
+                                                alt={service.title}
+                                            />
+                                        </Link>
+                                    </figure>
                                 </div>
                                 <div className="content-box">
-                                    <h5 className="title"><Link href="/service-software-solutions">Software Solution</Link></h5>
-                                    <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
-                                    <Link href="/service-software-solutions" className="read-more">read More <i className="fa fa-long-arrow-alt-right" /></Link>
+                                    <h5 className="title"><Link href={service.link}>{service.title}</Link></h5>
+                                    <div className="text">{service.description}</div>
+                                    <Link href={service.link} className="read-more">{data[0].read_more}<i className="fa fa-long-arrow-alt-right" /></Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="service-block col-lg-4 col-md-6 col-sm-12">
-                            <div className="inner-box">
-                                <div className="image-box">
-                                    <figure className="image"><Link href="/service-infrastructure-solution"><img src="/images/resource/serve4.jpg" title='Oitech' /></Link></figure>
-                                    {/* <div className="icon-box"><i className="icon flaticon-business-002-graph" /></div> */}
-                                </div>
-                                <div className="content-box">
-                                    <h5 className="title"><Link href="/service-infrastructure-solution">IT Infrastructure Solution</Link></h5>
-                                    <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
-                                    <Link href="/service-infrastructure-solution" className="read-more">read More <i className="fa fa-long-arrow-alt-right" /></Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-block col-lg-4 col-md-6 col-sm-12">
-                            <div className="inner-box">
-                                <div className="image-box">
-                                    <figure className="image"><Link href="/service-cyber-x"><img src="/images/resource/serve1.jpg" title='Oitech' /></Link></figure>
-                                    {/* <div className="icon-box"><i className="icon flaticon-business-048-coin" /></div> */}
-                                </div>
-                                <div className="content-box">
-                                    <h5 className="title"><Link href="/service-cyber-x">Cyber Security</Link></h5>
-                                    <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
-                                    <Link href="/service-cyber-x" className="read-more">read More <i className="fa fa-long-arrow-alt-right" /></Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-block col-lg-4 col-md-6 col-sm-12">
-                            <div className="inner-box">
-                                <div className="image-box">
-                                    <figure className="image"><Link href="/internet-of-things"><img src="/images/resource/serve3.jpg" title='Oitech' /></Link></figure>
-                                    {/* <div className="icon-box"><i className="icon flaticon-business-010-startup" /></div> */}
-                                </div>
-                                <div className="content-box">
-                                    <h5 className="title"><Link href="/internet-of-things">Internet of Things (IoT)</Link></h5>
-                                    <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
-                                    <Link href="/internet-of-things" className="read-more">read More <i className="fa fa-long-arrow-alt-right" /></Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-block col-lg-4 col-md-6 col-sm-12">
-                            <div className="inner-box">
-                                <div className="image-box">
-                                    <figure className="image"><Link href="/service-details"><img src="/images/resource/serve5.jpg" title='Oitech' /></Link></figure>
-                                    {/* <div className="icon-box"><i className="icon flaticon-business-048-coin" /></div> */}
-                                </div>
-                                <div className="content-box">
-                                    <h5 className="title"><Link href="/service-details">Service & Maintenance</Link></h5>
-                                    <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
-                                    <Link href="/service-details" className="read-more">read More <i className="fa fa-long-arrow-alt-right" /></Link>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <div className="service-block col-lg-4 col-md-6 col-sm-12">
-                            <div className="inner-box">
-                                <div className="image-box">
-                                    <figure className="image"><Link href="/page-service-details"><img src="/images/resource/service-1.jpg" title='Oitech' /></Link></figure>
-                                    <div className="icon-box"><i className="icon flaticon-business-002-graph" /></div>
-                                </div>
-                                <div className="content-box">
-                                    <h5 className="title"><Link href="/page-service-details">UI/UX Designing</Link></h5>
-                                    <div className="text">We’ve designed a culture that allows our stewards to assimilate</div>
-                                    <Link href="/page-service-details" className="read-more">read More <i className="fa fa-long-arrow-alt-right" /></Link>
-                                </div>
-                            </div>
-                        </div> */}
+                        ))}
                     </div>
                 </div>
             </section>

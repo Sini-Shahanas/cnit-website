@@ -11,7 +11,11 @@ const nextConfig = {
   },
   env: {
     // Add your environment variable here
-    API_URL: process.env.API_URL,
+    // API_URL: process.env.API_URL,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  },
+  images: {
+    domains: ['localhost', 'localhost:1337'],
   },
 }
 

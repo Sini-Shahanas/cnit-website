@@ -1,7 +1,23 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BlogOne = ({ alternate }) => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-details?populate[blogDetails][populate]=*&populate[Posts][populate]=*&populate[SocialLinks][populate]`);
+            const result = await response.json();
+            setData(result.data[0]);
+        };
+
+        fetchData();
+    }, []);
+
+    if (!data) return <></>;
+
+    const { blogDetails, Posts, SocialLinks } = data;
+
     return (
         <>
             <section className="blog-details">
@@ -10,74 +26,83 @@ const BlogOne = ({ alternate }) => {
                         <div className="col-xl-8 col-lg-7">
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
-                                    <img src="/images/resource/education.jpg" title='Oitech' />
+                                    <img
+                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[1].image.url}`}
+                                        alt={blogDetails[1].image.name}
+                                    />
                                     <div className="blog-details__date">
-                                        <span className="day">28</span>
-                                        <span className="month">Aug</span>
+                                        <span className="day">{new Date(blogDetails[1].date).getDate()}</span>
+                                        <span className="month">{new Date(blogDetails[1].date).toLocaleString('default', { month: 'short' })}</span>
                                     </div>
                                 </div>
                                 <div className="blog-details__content">
                                     <ul className="list-unstyled blog-details__meta">
-                                        <li><Link href="/news-details"><i className="fas fa-user-circle"></i> Admin</Link> </li>
-                                        {/* <li><Link href="/news-details"><i className="fas fa-comments"></i> 02
-                                            Comments</Link>
-                                        </li> */}
+                                        <li>
+                                            <Link href="">
+                                                <i className="fas fa-user-circle"></i> {blogDetails[1].postedBy}
+                                            </Link>
+                                        </li>
                                     </ul>
-                                    <h3 className="blog-details__title font-weight-600">We’re Leader In Tecnology Market</h3>
-                                    <p className="blog-details__text-2">Mauris non dignissim purus, ac commodo diam. Donec sit
-                                        amet lacinia nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus
-                                        nulla, sollicitudin at euismod nec, feugiat at nisi. Quisque vitae odio nec lacus
-                                        interdum tempus. Phasellus a rhoncus erat. Vivamus vel eros vitae est aliquet
-                                        pellentesque vitae et nunc. Sed vitae leo vitae nisl pellentesque semper.
+                                    <h3 className="blog-details__title font-weight-600">{blogDetails[1].title}</h3>
+                                    <p className="blog-details__text-2">
+                                        {blogDetails[1].description}
                                     </p>
-                                    <p className="blog-details__text-2">Mauris non dignissim purus, ac commodo diam. Donec sit
-                                        amet lacinia nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus
-                                        nulla, sollicitudin at euismod nec, feugiat at nisi. Quisque vitae odio nec lacus
-                                        interdum tempus. Phasellus a rhoncus erat. Vivamus vel eros vitae est aliquet
-                                        pellentesque vitae et nunc. Sed vitae leo vitae nisl pellentesque semper.
+                                    <h4>{blogDetails[1].subtitle1}</h4>
+                                    <p className="blog-details__text-2">
+                                        {blogDetails[1].description1[0].children[0].text}
                                     </p>
-                                    <p className="blog-details__text-2">Mauris non dignissim purus, ac commodo diam. Donec sit
-                                        amet lacinia nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus
-                                        nulla, sollicitudin at euismod nec, feugiat at nisi. Quisque vitae odio nec lacus
-                                        interdum tempus. Phasellus a rhoncus erat. Vivamus vel eros vitae est aliquet
-                                        pellentesque vitae et nunc. Sed vitae leo vitae nisl pellentesque semper.
+                                    <h4>{blogDetails[1].subtitle2}</h4>
+                                    <p className="blog-details__text-2">
+                                        {blogDetails[1].description2[0].children[0].text}
+                                    </p>
+                                    <h4>{blogDetails[1].subtitle3}</h4>
+                                    <p className="blog-details__text-2">
+                                        {blogDetails[1].description3[0].children[0].text}
+                                    </p>
+                                    <h4>{blogDetails[1].subtitle4}</h4>
+                                    <p className="blog-details__text-2">
+                                        {blogDetails[1].description4[0].children[0].text}
                                     </p>
                                 </div>
                                 <div className="blog-details__bottom">
-                                    <div className="blog-details__social-list"> <Link href="/news-details"><i className="fab fa-twitter"></i></Link> <Link href="/news-details"><i className="fab fa-facebook"></i></Link> <Link href="/news-details"><i className="fab fa-pinterest-p"></i></Link> <Link href="/news-details"><i className="fab fa-instagram"></i></Link> </div>
+                                    <div className="blog-details__social-list">
+                                        {SocialLinks.map((link) => (
+                                            <Link href={link.social_link} key={link.id}>
+                                                <i className={link.IconClass}></i>
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-xl-4 col-lg-5">
-                            <div className="sidebar">
-                                <div className="sidebar__single sidebar__post">
-                                    <h3 className="sidebar__title">Latest Posts</h3>
-                                    <ul className="sidebar__post-list list-unstyled">
-                                        <li>
-                                            <div className="sidebar__post-image"> <img src="/images/resource/blog1.jpg" title='Oitech' /> </div>
-                                            <div className="sidebar__post-content">
-                                                <h3> <span className="sidebar__post-content-meta"><i
-                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/news-details">Top crypto exchange influencers</Link>
-                                                </h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="sidebar__post-image"> <img src="/images/resource/blog2.png" title='Oitech' /> </div>
-                                            <div className="sidebar__post-content">
-                                                <h3> <span className="sidebar__post-content-meta"><i
-                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/blog-erp">Necessity may give us best virtual court</Link> </h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="sidebar__post-image"> <img src="/images/resource/blog3.jpg" title='Oitech' /> </div>
-                                            <div className="sidebar__post-content">
-                                                <h3> <span className="sidebar__post-content-meta"><i
-                                                    className="fas fa-user-circle"></i>Admin</span> <Link href="/blog-education">You should know about business plan</Link> </h3>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                          <div className="sidebar">
+                            <div className="sidebar__single sidebar__post">
+                              <h3 className="sidebar__title">{data.latestPost}</h3>
+                              <ul className="sidebar__post-list list-unstyled">
+                                {Posts.map((post) => (
+                                  <li key={post.id}>
+                                    <div className="sidebar__post-image">
+                                      <img
+                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${post.postImage.url}`}
+                                        alt={post.postTitle}
+                                        className="img-fluid"
+                                      />
+                                    </div>
+                                    <div className="sidebar__post-content">
+                                      <h3>
+                                        <span className="sidebar__post-content-meta">
+                                          <i className="fas fa-user-circle"></i> {post.category}
+                                        </span>
+                                        <Link href={post.link}>{post.postTitle}</Link>
+                                      </h3>
+                                    </div>
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
+                          </div>
                         </div>
                     </div>
                 </div>

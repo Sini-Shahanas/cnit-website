@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
-import ModalVideo from 'react-modal-video';
+import React, { useEffect, useState } from 'react';
 
 const OfferOne = () => {
-    const [isOpen, setOpen] = useState(false)
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offer-abouts?populate=*`);
+                const res = await response.json();
+                setData(res.data[0]);
+            }
+            catch (error) {
+                console.error("Error:", error);
+            }
+            finally {
+                setIsLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
+    if (isLoading) {
+        return <></>
+    }
+
+    const {shortTitle, title, description, ideaIcon, ideaTitle, iconClass, shortText1, shortText2, shortText3, image} = data;
+    
     return (
         <>
             <section className="offer-section">
@@ -11,34 +35,30 @@ const OfferOne = () => {
                         <div className="content-column col-lg-6 col-md-12">
                             <div className="inner-column">
                                 <div className="sec-title light">
-                                    <span className="sub-title">Tech management</span>
-                                    <h2>The Best Source for IT Solutions</h2>
-                                    <div className="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu convenient scheduling, account fugiat nulla pariatur.</div>
+                                    <span className="sub-title">{shortTitle}</span>
+                                    <h2>{title}</h2>
+                                    <div className="text">{description}</div>
                                 </div>
                                 <div className="info-box">
-                                    <i className="icon flaticon-business-036-idea" />
-                                    <h5 className="title">We’re doing the right thing.<br /> The right way.</h5>
+                                    <i className={ideaIcon} />
+                                    {/* <h5 className="title">{ideaTitle}</h5> */}
+                                    <h5 className="title">
+                                        {ideaTitle?.split('.')[0]}.
+                                        <br />
+                                        {ideaTitle?.split('.')[1]?.trim() + '.'}
+                                    </h5>
                                 </div>
                                 <ul className="list-style-two">
-                                    <li><i className="fa fa-check-circle" /> Lorem Ipsum is not simply random text</li>
-                                    <li><i className="fa fa-check-circle" /> Making this the first true generator on the Internet</li>
-                                    <li><i className="fa fa-check-circle" /> Various versions have evolved over the years</li>
+                                    <li><i className={iconClass}/>{shortText1}</li>
+                                    <li><i className={iconClass} />{shortText2}</li>
+                                    <li><i className={iconClass} />{shortText3}</li>
                                 </ul>
                             </div>
                         </div>
                         <div className="image-column col-lg-6 col-md-12 col-sm-12">
                             <div className="inner-column">
                                 <div className="image-box">
-                                    <figure className="image"><img src="/images/resource/aboutFooter.jpg" title='Oitech' /></figure>
-                                    {/* <div className="caption-box wow slideInRight">
-                                        <div className="icon-box">
-                                            <a onClick={() => setOpen(true)} className="play-now-two lightbox-image"><i className="icon fa fa-play" /></a>
-                                        </div>
-                                        <div className="title-box">
-                                            <h5 className="title">Professional IT technology services you can trust</h5>
-                                        </div>
-                                    </div> */}
-                                    <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} />
+                                    <figure className="image"><img src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`} /></figure>
                                 </div>
                             </div>
                         </div>

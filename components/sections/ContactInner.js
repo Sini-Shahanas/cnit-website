@@ -52,7 +52,10 @@ const ContactInner = () => {
                                                 <textarea name="message" placeholder="Write Message" required={""} />
                                             </div>
                                             <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                                <button className="theme-btn btn-style-one hvr-light" type="submit" name="submit-form"><span className="btn-title">Send a message</span></button>
+                                                {/* <button className="theme-btn btn-style-one hvr-light" type="submit" name="submit-form"><span className="btn-title">Send a message</span></button> */}
+                                                <Link href="mailto:info@cnitsolution.com" className="theme-btn btn-style-one hvr-light">
+                                                    <span className="btn-title">Send a message</span>
+                                                </Link>
                                             </div>
                                         </div>
                                     </form>

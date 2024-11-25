@@ -5305,6 +5305,10 @@ Section Title
   padding: 120px 0 90px;
   z-index: 1;
 }
+.service-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
 .service-block {
   position: relative;
