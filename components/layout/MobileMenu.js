@@ -2,11 +2,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const MobileMenu = () => {
-    // const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-    // const handleItemClick = () => {
-    //     setIsSidebarOpen(false);
-    // };
 
   const [isActive, setIsActive] = useState({
     status: false,
@@ -45,7 +40,6 @@ const MobileMenu = () => {
 
   return (
     <>
-        {/* {isSidebarOpen && ( */}
       <ul className="navigation clearfix">
         {menuData.map((menuItem) => (
           <li
@@ -62,7 +56,6 @@ const MobileMenu = () => {
                       .toLowerCase()
                       .replace(/\s+/g, "-")}`
               }
-            //   onClick={handleItemClick}
             >
               {menuItem.menuItem}
             </Link>
@@ -135,7 +128,7 @@ const MobileMenu = () => {
                     ? "dropdown-btn active"
                     : "dropdown-btn"
                 }
-                onClick={() => handleClick(menuItem.id)}
+                // onClick={() => handleClick(menuItem.id)}
               >
                 <i className="fa fa-angle-down"></i>
               </div>
@@ -143,7 +136,6 @@ const MobileMenu = () => {
           </li>
         ))}
       </ul>
-    {/* )} */}
     </>
   );
 };
