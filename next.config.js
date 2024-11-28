@@ -15,7 +15,8 @@ const nextConfig = {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
   images: {
-    domains: ['localhost', 'localhost:1337'],
+    // domains: ['localhost', 'localhost:1337'],
+    domains: ['admin.cnit-solutions.com'],
   },
 }
 

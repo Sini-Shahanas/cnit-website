@@ -46,7 +46,7 @@ const Careers = () => {
               </div>
             ))
           ) : (
-            <p>Loading job openings...</p>
+            <></>
           )}
         </section>
       </div>

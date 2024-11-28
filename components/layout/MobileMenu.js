@@ -1,167 +1,151 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useState } from "react";
 
 const MobileMenu = () => {
-    const [isActive, setIsActive] = useState({
-        status: false,
-        key: "",
-    });
-    const [hoverKey, setHoverKey] = useState("");
+    // const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-    const handleClick = (key) => {
-        if (isActive.key === key) {
-            setIsActive({
-                status: false,
+    // const handleItemClick = () => {
+    //     setIsSidebarOpen(false);
+    // };
 
-            });
-        } else {
-            setIsActive({
-                status: true,
-                key,
-            });
-        }
-    };
-    const [isSubActive, setSubIsActive] = useState({
-        status: false,
-        key: "",
-    });
+  const [isActive, setIsActive] = useState({
+    status: false,
+    key: "",
+  });
+  const [hoverKey, setHoverKey] = useState("");
+  const [menuData, setMenuData] = useState(null);
 
-    const handleSubClick = (key) => {
-        if (isSubActive.key === key) {
-            setSubIsActive({
-                status: false,
-
-            });
-        } else {
-            setSubIsActive({
-                status: true,
-                key,
-            });
-        }
+  useEffect(() => {
+    const fetchMenuData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/header-navbar?populate=*`);
+        const data = await response.json();
+        setMenuData(data.data.HeaderData.menu);
+      } catch (error) {
+        console.error("Error fetching menu data:", error);
+      }
     };
 
-    return (
-        <>
-            <ul className="navigation clearfix">
+    fetchMenuData();
+  }, []);
 
-                {/* <li className="current dropdown"><Link href="/">Home</Link>
-                    <ul className={isActive.key === 1 ? "d-block" : "d-none"}> */}
-                        <li><Link href="/">Home</Link></li>
-                        {/* <li><Link href="/index-2">Home Layout 2</Link></li>
-                        <li><Link href="/index-3">Home Layout 3</Link></li>
-                        <li><Link href="/index-4">Home Layout 4</Link></li>
-                        <li><Link href="/index-5">Home Layout 5</Link></li>
-                        <li className="dropdown"><Link href="/#">Header Styles</Link>
-                        <ul className={isSubActive.key === 17 ? "d-block" : "d-none"}>
-                                <li><Link href="/">Header Style 1</Link></li>
-                                <li><Link href="/index-2">Header Style 2</Link></li>
-                                <li><Link href="/index-3">Header Style 3</Link></li>
-                                <li><Link href="/index-4">Header Style 4</Link></li>
-                                <li><Link href="/index-5">Header Style 5</Link></li>
-                            </ul>
-                            <div className={isSubActive.key === 17 ? "dropdown-btn active" : "dropdown-btn"}
-                                onClick={() => handleSubClick(17)}><i className="fa fa-angle-down"></i></div></li>
-                    </ul>
-                    <div className={isActive.key === 1 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(1)}><i className="fa fa-angle-down"></i></div>
-                </li> */}
-                <li className="dropdown"><Link href="/page-services">Services</Link>
-                    <ul className={isActive.key === 3 ? "d-block" : "d-none"}>
-                        <li
-                            className="dropdown"
-                            onMouseEnter={() => setHoverKey("software-solution")}
-                            onMouseLeave={() => setHoverKey("")}
-                        >
-                            <Link href="/service-software-solutions">Software Solution</Link>
-                            <ul className={hoverKey === "software-solution" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-ibs-erp">IBS ERP</Link></li>
-                                <li><Link href="/service-e-commerce">E-Commerce</Link></li>
-                                <li><Link href="/service-crm">CRM</Link></li>
-                                <li><Link href="/service-cloud-hrms">HRMS</Link></li>
-                            </ul>
-                        </li>
-                        <li
-                            className="dropdown"
-                            onMouseEnter={() => setHoverKey("it-infrastructure")}
-                            onMouseLeave={() => setHoverKey("")}
-                        >
-                            <Link href="/service-infrastructure-solution">IT Infrastructure Solution</Link>
-                            <ul className={hoverKey === "it-infrastructure" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-micro-infra-nfvi">Micro Infra-NFVI</Link></li>
-                                <li><Link href="/service-cloud-native-network-solution">Cloud Native Network Solution</Link></li>
-                                <li><Link href="/service-it-infrastructure-monitoring-tool">IT Infrastructure Monitoring Tool</Link></li>
-                            </ul>
-                        </li>
-                        <li
-                            className="dropdown"
-                            onMouseEnter={() => setHoverKey("cyber-security")}
-                            onMouseLeave={() => setHoverKey("")}
-                        >
-                            <Link href="/service-cyber-x">Cyber Security</Link>
-                            <ul className={hoverKey === "cyber-security" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-edr">EDR</Link></li>
-                                <li><Link href="/service-ndr">NDR</Link></li>
-                                <li><Link href="/service-soar">SOAR</Link></li>
-                                <li><Link href="/service-siem">SIEM</Link></li>
-                                <li><Link href="/page-sub-service-details">Full Stack Solution</Link></li>
-                            </ul>
-                        </li>
-                        <li
-                            className="dropdown"
-                            onMouseEnter={() => setHoverKey("iot")}
-                            onMouseLeave={() => setHoverKey("")}
-                        >
-                            <Link href="/internet-of-things">Internet of Things (IoT)</Link>
-                            <ul className={hoverKey === "iot" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-innovo">Innovo</Link></li>
-                            </ul>
-                        </li>
-                        <li
-                            className="dropdown"
-                            onMouseEnter={() => setHoverKey("service-maintenance")}
-                            onMouseLeave={() => setHoverKey("")}
-                        >
-                            <Link href="/service-details">Service & Maintenance</Link>
-                            <ul className={hoverKey === "service-maintenance" ? "d-block" : "d-none"}>
-                                <li><Link href="/service-chip-level-management">Chip Level Service</Link></li>
-                                <li><Link href="/service-e-waste-management">E-waste Management</Link></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div className={isActive.key === 3 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(3)}><i className="fa fa-angle-down"></i></div></li>
-                {/* <li className="dropdown"><Link href="/page-about">Pages</Link>
-                    <ul className={isActive.key === 2 ? "d-block" : "d-none"}>
-                        <li className="dropdown"><Link href="/page-projects">Projects</Link>
-                        <ul className={isSubActive.key === 234 ? "d-block" : "d-none"}> */}
-                                {/* <li><Link href="/page-project-details">Project Details</Link></li> */}
-                            {/* </ul>
-                            <div className={isSubActive.key === 234 ? "dropdown-btn active" : "dropdown-btn"}
-                                onClick={() => handleSubClick(234)}><i className="fa fa-angle-down"></i></div></li>
-                        <li className="dropdown"><Link href="/page-team">Team</Link>
-                        <ul className={isSubActive.key === 23 ? "d-block" : "d-none"}>
-                                <li><Link href="/page-team">Team Grid</Link></li>
-                                <li><Link href="/page-team-details">Team Details</Link></li>
-                            </ul>
-                            <div className={isSubActive.key === 23 ? "dropdown-btn active" : "dropdown-btn"}
-                                onClick={() => handleSubClick(23)}><i className="fa fa-angle-down"></i></div></li>
-                        <li><Link href="/page-testimonial">Testimonial</Link></li>
-                        <li><Link href="/page-pricing">Pricing</Link></li>
-                        <li><Link href="/page-faq">FAQ</Link></li>
-                        <li><Link href="/page-404">Page 404</Link></li>
-                    </ul>
-                    <div className={isActive.key === 2 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(2)}><i className="fa fa-angle-down"></i></div></li> */}
-                    
-                {/* <li className="dropdown"><Link href="/#">News</Link>
-                    <ul className={isActive.key === 5 ? "d-block" : "d-none"}> */}
-                        <li><Link href="/news-grid">Blog</Link></li>
-                        <li><Link href="/page-careers">Careers</Link></li>
-                        {/* <li><Link href="/news-details">News Details</Link></li>
-                    </ul> */}
-                    {/* <div className={isActive.key === 5 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(5)}><i className="fa fa-angle-down"></i></div></li> */}
-                <li><Link href="/page-about">About</Link></li>
-                <li><Link href="/page-contact">Contact</Link></li>
-            </ul>
-        </>
-    );
+  const handleClick = (key) => {
+    setIsActive({
+      status: isActive.key === key ? false : true,
+      key: isActive.key === key ? "" : key,
+    });
+  };
+
+  const handleSubClick = (key) => {
+    setHoverKey(key);
+  };
+
+  if (!menuData) return <></>;
+
+  return (
+    <>
+        {/* {isSidebarOpen && ( */}
+      <ul className="navigation clearfix">
+        {menuData.map((menuItem) => (
+          <li
+            key={menuItem.id}
+            className={menuItem.menuItem === "Services" ? "dropdown" : ""}
+          >
+            <Link
+              href={
+                menuItem.menuItem === "Home"
+                  ? "/"
+                  : menuItem.menuItem === "Blog"
+                  ? "/news-grid"
+                  : `/page-${menuItem.menuItem
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`
+              }
+            //   onClick={handleItemClick}
+            >
+              {menuItem.menuItem}
+            </Link>
+
+            {menuItem.subMenu.length > 0 && (
+              <ul
+                className={isActive.key === menuItem.id ? "d-block" : "d-none"}
+              >
+                {menuItem.subMenu.map((subItem) => (
+                  <li
+                    key={subItem.id}
+                    className="dropdown"
+                    onMouseEnter={() => handleSubClick(subItem.subServices)}
+                    onMouseLeave={() => setHoverKey("")}
+                  >
+                    <Link
+                      href={
+                        subItem.subServices === "Internet of Things (IoT)"
+                          ? "/internet-of-things"
+                          : subItem.subServices === "Service & Sustainability"
+                          ? "/service-details"
+                          : `/service-${subItem.subServices
+                              .toLowerCase()
+                              .replace(/\s+/g, "-")
+                              .replace(/[()]/g, "")}`
+                      }
+                    >
+                      {subItem.subServices}
+                    </Link>
+                    {subItem.subChild && (
+                      <ul
+                        className={
+                          hoverKey === subItem.subServices
+                            ? "d-block"
+                            : "d-none"
+                        }
+                      >
+                        {subItem.subChild.map((child) => {
+                          const customRoutes = {
+                            "Endpoint Detection & Response": "edr",
+                            "Network Detection & Response": "ndr",
+                            "Security Orchestration, Automation & Response": "soar",
+                            "Security Information & Event Management": "siem",
+                          };
+
+                          const route = customRoutes[child.childList]
+                            ? `/service-${customRoutes[child.childList]}`
+                            : `/service-${child.childList
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")
+                                .replace(/[&]/g, "and")}`;
+
+                          return (
+                            <li key={child.id}>
+                              <Link href={route}>{child.childList}</Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {menuItem.menuItem === "Services" && (
+              <div
+                className={
+                  isActive.key === menuItem.id
+                    ? "dropdown-btn active"
+                    : "dropdown-btn"
+                }
+                onClick={() => handleClick(menuItem.id)}
+              >
+                <i className="fa fa-angle-down"></i>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    {/* )} */}
+    </>
+  );
 };
 
 export default MobileMenu;

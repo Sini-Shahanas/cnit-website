@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 import NavLinks from './NavLinks';
 import LogoWhite from './../../public/images/logo.png';
-import LogoDark from './../../public/images/logo-2.png';
 import cnitWhite from './../../public/images/site-logo-re.png';
 import cnitDark from './../../public/images/site-logo-white.png';
 
@@ -14,11 +13,10 @@ const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll 
     return (
         <>
             <header className={`main-header header-style-four ${scroll ? "fixed-header" : ""}`}>
-
                 <div className="header-lower">
                     <div className="main-box">
                         <div className="logo-box">
-                            <div className="logo"><Link href="/"><Image src={cnitWhite} title='Oitech' /></Link></div>
+                            <div className="logo"><Link href="/"><Image src={cnitWhite} /></Link></div>
                         </div>
                         <div className="nav-outer">
                             <nav className="nav main-menu">
@@ -39,7 +37,7 @@ const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll 
                     <div className="menu-backdrop" onClick={handleRemove} />
                     <nav className="menu-box">
                         <div className="upper-box">
-                            <div className="nav-logo"><Link href="/"><Image src={LogoWhite} title='Oitech' /></Link></div>
+                            <div className="nav-logo"><Link href="/"><Image src={LogoWhite}/></Link></div>
                             <div className="close-btn" onClick={handleRemove}><i className="icon fa fa-times" /></div>
                         </div>
                         <MobileMenu />
@@ -48,29 +46,29 @@ const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll 
                                 <div className="contact-info-box">
                                     <i className="icon lnr-icon-phone-handset" />
                                     <span className="title">Call Now</span>
-                                    <Link href="tel:+92880098670">+92 (8800) - 98670</Link>
+                                    <Link href="tel:+92880098670">+ 971 48347705</Link>
                                 </div>
                             </li>
                             <li>
                                 <div className="contact-info-box">
                                     <span className="icon lnr-icon-envelope1" />
                                     <span className="title">Send Email</span>
-                                    <Link href="mailto:help@company.com">help@company.com</Link>
+                                    <Link href="mailto:info@cnitsolution.com">info@cnitsolution.com</Link>
                                 </div>
                             </li>
                             <li>
                                 <div className="contact-info-box">
                                     <span className="icon lnr-icon-clock" />
                                     <span className="title">Send Email</span>
-                                    Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+                                        Mon - Fri : 9 AM - 6 PM <br/> Sat : 9AM - 1PM
                                 </div>
                             </li>
                         </ul>
                         <ul className="social-links">
-                            <li><Link href="#"><i className="fab fa-twitter" /></Link></li>
-                            <li><Link href="#"><i className="fab fa-facebook-f" /></Link></li>
-                            <li><Link href="#"><i className="fab fa-pinterest" /></Link></li>
-                            <li><Link href="#"><i className="fab fa-instagram" /></Link></li>
+                            <li><Link href="https://twitter.com/cloudnativeits"><i className="fab fa-twitter" /></Link></li>
+                            <li><Link href="https://www.facebook.com/cloud.native.it.solutions"><i className="fab fa-facebook-f" /></Link></li>
+                            <li><Link href="https://www.linkedin.com/company/cloud-native-it-solutions"><i className="fab fa-linkedin-in" /></Link></li>
+                            <li><Link href="https://www.instagram.com/cloudnativeits/"><i className="fab fa-instagram" /></Link></li>
                         </ul>
                     </nav>
                 </div>

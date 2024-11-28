@@ -8,8 +8,6 @@ import LogoDark from './../../public/images/logo-2.png';
 
 const Header1 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll }) => {
 
-
-
     return (
         <>
 

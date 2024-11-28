@@ -37,13 +37,14 @@ const IntroSlider1 = () => {
         className="project-carousel"
       >
         {banners.map((banner, i) => (
-          banner.homeBanner && banner.homeBanner.backgroundImage && (
-            <SwiperSlide key={i}>
+          banner.homeBanner && banner.homeBanner.backgroundImage &&
+          banner.homeBanner.backgroundImage.map((image, j) => (
+            <SwiperSlide key={`${i}-${j}`}>
               <div className="slide-item">
                 <div
                   className="bg-image"
                   style={{
-                    backgroundImage: `url(${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${banner.homeBanner.backgroundImage[0].url})`,
+                    backgroundImage: `url(${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url})`,
                   }}
                 />
                 <div className="auto-container">
@@ -70,7 +71,7 @@ const IntroSlider1 = () => {
                 </div>
               </div>
             </SwiperSlide>
-          )
+          ))
         ))}
       </Swiper>
 

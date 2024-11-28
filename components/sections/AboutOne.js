@@ -26,7 +26,7 @@ const AboutOne = () => {
     }
 
     if (!data) {
-        return <p>No data available</p>;
+        return <></>;
     }
 
     const { Features, title, subtitle, Description, buttonText, buttonLink, aboutSection, image1, image2 } = data;
@@ -34,7 +34,6 @@ const AboutOne = () => {
     return (
         <>
             <section className="about-section pt-0">
-                {/* Features Section */}
                 <div className="features-section pull-up pt-0">
                     <div className="auto-container">
                         <div className="outer-box">
@@ -59,7 +58,6 @@ const AboutOne = () => {
                         </div>
                     </div>
                 </div>
-                {/* End Features Section */}
                 <div className="auto-container">
                     <div className="row">
                         <div
@@ -90,7 +88,6 @@ const AboutOne = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* Image Column */}
                         <div className="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12 order-1">
                             <div className="inner-column">
                                 <div className="image-1 overlay-anim wow fadeInUp">
