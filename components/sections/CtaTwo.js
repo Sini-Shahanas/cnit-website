@@ -40,8 +40,9 @@ const CtaTwo = () => {
                     <div className="content-box">
                         <div className="title-box">
                             <h3 className="title">
-                                {ctaData.title?.split(' ').slice(0, 2).join(' ')} <br />
-                                {ctaData.title?.split(' ').slice(2).join(' ')}
+                                {/* {ctaData.title?.split(' ').slice(0, 2).join(' ')} <br />
+                                {ctaData.title?.split(' ').slice(2).join(' ')} */}
+                                {ctaData.title}
                             </h3>
                         </div>
 

@@ -66,6 +66,8 @@ const NavLinks = ({ extraClassName }) => {
                         ? "/internet-of-things"
                         : subMenuItem.subServices === "Service & Sustainability"
                         ? "/service-details"
+                        : subMenuItem.subServices === "IT Infrastructure Solutions"
+                        ? "/service-infrastructure-solution"
                         : `/service-${subMenuItem.subServices
                             .toLowerCase()
                             .replace(/\s+/g, "-")
@@ -83,6 +85,7 @@ const NavLinks = ({ extraClassName }) => {
                           "Network Detection & Response": "ndr",
                           "Security Orchestration, Automation & Response": "soar",
                           "Security Information & Event Management": "siem",
+                          "Innova":"innovo",
                         };
 
                         const route = customRoutes[childItem.childList]

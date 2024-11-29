@@ -24,7 +24,7 @@ const Careers = () => {
     <>
       <Head>
         <title>Careers at Our IT Company</title>
-        <meta name="description" content="Explore exciting career opportunities at our IT company." />
+        <meta name="description" content="Explore exciting career opportunities at our company." />
         <link rel="stylesheet" href="/css/careers.css" />
       </Head>
       <div className="container">
@@ -41,7 +41,7 @@ const Careers = () => {
                 <p><strong>Qualification:</strong> {job.qualification}</p>
                 <p>{job.experience}</p>
                 <Link href={job.buttonLink}>
-                  <CareerModalForm />                
+                  <CareerModalcForm />                
                 </Link>
               </div>
             ))

@@ -99,6 +99,7 @@ const MobileMenu = () => {
                             "Network Detection & Response": "ndr",
                             "Security Orchestration, Automation & Response": "soar",
                             "Security Information & Event Management": "siem",
+                            "Innova":"innovo",
                           };
 
                           const route = customRoutes[child.childList]

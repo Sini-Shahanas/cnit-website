@@ -3507,12 +3507,12 @@ Section Title
   background-position: center;
   background-size: cover;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .banner-section-four .slide-item .bg-image {
-    background-position: center center; /* Center the background image on mobile */
-    height: 60vh; /* Adjust the height on smaller screens */
+    background-position: center center;
+    height: 60vh;
   }
-}
+} */
 .banner-section-four .content-box {
   position: relative;
   z-index: 2;
@@ -6104,7 +6104,7 @@ Section Title
      object-fit: cover;
 }
 .call-to-action-two .title-box .title {
-  font-size: 40px;
+  /* font-size: 35px; */
   color: var(--bg-theme-color1);
   font-weight: 700;
   margin-bottom: 0;

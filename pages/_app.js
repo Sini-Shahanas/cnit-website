@@ -4,7 +4,6 @@ import "swiper/css/navigation";
 import '../public/css/bootstrap.min.css';
 import '../public/css/style.css';
 import '../public/css/responsive.css';
-// import '../public/css/careers.css';
 import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {
