@@ -8,7 +8,10 @@ import LogoWhite from './../../public/images/logo.png';
 import cnitWhite from './../../public/images/site-logo-re.png';
 import cnitDark from './../../public/images/site-logo-white.png';
 
-const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll }) => {
+const Header4 = ({ handleOpen, searchToggle, handleToggle, scroll }) => {
+    const handleRemove = () => {
+        document.body.classList.remove("mobile-menu-visible");
+    };
 
     return (
         <>
@@ -33,14 +36,14 @@ const Header4 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll 
                     </div>
                 </div>
 
-                <div className="mobile-menu">
-                    <div className="menu-backdrop" onClick={handleRemove} />
+                <div className="mobile-menu" onClick={handleRemove}>
+                    <div className="menu-backdrop" />
                     <nav className="menu-box">
                         <div className="upper-box">
                             <div className="nav-logo"><Link href="/"><Image src={LogoWhite}/></Link></div>
                             <div className="close-btn" onClick={handleRemove}><i className="icon fa fa-times" /></div>
                         </div>
-                        <MobileMenu />
+                        <MobileMenu handleRemove={handleRemove}/>
                         <ul className="contact-list-one">
                             <li>
                                 <div className="contact-info-box">

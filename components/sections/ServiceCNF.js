@@ -10,8 +10,8 @@ const Serviceone = () => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
         const result = await response.json();
         if (result?.data?.length) {
-          const serviceData = result.data.find(item => item.id === 43);
-          setService(serviceData);
+			const serviceData = result.data.find(item => item.id === 49);
+			setService(serviceData);
         }
       } catch (error) {
         console.error("Error fetching service details:", error);
@@ -38,9 +38,9 @@ const Serviceone = () => {
                   <div className="service-sidebar wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1200ms">
                     <div className="service-list">
                       <ul>
-                        {subServices.map((subService) => (
+                        {subServices.map((subService, index) => (
                           <li key={subService.id}>
-                            <Link href={subService.link}>
+                            <Link className={(index === 2) ? 'current': ''} href={subService.link || ''}>
                               <i className="fas fa-angle-right"></i>
                               <span>{subService.subServiceTitle}</span>
                             </Link>

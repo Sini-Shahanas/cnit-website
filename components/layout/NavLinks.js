@@ -86,6 +86,7 @@ const NavLinks = ({ extraClassName }) => {
                           "Security Orchestration, Automation & Response": "soar",
                           "Security Information & Event Management": "siem",
                           "Innova":"innovo",
+                          "Micro Infra-Cn²S":"cloud-native-network-solution",
                         };
 
                         const route = customRoutes[childItem.childList]

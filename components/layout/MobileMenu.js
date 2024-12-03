@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-const MobileMenu = () => {
+const MobileMenu = ({handleRemove}) => {
 
   const [isActive, setIsActive] = useState({
     status: false,
@@ -9,6 +9,8 @@ const MobileMenu = () => {
   });
   const [hoverKey, setHoverKey] = useState("");
   const [menuData, setMenuData] = useState(null);
+
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const fetchMenuData = async () => {
@@ -24,13 +26,20 @@ const MobileMenu = () => {
 
     fetchMenuData();
   }, []);
-
-  const handleClick = (key) => {
+  
+  const handleClick = (e, key) => {
+    e.stopPropagation();
     setIsActive({
       status: isActive.key === key ? false : true,
       key: isActive.key === key ? "" : key,
     });
   };
+  // const handleClick = (key) => {
+  //   setIsActive({
+  //     status: isActive.key === key ? false : true,
+  //     key: isActive.key === key ? "" : key,
+  //   });
+  // };
 
   const handleSubClick = (key) => {
     setHoverKey(key);
@@ -77,6 +86,8 @@ const MobileMenu = () => {
                           ? "/internet-of-things"
                           : subItem.subServices === "Service & Sustainability"
                           ? "/service-details"
+                          : subItem.subServices === "IT Infrastructure Solutions"
+                        ? "/service-infrastructure-solution"
                           : `/service-${subItem.subServices
                               .toLowerCase()
                               .replace(/\s+/g, "-")
@@ -100,6 +111,7 @@ const MobileMenu = () => {
                             "Security Orchestration, Automation & Response": "soar",
                             "Security Information & Event Management": "siem",
                             "Innova":"innovo",
+                            "Micro Infra-Cn²S":"cloud-native-network-solution",
                           };
 
                           const route = customRoutes[child.childList]
@@ -124,12 +136,14 @@ const MobileMenu = () => {
 
             {menuItem.menuItem === "Services" && (
               <div
+                ref={dropdownRef}
                 className={
                   isActive.key === menuItem.id
                     ? "dropdown-btn active"
                     : "dropdown-btn"
                 }
                 // onClick={() => handleClick(menuItem.id)}
+                onClick={(e) => handleClick(e, menuItem.id)}
               >
                 <i className="fa fa-angle-down"></i>
               </div>

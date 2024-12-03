@@ -40,9 +40,9 @@ const Careers = () => {
                 <p><strong>Location:</strong> {job.location}</p>
                 <p><strong>Qualification:</strong> {job.qualification}</p>
                 <p>{job.experience}</p>
-                <Link href={job.buttonLink}>
-                  <CareerModalcForm />                
-                </Link>
+                {/* <Link href={job.buttonLink}> */}
+                  <CareerModalForm job={job} />                
+                {/* </Link> */}
               </div>
             ))
           ) : (

@@ -10,7 +10,7 @@ const Serviceone = () => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
         const result = await response.json();
         if (result?.data?.length) {
-			const serviceData = result.data.find(item => item.id === 23);
+			const serviceData = result.data.find(item => item.id === 44);
 			setService(serviceData);
         }
       } catch (error) {

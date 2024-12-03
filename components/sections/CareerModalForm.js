@@ -2,52 +2,122 @@ import { useState } from "react";
 
 const CareerFormModal = () => {
   const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    resume: null,
+    address: '',
+    comments: ''
+  });
 
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
+  const handleChange = (e) => {
+    const { name, value, type, files } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: type === 'file' ? files[0] : value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+    for (const key in formData) {
+      data.append(key, formData[key]);
+    }
+
+    try {
+      const response = await fetch('/api/career-email', {
+        method: 'POST',
+        body: data,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Application submitted successfully!');
+        setShowModal(false);
+      } else {
+        alert(result.error ||'Error submitting the application. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send email.');
+    }
+  };
+
   return (
     <div>
-      {/* Button to open the modal */}
-      <button
-        className="theme-btn apply-button"
-        onClick={handleOpenModal}
-      >
+      <button className="theme-btn apply-button" onClick={handleOpenModal}>
         Apply Now
       </button>
-
-      {/* Modal */}
+      
       {showModal && (
         <div className="modal-overlay">
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>
-              &times;
-            </span>
-            <h3>CAREER ENQUIRY</h3>
-            <form>
-              {/* <label htmlFor="name">Name</label> */}
-              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={handleCloseModal}>
+                &times;
+              </span>
+              <h3>CAREER ENQUIRY</h3>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="Enter your mobile number"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  accept=".pdf,.doc,.docx"
+                  onChange={handleChange}
+                />
+                <textarea
+                  id="address"
+                  name="address"
+                  placeholder="Enter your address"
+                  value={formData.address}
+                  onChange={handleChange}
+                ></textarea>
+                <textarea
+                  id="comments"
+                  name="comments"
+                  placeholder="Additional comments (if any)"
+                  value={formData.comments}
+                  onChange={handleChange}
+                ></textarea>
 
-              {/* <label htmlFor="email">e-Mail</label> */}
-              <input type="email" id="email" name="email" placeholder="Enter your email" required />
-
-              {/* <label htmlFor="mobile">Mobile Number</label> */}
-              <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required />
-
-              {/* <label htmlFor="resume">Upload Resume</label> */}
-              <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
-
-              {/* <label htmlFor="address">Address</label> */}
-              <textarea id="address" name="address" placeholder="Enter your address"></textarea>
-
-              {/* <label htmlFor="comments">Comments (if any)</label> */}
-              <textarea id="comments" name="comments" placeholder="Additional comments (if any)"></textarea>
-
-              <button type="submit">SUBMIT</button>
-            </form>
+                <button type="submit">SUBMIT</button>
+              </form>
+            </div>
           </div>
-        </div>
         </div>
       )}
       <style jsx>{`

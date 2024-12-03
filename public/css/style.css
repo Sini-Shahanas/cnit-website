@@ -3507,7 +3507,7 @@ Section Title
   background-position: center;
   background-size: cover;
 }
-/* @media (max-width: 768px) {
+/* @media (max-width: 1023px) {
   .banner-section-four .slide-item .bg-image {
     background-position: center center;
     height: 60vh;

@@ -10,7 +10,7 @@ const Serviceone = () => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
         const result = await response.json();
         if (result?.data?.length) {
-			const serviceData = result.data.find(item => item.id === 27);
+			const serviceData = result.data.find(item => item.id === 48);
 			setService(serviceData);
         }
       } catch (error) {
@@ -40,7 +40,7 @@ const Serviceone = () => {
                       <ul>
                         {subServices.map((subService, index) => (
                           <li key={subService.id}>
-                            <Link className={(index === 2) ? 'current': ''} href={subService.link || ''}>
+                            <Link className={(index === 3) ? 'current': ''} href={subService.link || ''}>
                               <i className="fas fa-angle-right"></i>
                               <span>{subService.subServiceTitle}</span>
                             </Link>

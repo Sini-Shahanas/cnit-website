@@ -1,13 +1,60 @@
 import Link from 'next/link';
-import React from 'react';
+import { useState } from 'react';
 
 const ContactInner = () => {
+    const [formData, setFormData] = useState({
+        full_name: '',
+        email: '',
+        subject: '',
+        message: '',
+        phone: '',
+    });
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const res = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                setResponseMessage(data.message);
+            } else {
+                setResponseMessage('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            setResponseMessage('Error: ' + error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <>
             <section className="contact-section-three">
                 <div className="auto-container">
                     <div className="row">
-                        <div className="info-column col-lg-6 col-md-12 col-sm-12">
+                    <div className="info-column col-lg-6 col-md-12 col-sm-12">
                             <div className="inner-column wow fadeInRight ps-0 pe-4">
                                 <div className="sec-title light">
                                     <div className="sub-title">Get in Touch</div>
@@ -34,31 +81,69 @@ const ContactInner = () => {
                         <div className="form-column col-lg-6 col-md-12 col-sm-12">
                             <div className="inner-column">
                                 <div className="contact-form-two style-two wow fadeInLeft">
-                                    <form method="post" action="#" id="contact-form">
+                                    <form onSubmit={handleSubmit} id="contact-form">
                                         <div className="row">
                                             <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                                                <input type="text" name="full_name" placeholder="Your Name" required />
+                                                <input
+                                                    type="text"
+                                                    name="full_name"
+                                                    placeholder="Your Name"
+                                                    required
+                                                    value={formData.full_name}
+                                                    onChange={handleChange}
+                                                />
                                             </div>
                                             <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                                                <input type="email" name="Email" placeholder="Email Address" required />
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder="Email Address"
+                                                    required
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                />
                                             </div>
                                             <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                                                <input type="text" name="Phone" placeholder="Phone Number" required />
+                                                <input
+                                                    type="text"
+                                                    name="subject"
+                                                    placeholder="Subject"
+                                                    required
+                                                    value={formData.subject}
+                                                    onChange={handleChange}
+                                                />
                                             </div>
                                             <div className="form-group col-lg-6 col-md-6 col-sm-12">
-                                                <input type="text" name="subject" placeholder="Subject" required />
+                                                <input 
+                                                    type="text" 
+                                                    name="phone" 
+                                                    placeholder="Phone Number" 
+                                                    required
+                                                    value={formData.phone}
+                                                    onChange={handleChange}
+                                                />
                                             </div>
                                             <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                                <textarea name="message" placeholder="Write Message" required={""} />
+                                                <textarea
+                                                    name="message"
+                                                    placeholder="Write Message"
+                                                    required
+                                                    value={formData.message}
+                                                    onChange={handleChange}
+                                                />
                                             </div>
                                             <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                                {/* <button className="theme-btn btn-style-one hvr-light" type="submit" name="submit-form"><span className="btn-title">Send a message</span></button> */}
-                                                <Link href="mailto:info@cnitsolution.com" className="theme-btn btn-style-one hvr-light">
-                                                    <span className="btn-title">Send a message</span>
-                                                </Link>
+                                                <button
+                                                    type="submit"
+                                                    className="theme-btn btn-style-one hvr-light"
+                                                    disabled={loading}
+                                                >
+                                                    {loading ? 'Sending...' : 'Send a message'}
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
+                                    {responseMessage && <div>{responseMessage}</div>}
                                 </div>
                             </div>
                         </div>
