@@ -111,7 +111,13 @@
 	}
 
 	.banner-section-four .content-box .title{
-		font-size: 64px;
+		font-size: 45px;
+	}
+
+	.banner-section-four .content-box .sub-title{
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 20px;
 	}
 
 
@@ -1646,8 +1652,6 @@
 		padding: 0;
 	}
 }
-
-
 
 
 @media only screen and (max-width: 424px){

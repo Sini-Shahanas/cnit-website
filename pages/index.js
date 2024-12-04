@@ -17,6 +17,7 @@ import ServiceOne from "../components/sections/ServiceOne";
 // import ProjectFour from "../components/sections/ProjectFour";
 import Industries from '../components/sections/Industries';
 import BlogTwo from '../components/sections/BlogTwo';
+import ServiceThree from "../components/sections/ServiceThree";
 
 export default function Home() {
 
@@ -37,6 +38,7 @@ export default function Home() {
                 {/* <FaqOne /> */}
                 <BlogTwo />
                 <CtaTwo />
+                <ServiceThree />
                 <MapOne />
             </Layout>
         </>
