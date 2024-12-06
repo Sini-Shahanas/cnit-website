@@ -1,25 +1,31 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 
-const BlogOne = ({ alternate }) => {
-    const [data, setData] = useState(null);
+const BlogDetails = ({ blogData }) => {
+    if (!blogData) return <></>;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-details?populate[blogDetails][populate]=*&populate[Posts][populate]=*&populate[SocialLinks][populate]`);
-            const result = await response.json();
-            setData(result.data[0]);
-        };
+    const { blogDetails, Posts, SocialLinks } = blogData;
 
-        fetchData();
-    }, []);
-
-    if (!data) return <></>;
-
-    const { blogDetails, Posts, SocialLinks } = data;
+    const title = blogDetails[2]?.title || "Default Blog Title";
+    const description = blogDetails[2]?.description || "Default description of the blog.";
+    const image = blogDetails[2]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[2].image.url}` : "https://example.com/default-image.jpg";
+    // const url = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${blogData.id}`; // Assuming you have a dynamic URL for each blog
 
     return (
         <>
+        <Head>
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={image} />
+                {/* <meta property="og:url" content={url} /> */}
+                <meta property="og:type" content="article" />
+                {/* Optional: Add Twitter card tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content={image} />
+            </Head>
+
             <section className="blog-details">
                 <div className="container">
                     <div className="row">
@@ -79,7 +85,7 @@ const BlogOne = ({ alternate }) => {
                         <div className="col-xl-4 col-lg-5">
                           <div className="sidebar">
                             <div className="sidebar__single sidebar__post">
-                              <h3 className="sidebar__title">{data.latestPost}</h3>
+                              <h3 className="sidebar__title">{blogData.latestPost}</h3>
                               <ul className="sidebar__post-list list-unstyled">
                                 {Posts.map((post) => (
                                   <li key={post.id}>
@@ -111,4 +117,4 @@ const BlogOne = ({ alternate }) => {
     );
 };
 
-export default BlogOne;
+export default BlogDetails;

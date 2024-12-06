@@ -1,28 +1,7 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
 
-const Serviceone = () => {
-  const [service, setService] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
-        const result = await response.json();
-        if (result?.data?.length) {
-          const serviceData = result.data.find(item => item.id === 50);
-          setService(serviceData);
-        }
-      } catch (error) {
-        console.error("Error fetching service details:", error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (!service) {
-    return <></>;
-  }
+const ServiceCyberSecurity = ({ service }) => {
+  if (!service) return <></>;
 
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
@@ -79,4 +58,4 @@ const Serviceone = () => {
   );
 };
 
-export default Serviceone;
+export default ServiceCyberSecurity;

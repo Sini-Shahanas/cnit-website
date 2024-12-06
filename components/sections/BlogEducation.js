@@ -1,22 +1,10 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
 
-const BlogOne = ({ alternate }) => {
-    const [data, setData] = useState(null);
+const BlogEducation = ({ blogData }) => {
+    
+    if (!blogData) return <></>;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-details?populate[blogDetails][populate]=*&populate[Posts][populate]=*&populate[SocialLinks][populate]`);
-            const result = await response.json();
-            setData(result.data[0]);
-        };
-
-        fetchData();
-    }, []);
-
-    if (!data) return <></>;
-
-    const { blogDetails, Posts, SocialLinks } = data;
+    const { blogDetails, Posts, SocialLinks } = blogData;
 
     return (
         <>
@@ -79,7 +67,7 @@ const BlogOne = ({ alternate }) => {
                         <div className="col-xl-4 col-lg-5">
                           <div className="sidebar">
                             <div className="sidebar__single sidebar__post">
-                              <h3 className="sidebar__title">{data.latestPost}</h3>
+                              <h3 className="sidebar__title">{blogData.latestPost}</h3>
                               <ul className="sidebar__post-list list-unstyled">
                                 {Posts.map((post) => (
                                   <li key={post.id}>
@@ -111,4 +99,4 @@ const BlogOne = ({ alternate }) => {
     );
 };
 
-export default BlogOne;
+export default BlogEducation;

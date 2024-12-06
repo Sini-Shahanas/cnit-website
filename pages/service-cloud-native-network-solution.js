@@ -3,13 +3,35 @@ import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
 import ServiceCNN from '../components/sections/ServiceCNN';
 
-export default function Home() {
+export const getServerSideProps = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
+      const result = await response.json();
+
+      const service = result.data?.find((item) => item.id === 47) || null;
+  
+      return {
+        props: {
+          service,
+        },
+      };
+    } catch (error) {
+      console.error('Error fetching service details:', error);
+      return {
+        props: {
+          service: null,
+        },
+      };
+    }
+  };
+
+export default function Home({ service }) {
 
     return (
         <>
             <Layout HeaderStyle="one">
                 <PageTitle pageName="Micro Infra-Cn²S" />
-                <ServiceCNN />
+                <ServiceCNN service={service} />
             </Layout>
         </>
     )
