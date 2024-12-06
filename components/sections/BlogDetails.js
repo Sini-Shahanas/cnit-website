@@ -9,7 +9,7 @@ const BlogDetails = ({ blogData }) => {
     const title = blogDetails[2]?.title || "Default Blog Title";
     const description = blogDetails[2]?.description || "Default description of the blog.";
     const image = blogDetails[2]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[2].image.url}` : "https://example.com/default-image.jpg";
-    // const url = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${blogData.id}`; // Assuming you have a dynamic URL for each blog
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL}/news-details`; // Assuming you have a dynamic URL for each blog
 
     return (
         <>
@@ -17,7 +17,7 @@ const BlogDetails = ({ blogData }) => {
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={description} />
                 <meta property="og:image" content={image} />
-                {/* <meta property="og:url" content={url} /> */}
+                <meta property="og:url" content={url} />
                 <meta property="og:type" content="article" />
                 {/* Optional: Add Twitter card tags */}
                 <meta name="twitter:card" content="summary_large_image" />
