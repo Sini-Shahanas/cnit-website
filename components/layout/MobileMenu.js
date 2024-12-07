@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react"; 
 import Link from "next/link";
 
-const MobileMenu = ({handleRemove}) => {
-
+const MobileMenu = ({ handleRemove }) => {
   const [isActive, setIsActive] = useState({
     status: false,
     key: "",
@@ -16,9 +15,10 @@ const MobileMenu = ({handleRemove}) => {
     const fetchMenuData = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/header-navbar?populate=*`);
+          `${process.env.NEXT_PUBLIC_API_URL}/header-navbar?populate=*`
+        );
         const data = await response.json();
-        setMenuData(data.data.HeaderData.menu);
+        setMenuData(data?.data?.HeaderData?.menu);
       } catch (error) {
         console.error("Error fetching menu data:", error);
       }
@@ -26,7 +26,7 @@ const MobileMenu = ({handleRemove}) => {
 
     fetchMenuData();
   }, []);
-  
+
   const handleClick = (e, key) => {
     e.stopPropagation();
     setIsActive({
@@ -34,124 +34,82 @@ const MobileMenu = ({handleRemove}) => {
       key: isActive.key === key ? "" : key,
     });
   };
-  // const handleClick = (key) => {
-  //   setIsActive({
-  //     status: isActive.key === key ? false : true,
-  //     key: isActive.key === key ? "" : key,
-  //   });
-  // };
 
   const handleSubClick = (key) => {
     setHoverKey(key);
   };
 
-  if (!menuData) return <></>;
+  if (!menuData) return null;
 
   return (
-    <>
-      <ul className="navigation clearfix">
-        {menuData.map((menuItem) => (
-          <li
-            key={menuItem.id}
-            className={menuItem.menuItem === "Services" ? "dropdown" : ""}
-          >
-            <Link
-              href={
-                menuItem.menuItem === "Home"
-                  ? "/"
-                  : menuItem.menuItem === "Blog"
-                  ? "/news-grid"
-                  : `/page-${menuItem.menuItem
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`
-              }
-            >
-              {menuItem.menuItem}
-            </Link>
+    <ul className="navigation clearfix">
+      {menuData.map((menuItem) => (
+        <li
+          key={menuItem.id}
+          className={menuItem.subMenu.length > 0 ? "dropdown" : ""}
+        >
+          <Link href={menuItem.link || "#"}>
+            {menuItem.menuItem}
+          </Link>
 
-            {menuItem.subMenu.length > 0 && (
-              <ul
-                className={isActive.key === menuItem.id ? "d-block" : "d-none"}
-              >
-                {menuItem.subMenu.map((subItem) => (
-                  <li
-                    key={subItem.id}
-                    className="dropdown"
-                    onMouseEnter={() => handleSubClick(subItem.subServices)}
-                    onMouseLeave={() => setHoverKey("")}
-                  >
-                    <Link
-                      href={
-                        subItem.subServices === "Internet of Things (IoT)"
-                          ? "/internet-of-things"
-                          : subItem.subServices === "Service & Sustainability"
-                          ? "/service-details"
-                          : subItem.subServices === "IT Infrastructure Solutions"
-                        ? "/service-infrastructure-solution"
-                          : `/service-${subItem.subServices
-                              .toLowerCase()
-                              .replace(/\s+/g, "-")
-                              .replace(/[()]/g, "")}`
+          {menuItem.subMenu.length > 0 && (
+            <ul
+              className={isActive.key === menuItem.id ? "d-block" : "d-none"}
+            >
+              {menuItem.subMenu.map((subItem) => (
+                <li
+                  key={subItem.id}
+                  className={subItem.subChild ? "dropdown" : ""}
+                  onMouseEnter={() => handleSubClick(subItem.subServices)}
+                  onMouseLeave={() => setHoverKey("")}
+                >
+                  <Link href={subItem.link || "#"}>
+                    {subItem.subServices}
+                  </Link>
+                  {subItem.subChild && (
+                    <ul
+                      className={
+                        hoverKey === subItem.subServices
+                          ? "d-block"
+                          : "d-none"
                       }
                     >
-                      {subItem.subServices}
-                    </Link>
-                    {subItem.subChild && (
-                      <ul
-                        className={
-                          hoverKey === subItem.subServices
-                            ? "d-block"
-                            : "d-none"
-                        }
-                      >
-                        {subItem.subChild.map((child) => {
-                          const customRoutes = {
-                            "Endpoint Detection & Response": "edr",
-                            "Network Detection & Response": "ndr",
-                            "Security Orchestration, Automation & Response": "soar",
-                            "Security Information & Event Management": "siem",
-                            "Innova":"innovo",
-                            "Micro Infra-Cn²S":"cloud-native-network-solution",
-                          };
+                      {subItem.subChild.map((child) => {
+                        const route = `/service-${child.childList
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")
+                          .replace(/[&]/g, "and")
+                          .replace(/[()]/g, "")}`;
 
-                          const route = customRoutes[child.childList]
-                            ? `/service-${customRoutes[child.childList]}`
-                            : `/service-${child.childList
-                                .toLowerCase()
-                                .replace(/\s+/g, "-")
-                                .replace(/[&]/g, "and")}`;
+                        return (
+                          <li key={child.id}>
+                            <Link href={route}>{child.childList}</Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
 
-                          return (
-                            <li key={child.id}>
-                              <Link href={route}>{child.childList}</Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {menuItem.menuItem === "Services" && (
-              <div
-                ref={dropdownRef}
-                className={
-                  isActive.key === menuItem.id
-                    ? "dropdown-btn active"
-                    : "dropdown-btn"
-                }
-                // onClick={() => handleClick(menuItem.id)}
-                onClick={(e) => handleClick(e, menuItem.id)}
-              >
-                <i className="fa fa-angle-down"></i>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </>
+          {menuItem.menuItem === "Services" && (
+            <div
+              ref={dropdownRef}
+              className={
+                isActive.key === menuItem.id
+                  ? "dropdown-btn active"
+                  : "dropdown-btn"
+              }
+              onClick={(e) => handleClick(e, menuItem.id)}
+            >
+              <i className="fa fa-angle-down"></i>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };
 

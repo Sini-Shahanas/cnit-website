@@ -4,14 +4,13 @@ const ServiceOne = () => {
   const [homeChooseUsData, setHomeChooseUsData] = useState(null);
 
   useEffect(() => {
-    // Fetch data from API
     const fetchData = async () => {
       try {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/home-pages?populate[HomeChooseUs]=*`
         );
         const result = await response.json();
-        const data = result?.data?.find((item) => item.HomeChooseUs); // Find the item with HomeChooseUs data
+        const data = result?.data?.find((item) => item.HomeChooseUs);
         if (data?.HomeChooseUs) {
           setHomeChooseUsData(data.HomeChooseUs);
         }
@@ -24,7 +23,6 @@ const ServiceOne = () => {
   }, []);
 
   if (!homeChooseUsData) {
-    // Show loading state until data is fetched
     return <></>;
   }
 

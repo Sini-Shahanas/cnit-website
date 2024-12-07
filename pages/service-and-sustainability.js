@@ -8,8 +8,8 @@ export const getServerSideProps = async () => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
 
-      const service = result.data?.find((item) => item.id === 11) || null;
-  
+      const service = result.data?.find((item) => item.title === "Service & Sustainability") || null;
+        
       return {
         props: {
           service,

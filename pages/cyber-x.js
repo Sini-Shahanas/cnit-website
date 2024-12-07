@@ -8,7 +8,7 @@ export const getServerSideProps = async () => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
 
-      const service = result.data?.find((item) => item.id === 50) || null;
+      const service = result.data?.find((item) => item.title === "Cyber X: Solutions for Proactive Protection and Resilient Growth") || null;
   
       return {
         props: {

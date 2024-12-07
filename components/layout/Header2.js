@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import NavLinks from './NavLinks';
 import LogoWhite from './../../public/images/logo.png';
-import LogoDark from './../../public/images/logo-2.png';
+// import LogoDark from './../../public/images/logo-2.png';
 const Header2 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll }) => {
 
 

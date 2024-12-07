@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
-import ServiceIOT from '../components/sections/ServiceIOT';
+import ServiceSOAR from '../components/sections/ServiceSOAR';
 
 export const getServerSideProps = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
 
-      const service = result.data?.find((item) => item.title === "Internet Of Things (IoT)") || null;
+      const service = result.data?.find((item) => item.title === "Strategic Edge of Implementing Our SOAR Services") || null;
   
       return {
         props: {
@@ -30,8 +30,8 @@ export default function Home({ service }) {
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="Internet of Things" />
-                <ServiceIOT service={service} />
+                <PageTitle pageName="Security Orchestration, Automation & Response" />
+                <ServiceSOAR service={service} />
             </Layout>
         </>
     )

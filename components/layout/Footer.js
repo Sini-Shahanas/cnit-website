@@ -75,7 +75,17 @@ const Footer = () => {
                                         <div className="footer-widget contact-widget">
                                             <h3 className="widget-title">{section.sectionName}</h3>
                                             <div className="widget-content">
-                                                <div className="text">{section.details.address}</div>
+                                                <div className="text">
+                                                    {/* {section.details.address} */}
+                                                    {section.details.address.split(", ").map((line, index, arr) => {
+                                                        if (index === arr.length - 2) {
+                                                            return <div key={index}>{line + ", " + arr[index + 1]}</div>;
+                                                        }
+                                                        if (index < arr.length - 1) {
+                                                            return <div key={index}>{line}</div>;
+                                                        }
+                                                    })}
+                                                </div>
                                                 <ul className="contact-info">
                                                     {section.details.contactMethods.map((method) => (
                                                         <li key={method.id}>

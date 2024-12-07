@@ -1,25 +1,7 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 
-const Serviceone = () => {
-  const [service, setService] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
-        const result = await response.json();
-        if (result?.data?.length) {
-			const serviceData = result.data.find(item => item.id === 41);
-			setService(serviceData);
-        }
-      } catch (error) {
-        console.error("Error fetching service details:", error);
-      }
-    };
-    fetchData();
-  }, []);
-
+const Serviceone = ({ service }) => {
   if (!service) {
     return <></>;
   }
@@ -27,8 +9,34 @@ const Serviceone = () => {
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
+  // const pageTitle = `${title} | E-Waste Management`;
+  const pageTitle = `${title || "E-Waste Management"} | E-Waste Management`;
+  const pageDescription = description || "Discover more about our services";
+  const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image?.url || ""}`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/e-waste-management`;
+
   return (
     <>
+    <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="IT Maintenance Services, E Waste Management" />
+
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={pageImage} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="article" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={pageImage} />
+
+        <link rel="canonical" href={pageUrl} />
+      </Head>
+      
       <section className="services-details">
         <div className="container">
           <div className="row">
@@ -38,14 +46,14 @@ const Serviceone = () => {
                   <div className="service-sidebar wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1200ms">
                     <div className="service-list">
                       <ul>
-                        {subServices.map((subService, index) => (
+                        {subServices?.map((subService, index) => (
                           <li key={subService.id}>
                             <Link className={(index === 1) ? 'current': ''} href={subService.link || ''}>
                               <i className="fas fa-angle-right"></i>
                               <span>{subService.subServiceTitle}</span>
                             </Link>
                           </li>
-                        ))}
+                        )) || []}
                       </ul>
                     </div>
                   </div>
@@ -56,8 +64,8 @@ const Serviceone = () => {
             <div className="col-xl-8 col-lg-8">
               <div className="services-details__content">
                 <img
-					src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
-                  	alt={image.title}
+					          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image?.url || ""}`}
+                  	alt={image?.title || ""}
                 />
                 <h3 className="mt-4">{title}</h3>
                 <p>{description}</p>

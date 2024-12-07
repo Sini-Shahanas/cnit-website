@@ -3570,7 +3570,8 @@ Section Title
   position: relative;
   overflow: hidden;
   height: 100%;
-  padding: 40px 40px 30px;
+  /* padding: 40px 40px 30px; */
+  padding: 20px 20px 15px;
   background-color: #ffffff;
   background-image: url(../images/icons/waves.jpg);
   background-repeat: no-repeat;

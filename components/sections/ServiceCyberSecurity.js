@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 const ServiceCyberSecurity = ({ service }) => {
   if (!service) return <></>;
@@ -6,8 +7,33 @@ const ServiceCyberSecurity = ({ service }) => {
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
+  const pageTitle = `${title} | Cyber X`;
+  const pageDescription = description || "Discover more about our services";
+  const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/cyber-x`;
+
   return (
     <>
+    <Head>
+        <title>Cyber X</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="Cybersecurity Services" />
+
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={pageImage} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="article" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={pageImage} />
+
+        <link rel="canonical" href={pageUrl} />
+      </Head>
+
       <section className="services-details">
         <div className="container">
           <div className="row">

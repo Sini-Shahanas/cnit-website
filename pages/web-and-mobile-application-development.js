@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
-import ServiceCRM from '../components/sections/ServiceCRM';
+import Serviceone from '../components/sections/ServiceWebAndMobile';
 
 export const getServerSideProps = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
 
-      const service = result.data?.find((item) => item.id === 17) || null;
+      const service = result.data?.find((item) => item.title === "Web & Mobile App Development Services") || null;
   
       return {
         props: {
@@ -30,8 +30,8 @@ export default function Home({ service }) {
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="CRM" />
-                <ServiceCRM service={service} />
+                <PageTitle pageName="Web & Mobile Application Development" />
+                <Serviceone service={service} />
             </Layout>
         </>
     )

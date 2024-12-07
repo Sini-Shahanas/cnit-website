@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
-import ServiceHRMS from '../components/sections/ServiceHRMS';
+import ServiceChip from '../components/sections/ServiceChip';
 
 export const getServerSideProps = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
-
-      const service = result.data?.find((item) => item.id === 19) || null;
   
+      const service = result.data?.find((item) => item.title === "Chip-Level Management for Device Performance") || null;
+        
       return {
         props: {
           service,
@@ -30,10 +30,9 @@ export default function Home({ service }) {
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="HRMS" />
-                <ServiceHRMS service={service} />
+                <PageTitle pageName="Chip Level Management" />
+                <ServiceChip service={service} />
             </Layout>
         </>
     )
 }
- 

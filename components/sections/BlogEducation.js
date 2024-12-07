@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 const BlogEducation = ({ blogData }) => {
     
@@ -6,8 +7,32 @@ const BlogEducation = ({ blogData }) => {
 
     const { blogDetails, Posts, SocialLinks } = blogData;
 
+    const title = blogDetails[1]?.title || "Revolutionizing Education";
+    const description = blogDetails[1]?.description || "Revolutionizing Education: Next Gen LMS with Virtual Live Class Next Gen LMS with Virtual Live Class";
+    const image = blogDetails[1]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[1].image.url}` : "https://admin.cnit-solutions.com/uploads/blog3_b91b6b59e5.jpg";
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL}/revolutionizing-education`;
+
     return (
         <>
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="keywords" content="Revolutionizing Education" />
+                <meta name="author" content={blogDetails[1]?.postedBy || "Admin"} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={image} />
+                <meta property="og:url" content={url} />
+                <meta property="og:type" content="article" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content={image} />
+            </Head>
+
             <section className="blog-details">
                 <div className="container">
                     <div className="row">

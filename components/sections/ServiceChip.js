@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 const Serviceone = ({service}) => {
   if (!service) return <></>;
@@ -6,8 +7,33 @@ const Serviceone = ({service}) => {
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
+  const pageTitle = `${title || "Chip Level Management"} | Chip Level Management`;
+  const pageDescription = description || "Discover more about our services";
+  const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/chip-level-management`;
+
   return (
     <>
+    <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="IT Maintenance Services, Chip Level Management" />
+
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={pageImage} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="article" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={pageImage} />
+
+        <link rel="canonical" href={pageUrl} />
+      </Head>
+      
       <section className="services-details">
         <div className="container">
           <div className="row">
@@ -35,7 +61,7 @@ const Serviceone = ({service}) => {
             <div className="col-xl-8 col-lg-8">
               <div className="services-details__content">
                 <img
-					src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
+					          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
                   	alt={image.title}
                 />
                 <h3 className="mt-4">{title}</h3>

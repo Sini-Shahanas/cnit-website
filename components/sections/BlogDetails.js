@@ -6,20 +6,26 @@ const BlogDetails = ({ blogData }) => {
 
     const { blogDetails, Posts, SocialLinks } = blogData;
 
-    const title = blogDetails[2]?.title || "Default Blog Title";
-    const description = blogDetails[2]?.description || "Default description of the blog.";
-    const image = blogDetails[2]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[2].image.url}` : "https://example.com/default-image.jpg";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL}/news-details`; // Assuming you have a dynamic URL for each blog
+    const title = blogDetails[2]?.title || "Unleashing the potential of NFV";
+    const description = blogDetails[2]?.description || "Unleashing the potential of NFV";
+    const image = blogDetails[2]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[2].image.url}` : "https://admin.cnit-solutions.com/uploads/blog1_59109466a8.jpg";
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL}/unleashing-the-potential-of-NFV`;
 
     return (
         <>
-        <Head>
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="keywords" content="NFVi" />
+                <meta name="author" content={blogDetails[2]?.postedBy || "Admin"} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={description} />
                 <meta property="og:image" content={image} />
                 <meta property="og:url" content={url} />
                 <meta property="og:type" content="article" />
-                {/* Optional: Add Twitter card tags */}
+
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={title} />
                 <meta name="twitter:description" content={description} />

@@ -1,12 +1,37 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 const BlogERP = ({ blogData}) => {    
     if (!blogData) return <></>;
 
     const { blogDetails, Posts, SocialLinks } = blogData;
 
+    const title = blogDetails[0]?.title || "Streamline Operations and elevate guest experience with cloud Based-ERPs for Hotels";
+    const description = blogDetails[0]?.description || "Streamline Operations and elevate guest experience with cloud Based-ERPs for Hotels";
+    const image = blogDetails[0]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[0].image.url}` : "https://admin.cnit-solutions.com/uploads/blog2_63b137c64b.png";
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL}/streamline-operations-and-elevate-guest-experience-with-cloud-Based-ERPs-for-Hotels`;
+
     return (
         <>
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="keywords" content="ERP" />
+                <meta name="author" content={blogDetails[0]?.postedBy || "Admin"} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={image} />
+                <meta property="og:url" content={url} />
+                <meta property="og:type" content="article" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content={image} />
+            </Head>
+
             <section className="blog-details">
                 <div className="container">
                     <div className="row">

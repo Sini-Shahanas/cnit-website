@@ -4,7 +4,7 @@ import React from 'react';
 import MobileMenu from './MobileMenu';
 import NavLinks from './NavLinks';
 import LogoWhite from './../../public/images/logo.png';
-import LogoDark from './../../public/images/logo-2.png';
+// import LogoDark from './../../public/images/logo-2.png';
 
 const Header5 = ({ handleOpen, handleRemove, searchToggle, handleToggle, scroll }) => {
 

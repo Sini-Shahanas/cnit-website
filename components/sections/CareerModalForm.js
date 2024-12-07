@@ -63,7 +63,7 @@ const CareerFormModal = () => {
               <span className="close" onClick={handleCloseModal}>
                 &times;
               </span>
-              <h3>CAREER ENQUIRY</h3>
+              <h3>Apply for this job</h3>
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"

@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
-import ServiceIOT from '../components/sections/ServiceIOT';
+import ServiceCNF from '../components/sections/ServiceCNF';
 
 export const getServerSideProps = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
 
-      const service = result.data?.find((item) => item.title === "Internet Of Things (IoT)") || null;
+      const service = result.data?.find((item) => item.title === "Cloud-Native Network Functions (CNFs)") || null;
   
       return {
         props: {
@@ -25,13 +25,13 @@ export const getServerSideProps = async () => {
     }
   };
 
-export default function Home({ service }) {
+export default function Home({ service}) {
 
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="Internet of Things" />
-                <ServiceIOT service={service} />
+                <PageTitle pageName="Micro Infra - Cn²S (CNF)" />
+                <ServiceCNF service={service} />
             </Layout>
         </>
     )

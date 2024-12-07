@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
-import ServiceCNF from '../components/sections/ServiceCNF';
+import ServiceInnovo from '../components/sections/ServiceInnovo';
 
 export const getServerSideProps = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
       const result = await response.json();
 
-      const service = result.data?.find((item) => item.id === 49) || null;
+      const service = result.data?.find((item) => item.title === "Innova: Cost-Effective and Vendor-Neutral Architecture") || null;
   
       return {
         props: {
@@ -25,13 +25,13 @@ export const getServerSideProps = async () => {
     }
   };
 
-export default function Home({ service}) {
+export default function Home({ service }) {
 
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="Cloud-Native Network Functions" />
-                <ServiceCNF service={service} />
+                <PageTitle pageName="Innova Smart Home" />
+                <ServiceInnovo service={service} />
             </Layout>
         </>
     )
