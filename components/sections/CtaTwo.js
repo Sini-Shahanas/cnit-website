@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const CtaTwo = () => {
     const [ctaData, setCtaData] = useState(null);
@@ -33,8 +34,10 @@ const CtaTwo = () => {
                 <div className="outer-box wow fadeIn">
                     <div className="image-box">
                         <figure className="image">
-                            <img src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${ctaData.image.url}`} 
-                                    alt={ctaData.title} />
+                            <Image src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${ctaData.image.url}`} 
+                                    alt={ctaData.title}
+                                    width={340}
+                                    height={205} />
                         </figure>
                     </div>
                     <div className="content-box">

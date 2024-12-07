@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ServiceOne = ({ data }) => {
     if (!data) {
@@ -19,9 +20,11 @@ const ServiceOne = ({ data }) => {
                                 <div className="image-box">
                                     <figure className="image">
                                         <Link href={service.link}>
-                                            <img 
+                                            <Image
                                                 src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${service.image.url}`}
                                                 alt={service.title}
+                                                width={370}
+                                                height={536}
                                             />
                                         </Link>
                                     </figure>

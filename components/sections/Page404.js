@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 const AboutFive = () => {
     return (
@@ -10,7 +11,7 @@ const AboutFive = () => {
                     <div className="col-xl-12">
                         <div className="error-page__inner">
                             <div className="error-page__title-box">
-                                <img src="/images/resource/404.jpg" title='Oitech' />
+                                <Image src="/images/resource/404.jpg" alt="Oitech" />
                                 <h3 className="error-page__sub-title">Page not found!</h3>
                             </div>
                             <p className="error-page__text">Sorry we can&apos;t find that page! The page you are looking  for

@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Layout from "../components/layout/Layout";
 import AboutInner from "../components/sections/AboutInner";
 // import FunfactOne from "../components/sections/FunfactOne";
@@ -10,6 +11,9 @@ export default function Home() {
 
     return (
         <>
+            <Head>
+                <title>About</title>
+            </Head>
             <Layout HeaderStyle="one">
                 <PageTitle pageName="About Us" />
                 <AboutInner />

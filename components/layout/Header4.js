@@ -19,7 +19,7 @@ const Header4 = ({ handleOpen, searchToggle, handleToggle, scroll }) => {
                 <div className="header-lower">
                     <div className="main-box">
                         <div className="logo-box">
-                            <div className="logo"><Link href="/"><Image src={cnitWhite} /></Link></div>
+                            <div className="logo"><Link href="/"><Image src={cnitWhite} alt="Logo" /></Link></div>
                         </div>
                         <div className="nav-outer">
                             <nav className="nav main-menu">
@@ -40,7 +40,7 @@ const Header4 = ({ handleOpen, searchToggle, handleToggle, scroll }) => {
                     <div className="menu-backdrop" />
                     <nav className="menu-box">
                         <div className="upper-box">
-                            <div className="nav-logo"><Link href="/"><Image src={LogoWhite}/></Link></div>
+                            <div className="nav-logo"><Link href="/"><Image src={LogoWhite} alt="Logo"/></Link></div>
                             <div className="close-btn" onClick={handleRemove}><i className="icon fa fa-times" /></div>
                         </div>
                         <MobileMenu handleRemove={handleRemove}/>
@@ -91,7 +91,7 @@ const Header4 = ({ handleOpen, searchToggle, handleToggle, scroll }) => {
                     <div className="auto-container">
                         <div className="inner-container">
                             <div className="logo">
-                                <Link href="/" title><Image src={cnitDark} title='Oitech' /></Link>
+                                <Link href="/" title><Image src={cnitDark} alt="Logo" /></Link>
                             </div>
                             <div className="nav-outer">
                                 <nav className="main-menu">

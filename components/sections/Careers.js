@@ -8,7 +8,7 @@ const Careers = ({ jobOpenings }) => {
       <Head>
         <title>Careers</title>
         <meta name="description" content="Explore exciting career opportunities at our company." />
-        <link rel="stylesheet" href="/css/careers.css" />
+        {/* <link rel="stylesheet" href="/css/careers.css" /> */}
       </Head>
       <div className="container">
         <header className="header">

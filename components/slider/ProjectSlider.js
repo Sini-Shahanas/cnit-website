@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -54,8 +55,11 @@ const ProjectSlider = ({ services }) => {
                             <div className="image-box">
                                 <figure className="image">
                                     <Link href="" className="lightbox-image">
-                                        <img src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${item.image?.url}`} 
-                                        alt={item.title} />
+                                        <Image src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${item.image?.url}`} 
+                                        alt={item.title}
+                                        width={370}
+                                        height={536}
+                                         />
                                     </Link>
                                 </figure>
                                 <Link href={item.link} className="icon">
