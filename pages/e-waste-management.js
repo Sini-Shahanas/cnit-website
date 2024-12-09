@@ -30,7 +30,7 @@ export default function Home({ service }) {
     return (
         <>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="E-Waste Management" service={service}/>
+                <PageTitle pageName="E-Waste Management" />
                 <ServiceEWaste service={service} />
             </Layout>
         </>

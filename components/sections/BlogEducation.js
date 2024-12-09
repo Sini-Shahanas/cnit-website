@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const BlogEducation = ({ blogData }) => {
     
@@ -39,9 +40,11 @@ const BlogEducation = ({ blogData }) => {
                         <div className="col-xl-8 col-lg-7">
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
-                                    <img
+                                    <Image
                                         src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[1].image.url}`}
                                         alt={blogDetails[1].image.name}
+                                        width={1024}
+                                        height={683}
                                     />
                                     <div className="blog-details__date">
                                         <span className="day">{new Date(blogDetails[1].date).getDate()}</span>
@@ -97,9 +100,11 @@ const BlogEducation = ({ blogData }) => {
                                 {Posts.map((post) => (
                                   <li key={post.id}>
                                     <div className="sidebar__post-image">
-                                      <img
+                                      <Image
                                         src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${post.postImage.url}`}
                                         alt={post.postTitle}
+                                        width={370}
+                                        height={334}
                                         className="img-fluid"
                                       />
                                     </div>

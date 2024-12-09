@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Serviceone = ({ service }) => {
   if (!service) {
@@ -9,8 +10,7 @@ const Serviceone = ({ service }) => {
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
-  // const pageTitle = `${title} | E-Waste Management`;
-  const pageTitle = `${title || "E-Waste Management"} | E-Waste Management`;
+  const pageTitle = `${title} | E-Waste Management`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image?.url || ""}`;
   const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/e-waste-management`;
@@ -63,9 +63,11 @@ const Serviceone = ({ service }) => {
 
             <div className="col-xl-8 col-lg-8">
               <div className="services-details__content">
-                <img
+                <Image
 					          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image?.url || ""}`}
                   	alt={image?.title || ""}
+                    width={1300}
+                    height={650}
                 />
                 <h3 className="mt-4">{title}</h3>
                 <p>{description}</p>

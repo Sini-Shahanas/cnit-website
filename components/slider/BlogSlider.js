@@ -2,6 +2,7 @@ import React from 'react';
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 SwiperCore.use([Autoplay, Navigation]);
+import Image from 'next/image';
 
 const BlogSlider = ({ blogSlider }) => {
     return (
@@ -40,9 +41,11 @@ const BlogSlider = ({ blogSlider }) => {
                                 <div className="image-box">
                                     <figure className="image">
                                         <a href={item.link}>
-                                            <img 
+                                            <Image
                                                 src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${item.image.url}`} 
                                                 alt={item.title}
+                                                width={370}
+                                                height={334}
                                             />
                                         </a>
                                     </figure>
@@ -53,7 +56,7 @@ const BlogSlider = ({ blogSlider }) => {
                                 <div className="content-box">
                                     <ul className="post-info">
                                         <li><i className="fa fa-user" />{item.postedBy}</li>
-                                        <li><i className="fa fa-tag" /> {item.category}</li>
+                                        <li><i className="fa fa-tag" />{item.category}</li>
                                     </ul>
                                     <h4 className="title"><a href={item.link}>{item.title}</a></h4>
                                 </div>

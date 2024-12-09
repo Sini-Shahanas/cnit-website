@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 const Industries = () => {
   const [industriesData, setIndustriesData] = useState(null);
@@ -47,9 +48,11 @@ const Industries = () => {
           <div className="image-column col-lg-6 col-md-12 col-sm-12">
             <div className="image-box wow fadeIn">
               <figure className="image">
-                <img
+                <Image
                   src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
                   alt={image.alternativeText || "Industry Image"}
+                  width={500}
+                  height={310}
                 />
               </figure>
             </div>

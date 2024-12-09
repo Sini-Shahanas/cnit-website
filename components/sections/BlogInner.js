@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BlogInner = ({ blogs }) => {
   return (
@@ -13,9 +14,11 @@ const BlogInner = ({ blogs }) => {
                   <div className="image-box">
                     <figure className="image">
                       <Link href={blog.slug}>
-                        <img 
+                        <Image 
                           src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blog.image.url}`}
                           alt={blog.title || 'Blog Image'}
+                          width={370}
+                          height={334}
                         />
                       </Link>
                     </figure>

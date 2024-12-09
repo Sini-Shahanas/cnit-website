@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Serviceone = ({ service }) => {
   
@@ -63,9 +64,11 @@ const Serviceone = ({ service }) => {
 
             <div className="col-xl-8 col-lg-8">
               <div className="services-details__content">
-                <img
-					src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
+                <Image
+					          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
                   	alt={image.title}
+                    width={1300}
+                    height={650}
                 />
                 <h3 className="mt-4">{title}</h3>
                 <p>{description}</p>

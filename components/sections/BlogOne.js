@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 const BlogOne = ({ addClass }) => {
     return (
@@ -14,7 +15,7 @@ const BlogOne = ({ addClass }) => {
                         <div className="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <figure className="image"><Link href="/news-details"><img src="/images/resource/blog1.jpg" title='Oitech' /></Link></figure>
+                                    <figure className="image"><Link href="/news-details"><Image src="/images/resource/blog1.jpg" alt='Oitech' /></Link></figure>
                                     <span className="date"><b>28</b> OCT</span>
                                 </div>
                                 <div className="content-box">
@@ -33,7 +34,7 @@ const BlogOne = ({ addClass }) => {
                         <div className="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <figure className="image"><Link href="/news-details"><img src="/images/resource/blog2.png" title='Oitech' /></Link></figure>
+                                    <figure className="image"><Link href="/news-details"><Image src="/images/resource/blog2.png" alt='Oitech' /></Link></figure>
                                     <span className="date"><b>28</b> OCT</span>
                                 </div>
                                 <div className="content-box">
@@ -52,7 +53,7 @@ const BlogOne = ({ addClass }) => {
                         <div className="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <figure className="image"><Link href="/news-details"><img src="/images/resource/blog3.jpg" title='Oitech' /></Link></figure>
+                                    <figure className="image"><Link href="/news-details"><Image src="/images/resource/blog3.jpg" alt='Oitech' /></Link></figure>
                                     <span className="date"><b>28</b> OCT</span>
                                 </div>
                                 <div className="content-box">

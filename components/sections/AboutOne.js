@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const AboutOne = () => {
     const [data, setData] = useState(null);
@@ -91,15 +92,19 @@ const AboutOne = () => {
                         <div className="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12 order-1">
                             <div className="inner-column">
                                 <div className="image-1 overlay-anim wow fadeInUp">
-                                    <img
+                                    <Image
                                         src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image1.url}`}
                                         alt={image1.name}
+                                        width={3648}
+                                        height={5472}
                                     />
                                 </div>
                                 <div className="image-2 overlay-anim wow fadeInRight">
-                                    <img
+                                    <Image
                                         src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image2.url}`}
                                         alt={image2.name}
+                                        width={5304}
+                                        height={7952}
                                     />
                                 </div>
                             </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const OfferOne = () => {
     const [data, setData] = useState(null);
@@ -58,7 +59,14 @@ const OfferOne = () => {
                         <div className="image-column col-lg-6 col-md-12 col-sm-12">
                             <div className="inner-column">
                                 <div className="image-box">
-                                    <figure className="image"><img src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`} /></figure>
+                                    <figure className="image">
+                                        <Image 
+                                            src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
+                                            alt={image.title}
+                                             width={930}
+                                             height={570}
+                                        />
+                                    </figure>
                                 </div>
                             </div>
                         </div>
