@@ -112,6 +112,7 @@ SwiperCore.use([Autoplay, Navigation]);
 const IntroSlider1 = () => {
   const [isOpen, setOpen] = useState(false);
   const [banners, setBanners] = useState([]);
+  // const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -122,6 +123,19 @@ const IntroSlider1 = () => {
 
     fetchData();
   }, []);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+  //   };
+
+  //   handleResize(); // Initial check
+  //   window.addEventListener('resize', handleResize);
+
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -147,6 +161,14 @@ const IntroSlider1 = () => {
                   className="bg-image"
                   style={{
                     backgroundImage: `url(${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${slider.image.url})`,
+                    // backgroundImage: `url(${
+                    //   isMobile
+                    //     ? '/images/resource/mobile.jpg' // Mobile image
+                    //     : '/images/resource/desktop.jpg' // Desktop image
+                    // })`,
+                    // height: isMobile ? '800px' : '624px', // Optional height adjustment
+                    // backgroundSize: 'cover',
+                    // backgroundPosition: 'center',
                   }}
                 />
                 <div className="auto-container">
