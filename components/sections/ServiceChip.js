@@ -8,7 +8,7 @@ const Serviceone = ({service}) => {
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
-  const pageTitle = `${title || "Chip Level Management"} | Chip Level Management`;
+  const pageTitle = `${title} | Chip Level Management`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
   const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/chip-level-management`;

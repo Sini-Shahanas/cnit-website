@@ -102,6 +102,8 @@ const BlogDetails = ({ blogData }) => {
                                       <Image
                                         src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${post.postImage.url}`}
                                         alt={post.postTitle}
+                                        width={370}
+                                        height={334}
                                         className="img-fluid"
                                       />
                                     </div>

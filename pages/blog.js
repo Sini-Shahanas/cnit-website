@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
 import BlogInner from "../components/sections/BlogInner";
@@ -22,6 +23,9 @@ export async function getServerSideProps() {
 export default function Home({ blogs }) {
   return (
     <>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <Layout HeaderStyle="one">
         <PageTitle pageName="Blog" />
         <BlogInner blogs={blogs} />
