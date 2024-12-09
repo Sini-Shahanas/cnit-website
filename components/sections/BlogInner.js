@@ -1,9 +1,34 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const BlogInner = ({ blogs }) => {
+  const blogTitle = "Blog";
+  const blogDescription = "Explore our latest blogs covering technology, trends, and insights.";
+  const blogImage = blogs?.[0]?.image?.url
+                    ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogs[0].image.url}`
+                    : defaultImage
+  const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog`;
   return (
+    <>
+      <Head>
+        <title>{blogTitle}</title>
+        <meta name="description" content={blogDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta property="og:title" content={blogTitle} />
+        <meta property="og:description" content={blogDescription} />
+        <meta property="og:image" content={blogImage} />
+        <meta property="og:url" content={blogUrl} />
+        <meta property="og:type" content="article" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blogTitle} />
+        <meta name="twitter:description" content={blogDescription} />
+        <meta name="twitter:image" content={blogImage} />
+      </Head>
+
     <section className="news-section">
       <div className="auto-container">
         <div className="row">
@@ -50,6 +75,7 @@ const BlogInner = ({ blogs }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

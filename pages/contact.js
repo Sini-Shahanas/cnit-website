@@ -13,7 +13,7 @@ export default function Home() {
                 <title>Contact</title>
             </Head>
             <Layout HeaderStyle="one">
-                <PageTitle pageName="Contact" />
+                <PageTitle pageName="Contact Us" />
                 <ContactInner />
                 <MapOne />
             </Layout>
