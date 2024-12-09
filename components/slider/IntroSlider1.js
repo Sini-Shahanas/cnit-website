@@ -153,7 +153,7 @@ const IntroSlider1 = () => {
                   <div className="content-box">
                     
                     {slider.title && (
-                      <h6 className="title animate-2">{slider.title}</h6>
+                      <h3 className="title animate-2">{slider.title}</h3>
                     )}
                     {slider.subtitle && (
                       <span className="sub-title animate-1">{slider.subtitle}</span>

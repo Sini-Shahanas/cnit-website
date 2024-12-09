@@ -69,7 +69,23 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 );
-                            } else if (section.sectionName === 'Contact') {
+                            } else if (section.sectionName === 'Services') {
+                                return (
+                                    <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12" key={section.id}>
+                                        <div className="footer-widget">
+                                            <h3 className="widget-title">{section.sectionName}</h3>
+                                            <ul className="user-links">
+                                                {section.menu.map((menuItem) => (
+                                                    <li key={menuItem.id}>
+                                                        <Link href={menuItem.url}>{menuItem.menuItem}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                );
+                            }
+                            else if (section.sectionName === 'Contact') {
                                 return (
                                     <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12" key={section.id}>
                                         <div className="footer-widget contact-widget">
@@ -98,26 +114,7 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 );
-                            } else if (section.sectionName === 'Services') {
-                                return (
-                                    <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12" key={section.id}>
-                                        <div className="footer-widget gallery-widget">
-                                            <h3 className="widget-title">{section.sectionName}</h3>
-                                            <div className="widget-content">
-                                                <div className="outer clearfix">
-                                                    {section.gallery.map((item) => (
-                                                        <figure className="image" key={item.id}>
-                                                            <Link href={item.url}>
-                                                                <Image src={item.image.url} alt={item.image.alt} width={80} height={80} />
-                                                            </Link>
-                                                        </figure>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            }
+                            } 
                         })}
                     </div>
                 </div>
