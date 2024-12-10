@@ -3483,6 +3483,7 @@ Section Title
   z-index: 8;
   pointer-events: none;
 }
+
 .banner-section-four .slide-item {
   position: relative;
 }
@@ -3507,6 +3508,7 @@ Section Title
   background-position: center;
   background-size: cover;
 }
+
 /* @media (max-width: 1023px) {
   .banner-section-four .slide-item .bg-image {
     background-position: center center;
@@ -3534,6 +3536,7 @@ Section Title
   font-weight: 400;
   margin-bottom: 30px;
 }
+
 .banner-section-four .content-box .btn-box {
   position: relative;
   margin-top: 50px;
