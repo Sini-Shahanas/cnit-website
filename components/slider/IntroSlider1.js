@@ -64,8 +64,6 @@ const IntroSlider1 = () => {
                     backgroundImage: `url(${getImageUrl(slider)})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    height: '800x',
-                    width: '100%',
                     objectFit: 'cover',                   
                   }}
                 />
