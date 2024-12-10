@@ -8,7 +8,7 @@ const Serviceone = ({ service }) => {
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
-  const pageTitle = `${title} | Micro Infra Cn2S (CNF)`;
+  const pageTitle = `${title} | Micro Infra - Cn²S (CNF)`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
   const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/micro-infra-cn2s-cnf`;
@@ -16,7 +16,7 @@ const Serviceone = ({ service }) => {
   return (
     <>
     <Head>
-        <title>Micro Infra Cn2S (CNF)</title>
+        <title>Micro Infra - Cn²S (CNF)</title>
         <meta name="description" content={pageDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="NFVi Solutions, Micro Infra Cn2S CNF" />
