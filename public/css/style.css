@@ -4122,7 +4122,6 @@ Section Title
   padding: 60px 30px 50px;
   text-align: center;
   height: 100%;
-  background-image: url(../images/resource/feature-bg.jpg);
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
