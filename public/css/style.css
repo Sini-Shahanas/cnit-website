@@ -3491,7 +3491,7 @@ Section Title
 
 .banner-section-four .slide-item {
   position: relative;
-  height: 100vh; 
+  height: 70vh; 
   display: flex;
   /* align-items: center;
   justify-content: center; */
@@ -3541,17 +3541,24 @@ Section Title
   font-weight: 400;
   margin-bottom: 30px;
 }
+.banner-section-four .content-box .sub-title {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 2em;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
 
 .banner-section-four .content-box .btn-box {
   position: relative;
   margin-top: 50px;
 }
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .banner-section-four .content-box .btn-box {
     position: relative;
     margin-top: 160px;
   }
-}
+} */
 
 .banner-section-four .banner-carousel .owl-nav {
   -webkit-box-pack: justify;
