@@ -123,6 +123,11 @@ const Footer = () => {
                 <div className="auto-container">
                     <div className="inner-container">
                         <div className="copyright-text">{footerBottom.content}</div>
+                        <div
+                                dangerouslySetInnerHTML={{
+                                __html: footerBottom.footerScripts,
+                            }}
+                        />
                     </div>
                 </div>
             </div>
