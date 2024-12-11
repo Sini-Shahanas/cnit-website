@@ -22,11 +22,13 @@ const BlogInner = ({ blogs }) => {
         <meta property="og:image" content={blogImage} />
         <meta property="og:url" content={blogUrl} />
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Cloud Native IT Solutions" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blogTitle} />
         <meta name="twitter:description" content={blogDescription} />
         <meta name="twitter:image" content={blogImage} />
+        <meta name="twitter:url" content={blogUrl} />
       </Head>
 
     <section className="news-section">
