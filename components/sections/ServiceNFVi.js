@@ -13,7 +13,7 @@ const Serviceone = ({ service }) => {
   const pageTitle = `${title} | Micro Infra - NFVi`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
-  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/micro-infra-nfvi`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/network-infrastructure-solutions`;
 
   return (
     <>

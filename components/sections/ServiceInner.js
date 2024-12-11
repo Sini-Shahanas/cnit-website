@@ -12,7 +12,7 @@ const ServiceOne = ({ data }) => {
     const pageImage = data.services[0]?.image.url
         ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${data.services[0].image.url}`
         : "/images/default-service-image.png";
-    const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/our-services`;
+    const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/services`;
 
     return (
         <>

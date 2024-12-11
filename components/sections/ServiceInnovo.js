@@ -12,7 +12,7 @@ const Serviceone = ({ service }) => {
   const pageTitle = `${title} | Innova Smart Home`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
-  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/innova`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/home-automation`;
 
   return (
     <>

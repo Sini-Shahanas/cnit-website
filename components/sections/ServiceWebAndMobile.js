@@ -11,7 +11,7 @@ const Serviceone = ({ service }) => {
   const pageTitle = `${title} | Web and Mobile Application Development`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
-  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/web-and-mobile-application-development`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/web-mobile-application-development`;
 
   return (
     <>

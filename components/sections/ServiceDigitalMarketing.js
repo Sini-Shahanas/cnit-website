@@ -3,25 +3,23 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 const Serviceone = ({service}) => {
-  if (!service) {
-    return <></>;
-  }
+  if (!service) return <></>;
 
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices
   } = service;
 
-  const pageTitle = `${title} | Software Solutions`;
+  const pageTitle = `${title} | Digital Marketing`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
-  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/software-development`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/digital-marketing`;
 
   return (
     <>
-      <Head>
-        <title>Software Solutions</title>
+    <Head>
+        <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="Software Solutions, Custom Software Development,E Commerce Solutions, Web Mobile App Development" />
+        <meta name="keywords" content="IT Maintenance Services, Digital Marketing" />
 
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
@@ -46,9 +44,9 @@ const Serviceone = ({service}) => {
                   <div className="service-sidebar wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1200ms">
                     <div className="service-list">
                       <ul>
-                        {subServices.map((subService) => (
+                        {subServices.map((subService, index) => (
                           <li key={subService.id}>
-                            <Link href={subService.link}>
+                            <Link className={(index === 2) ? 'current': ''} href={subService.link || ''}>
                               <i className="fas fa-angle-right"></i>
                               <span>{subService.subServiceTitle}</span>
                             </Link>
