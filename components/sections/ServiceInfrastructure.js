@@ -11,7 +11,7 @@ const Serviceone = ({ service }) => {
   const pageTitle = `${title} | IT Infrastructure Solutions`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
-  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/it-infrastructure-solutions`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/it-infrastructure-monitoring-solutions`;
 
   return (
     <>

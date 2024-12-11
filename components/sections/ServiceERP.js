@@ -14,7 +14,7 @@ const Serviceone = ({ service }) => {
   const pageTitle = `${title} | IBS ERP`;
   const pageDescription = description || "Discover more about our services";
   const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
-  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/ibs-erp`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/erp-solutions`;
 
   return (
     <>
@@ -22,7 +22,7 @@ const Serviceone = ({ service }) => {
         <title>IBS ERP</title>
         <meta name="description" content={pageDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="IBS ERP, ERP Systems" />
+        <meta name="keywords" content="IBS ERP, ERP Systems, ERP Solutions" />
 
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
