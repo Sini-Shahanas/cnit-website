@@ -15,6 +15,7 @@ const nextConfig = {
     // domains: ['localhost', 'localhost:1337'],
     domains: ['admin.cnit-solutions.com'],
   },
+  distDir: 'dist_build',
 }
 
 module.exports = nextConfig
