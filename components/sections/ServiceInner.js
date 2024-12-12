@@ -10,8 +10,8 @@ const ServiceOne = ({ data }) => {
     const pageTitle ="Our Services";
     const pageDescription = data.shortheading || "Discover our services tailored to your needs.";
     const pageImage = data.services[0]?.image.url
-        ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${data.services[0].image.url}`
-        : "/images/default-service-image.png";
+        ? `${process.env.NEXT_PUBLIC_API_URL}${data.services[0].image.url}`
+        : "/images/site-logo-white.png";
     const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/services`;
 
     return (
@@ -20,17 +20,20 @@ const ServiceOne = ({ data }) => {
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="keywords" content="ERP Systems, Custom Software Development, Network Infrastructure, Home Automation Solutions, Office Automation, Cybersecurity Services, NFVi Solutions, ISO Certified IT Company, Managed IT Services, Business Automation, IoT Solutions, Cloud-Based IT Services, Digital Marketing, IT Maintenance Services" />
 
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
                 <meta property="og:image" content={pageImage} />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Cloud Native IT Solutions" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={pageImage} />
+                <meta name="twitter:url" content={pageUrl} />
 
                 <link rel="canonical" href={pageUrl} />
             </Head>
@@ -48,7 +51,7 @@ const ServiceOne = ({ data }) => {
                                     <figure className="image">
                                         <Link href={service.link}>
                                             <Image
-                                                src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${service.image.url}`}
+                                                src={`${process.env.NEXT_PUBLIC_API_URL}${service.image.url}`}
                                                 alt={service.title}
                                                 width={370}
                                                 height={536}

@@ -9,7 +9,7 @@ const BlogDetails = ({ blogData }) => {
 
     const title = blogDetails[2]?.title || "Unleashing the potential of NFV";
     const description = blogDetails[2]?.description || "Unleashing the potential of NFV";
-    const image = blogDetails[2]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[2].image.url}` : "https://admin.cnit-solutions.com/uploads/blog1_59109466a8.jpg";
+    const image = blogDetails[2]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL}${blogDetails[2].image.url}` : "https://admin.cnit-solutions.com/uploads/blog1_59109466a8.jpg";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL}/unleashing-the-potential-of-NFV`;
 
     return (
@@ -26,11 +26,13 @@ const BlogDetails = ({ blogData }) => {
                 <meta property="og:image" content={image} />
                 <meta property="og:url" content={url} />
                 <meta property="og:type" content="article" />
+                <meta property="og:site_name" content="Cloud Native IT Solutions" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={title} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:image" content={image} />
+                <meta name="twitter:url" content={url} />
             </Head>
 
             <section className="blog-details">
@@ -40,7 +42,7 @@ const BlogDetails = ({ blogData }) => {
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
                                     <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[2].image.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${blogDetails[2].image.url}`}
                                         alt={blogDetails[2].image.name}
                                         width={1024}
                                         height={683}
@@ -100,7 +102,7 @@ const BlogDetails = ({ blogData }) => {
                                   <li key={post.id}>
                                     <div className="sidebar__post-image">
                                       <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${post.postImage.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${post.postImage.url}`}
                                         alt={post.postTitle}
                                         width={370}
                                         height={334}

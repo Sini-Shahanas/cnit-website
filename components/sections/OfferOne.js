@@ -8,7 +8,7 @@ const OfferOne = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offer-abouts?populate=*`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/offer-abouts?populate=*`);
                 const res = await response.json();
                 setData(res.data[0]);
             }
@@ -61,7 +61,7 @@ const OfferOne = () => {
                                 <div className="image-box">
                                     <figure className="image">
                                         <Image 
-                                            src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
+                                            src={`${process.env.NEXT_PUBLIC_API_URL}${image.url}`}
                                             alt={image.title}
                                              width={930}
                                              height={570}

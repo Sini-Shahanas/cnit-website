@@ -7,7 +7,7 @@ const ServiceOne = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/home-pages?populate[HomeChooseUs]=*`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[HomeChooseUs]=*`
         );
         const result = await response.json();
         const data = result?.data?.find((item) => item.HomeChooseUs);

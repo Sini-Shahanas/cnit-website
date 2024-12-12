@@ -5,7 +5,7 @@ import BlogERP from '../components/sections/BlogERP';
 
 export const getServerSideProps = async () => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-details?populate[blogDetails][populate]=*&populate[Posts][populate]=*&populate[SocialLinks][populate]`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog-details?populate[blogDetails][populate]=*&populate[Posts][populate]=*&populate[SocialLinks][populate]`);
         const result = await response.json();
 
         const blogData = result.data ? result.data[0] : null;

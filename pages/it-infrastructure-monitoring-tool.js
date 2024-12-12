@@ -5,7 +5,7 @@ import ServiceMonitoringTool from '../components/sections/ServiceMonitoringTool'
 
 export const getServerSideProps = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/service-details?populate=*`);
       const result = await response.json();
 
       const service = result.data?.find((item) => item.title === "IT Infrastructure Monitoring Tool - NOC with 24/7 Monitoring") || null;

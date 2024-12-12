@@ -9,9 +9,9 @@ const Serviceone = ({ service }) => {
 
   const { title, description, subtitle1, description1, subtitle2, description2, subtitle3, description3, image, subServices } = service;
 
-  const pageTitle = `${title} | Innova Smart Home`;
-  const pageDescription = description || "Discover more about our services";
-  const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`;
+  const pageTitle = `${title}`;
+  const pageDescription = description;
+  const pageImage = `${process.env.NEXT_PUBLIC_API_URL}${image.url}`;
   const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/home-automation`;
 
   return (
@@ -26,12 +26,14 @@ const Serviceone = ({ service }) => {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={pageImage} />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Cloud Native IT Solutions" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={pageImage} />
+        <meta name="twitter:url" content={pageUrl} />
 
         <link rel="canonical" href={pageUrl} />
       </Head>
@@ -63,7 +65,7 @@ const Serviceone = ({ service }) => {
             <div className="col-xl-8 col-lg-8">
               <div className="services-details__content">
                 <Image
-					          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
+					          src={`${process.env.NEXT_PUBLIC_API_URL}${image.url}`}
                   	alt={image.title}
                     width={1300}
                     height={650}

@@ -24,10 +24,7 @@ export default function Home() {
     const title = "Cloud Native IT Solutions";
     const description = "Cloud Native IT Solutions is an ISO-certified IT company offering innovative services, including ERP systems, custom software development, network infrastructure, cybersecurity, and IoT automation solutions. Empower your business with cutting-edge technology tailored to your needs.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL}/`;
-    // const image =`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}/uploads/site_logo_white_76f0f7b859.png`
-    const image = process.env.NEXT_PUBLIC_API_URL 
-    ? process.env.NEXT_PUBLIC_API_URL.replace('/api', '') + '/uploads/site_logo_white_76f0f7b859.png' 
-    : 'site_logo.png';
+    const image =`${process.env.NEXT_PUBLIC_API_URL}/uploads/site_logo_white_76f0f7b859.png`
 
     return (
         <>
@@ -43,11 +40,14 @@ export default function Home() {
                 <meta property="og:image" content={image} />
                 <meta property="og:url" content={url} />
                 <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Cloud Native IT Solutions" />
+                
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={title} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:image" content={image} />
+                <meta name="twitter:url" content={url} />
             </Head>
 
             <Layout HeaderStyle="one">

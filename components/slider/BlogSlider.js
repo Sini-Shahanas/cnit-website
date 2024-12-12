@@ -42,7 +42,7 @@ const BlogSlider = ({ blogSlider }) => {
                                     <figure className="image">
                                         <a href={item.link}>
                                             <Image
-                                                src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${item.image.url}`} 
+                                                src={`${process.env.NEXT_PUBLIC_API_URL}${item.image.url}`} 
                                                 alt={item.title}
                                                 width={370}
                                                 height={334}

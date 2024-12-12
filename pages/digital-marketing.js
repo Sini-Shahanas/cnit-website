@@ -5,7 +5,7 @@ import ServiceDigitalMarketing from '../components/sections/ServiceDigitalMarket
 
 export const getServerSideProps = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/service-details?populate=*`);
       const result = await response.json();
   
       const service = result.data?.find((item) => item.title === "Tailored Digital Marketing Solutions for Your Business Growth") || null;

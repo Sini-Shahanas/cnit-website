@@ -7,7 +7,7 @@ const BlogInner = ({ blogs }) => {
   const blogTitle = "Blog";
   const blogDescription = "Explore our latest blogs covering technology, trends, and insights.";
   const blogImage = blogs?.[0]?.image?.url
-                    ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogs[0].image.url}`
+                    ? `${process.env.NEXT_PUBLIC_API_URL}${blogs[0].image.url}`
                     : defaultImage
   const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog`;
   return (
@@ -22,11 +22,13 @@ const BlogInner = ({ blogs }) => {
         <meta property="og:image" content={blogImage} />
         <meta property="og:url" content={blogUrl} />
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Cloud Native IT Solutions" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blogTitle} />
         <meta name="twitter:description" content={blogDescription} />
         <meta name="twitter:image" content={blogImage} />
+        <meta name="twitter:url" content={blogUrl} />
       </Head>
 
     <section className="news-section">
@@ -40,7 +42,7 @@ const BlogInner = ({ blogs }) => {
                     <figure className="image">
                       <Link href={blog.slug}>
                         <Image 
-                          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blog.image.url}`}
+                          src={`${process.env.NEXT_PUBLIC_API_URL}${blog.image.url}`}
                           alt={blog.title || 'Blog Image'}
                           width={370}
                           height={334}

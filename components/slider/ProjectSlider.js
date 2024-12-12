@@ -55,7 +55,7 @@ const ProjectSlider = ({ services }) => {
                             <div className="image-box">
                                 <figure className="image">
                                     <Link href="" className="lightbox-image">
-                                        <Image src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${item.image?.url}`} 
+                                        <Image src={`${process.env.NEXT_PUBLIC_API_URL}${item.image?.url}`} 
                                         alt={item.title}
                                         width={370}
                                         height={536}
