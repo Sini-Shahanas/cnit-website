@@ -11,8 +11,8 @@ const nextConfig = {
   },
   images: {
     // domains: ['localhost', 'localhost:1337'],
-    domains: ['localhost'],
-    // domains: ['admin.cnit-solutions.com'],
+    // domains: ['localhost'],
+    domains: ['admin.cnit-solutions.com'],
   },
   // distDir: 'dist_build',
 }
