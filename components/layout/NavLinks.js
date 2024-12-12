@@ -16,7 +16,7 @@ const NavLinks = ({ extraClassName }) => {
     const fetchNavbar = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/header-navbar?populate=*`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/header-navbar?populate=*`
         );
         const data = await res.json();
         setNavbarData(data?.data?.HeaderData?.menu);

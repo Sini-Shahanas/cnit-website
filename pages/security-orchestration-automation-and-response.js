@@ -5,7 +5,7 @@ import ServiceSOAR from '../components/sections/ServiceSOAR';
 
 export const getServerSideProps = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/service-details?populate=*`);
       const result = await response.json();
 
       const service = result.data?.find((item) => item.title === "Strategic Edge of Implementing Our SOAR Services") || null;

@@ -8,7 +8,7 @@ const Footer = () => {
     useEffect(() => {
         const fetchFooterData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/footer?populate=*`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/footer?populate=*`);
                 const data = await response.json();
                 setFooterData(data?.data?.FooterData);
             } catch (error) {

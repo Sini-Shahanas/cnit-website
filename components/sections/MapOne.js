@@ -6,7 +6,7 @@ const MapOne = () => {
     useEffect(() => {
         const fetchLocationData = async () => {
           try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/maps?populate=*`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/maps?populate=*`);
             const data = await response.json();
             setLocationData(data.data[0]);
           } catch (error) {

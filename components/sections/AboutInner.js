@@ -8,7 +8,7 @@ const AboutOne = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/abouts?populate=*`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/abouts?populate=*`);
                 const result = await response.json();
                 setData(result.data[0]);
             } catch (error) {
@@ -63,7 +63,7 @@ const AboutOne = () => {
                             <div className="inner-column">
                                 <div className="image-1 overlay-anim wow fadeInUp">
                                     <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image1.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${image1.url}`}
                                         alt={image1.name}
                                         width={3648}
                                         height={5472}
@@ -71,7 +71,7 @@ const AboutOne = () => {
                                 </div>
                                 <div className="image-2 overlay-anim wow fadeInRight">
                                     <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image2.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${image2.url}`}
                                         alt={image2.name}
                                         width={5304}
                                         height={7952}

@@ -19,7 +19,7 @@ const IntroSlider1 = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/home-banners?populate[IntroSlider][populate]=*`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home-banners?populate[IntroSlider][populate]=*`);
       const data = await response.json();
       setBanners(data.data);
     };
@@ -60,7 +60,7 @@ const IntroSlider1 = () => {
                 <div
                   className="bg-image"
                   style={{
-                    // backgroundImage: `url(${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${slider.image.url})`,
+                    // backgroundImage: `url(${process.env.NEXT_PUBLIC_API_URL}${slider.image.url})`,
                     backgroundImage: `url(${getImageUrl(slider)})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',

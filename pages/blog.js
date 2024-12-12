@@ -5,7 +5,7 @@ import BlogInner from "../components/sections/BlogInner";
 
 export async function getServerSideProps() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-inners?populate=*`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog-inners?populate=*`);
     const data = await res.json();
 
     return {

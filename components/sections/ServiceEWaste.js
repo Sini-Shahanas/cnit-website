@@ -12,7 +12,7 @@ const Serviceone = ({ service }) => {
 
   const pageTitle = `${title}`;
   const pageDescription = description;
-  const pageImage = `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image?.url || ""}`;
+  const pageImage = `${process.env.NEXT_PUBLIC_API_URL}${image?.url || ""}`;
   const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/e-waste-management`;
 
   return (
@@ -66,7 +66,7 @@ const Serviceone = ({ service }) => {
             <div className="col-xl-8 col-lg-8">
               <div className="services-details__content">
                 <Image
-					          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image?.url || ""}`}
+					          src={`${process.env.NEXT_PUBLIC_API_URL}${image?.url || ""}`}
                   	alt={image?.title || ""}
                     width={1300}
                     height={650}
