@@ -14,11 +14,11 @@ function MyApp({ Component, pageProps }) {
             setLoading(false);
         }, 2000);
 
-        const WOW = require('wowjs');
-        window.wow = new WOW.WOW({
-            live: false
-        });
-        window.wow.init();
+        // const WOW = require('wowjs');
+        // window.wow = new WOW.WOW({
+        //     live: false
+        // });
+        // window.wow.init();
     }, []);
     return (<>
         {!loading ? (
