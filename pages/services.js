@@ -5,7 +5,7 @@ import ServiceInner from "../components/sections/ServiceInner";
 
 export const getServerSideProps = async () => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/sliders?populate[services][populate]=*`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sliders?populate[services][populate]=*`);
         const result = await response.json();
         const data = result.data?.[0];
 

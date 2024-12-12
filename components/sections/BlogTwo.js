@@ -7,7 +7,7 @@ const BlogTwo = ({ alternate }) => {
     useEffect(() => {
         const fetchBlogData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs?populate[blogSlider][populate]=*`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate[blogSlider][populate]=*`);
                 const result = await response.json();
                 setBlogData(result.data[0]);
             } catch (error) {

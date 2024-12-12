@@ -10,7 +10,7 @@ const ServiceOne = ({ data }) => {
     const pageTitle ="Our Services";
     const pageDescription = data.shortheading || "Discover our services tailored to your needs.";
     const pageImage = data.services[0]?.image.url
-        ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${data.services[0].image.url}`
+        ? `${process.env.NEXT_PUBLIC_API_URL}${data.services[0].image.url}`
         : "/images/site-logo-white.png";
     const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/services`;
 
@@ -51,7 +51,7 @@ const ServiceOne = ({ data }) => {
                                     <figure className="image">
                                         <Link href={service.link}>
                                             <Image
-                                                src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${service.image.url}`}
+                                                src={`${process.env.NEXT_PUBLIC_API_URL}${service.image.url}`}
                                                 alt={service.title}
                                                 width={370}
                                                 height={536}

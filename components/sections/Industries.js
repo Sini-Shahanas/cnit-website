@@ -9,7 +9,7 @@ const Industries = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/industries-sections?populate=*`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/industries-sections?populate=*`);
         setIndustriesData(response.data.data[0]);
       } catch (error) {
         console.error("Error fetching industries data:", error);
@@ -49,7 +49,7 @@ const Industries = () => {
             <div className="image-box wow fadeIn">
               <figure className="image">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image.url}`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}${image.url}`}
                   alt={image.alternativeText || "Industry Image"}
                   width={500}
                   height={310}

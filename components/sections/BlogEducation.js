@@ -10,7 +10,7 @@ const BlogEducation = ({ blogData }) => {
 
     const title = blogDetails[1]?.title || "Revolutionizing Education";
     const description = blogDetails[1]?.description || "Revolutionizing Education: Next Gen LMS with Virtual Live Class Next Gen LMS with Virtual Live Class";
-    const image = blogDetails[1]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[1].image.url}` : "https://admin.cnit-solutions.com/uploads/blog3_b91b6b59e5.jpg";
+    const image = blogDetails[1]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL}${blogDetails[1].image.url}` : "https://admin.cnit-solutions.com/uploads/blog3_b91b6b59e5.jpg";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL}/revolutionizing-education`;
 
     return (
@@ -43,7 +43,7 @@ const BlogEducation = ({ blogData }) => {
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
                                     <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[1].image.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${blogDetails[1].image.url}`}
                                         alt={blogDetails[1].image.name}
                                         width={1024}
                                         height={683}
@@ -103,7 +103,7 @@ const BlogEducation = ({ blogData }) => {
                                   <li key={post.id}>
                                     <div className="sidebar__post-image">
                                       <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${post.postImage.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${post.postImage.url}`}
                                         alt={post.postTitle}
                                         width={370}
                                         height={334}

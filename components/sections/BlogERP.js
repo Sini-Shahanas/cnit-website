@@ -9,7 +9,7 @@ const BlogERP = ({ blogData}) => {
 
     const title = blogDetails[0]?.title || "Streamline Operations and elevate guest experience with cloud Based-ERPs for Hotels";
     const description = blogDetails[0]?.description || "Streamline Operations and elevate guest experience with cloud Based-ERPs for Hotels";
-    const image = blogDetails[0]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[0].image.url}` : "https://admin.cnit-solutions.com/uploads/blog2_63b137c64b.png";
+    const image = blogDetails[0]?.image?.url ? `${process.env.NEXT_PUBLIC_API_URL}${blogDetails[0].image.url}` : "https://admin.cnit-solutions.com/uploads/blog2_63b137c64b.png";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL}/streamline-operations-and-elevate-guest-experience-with-cloud-Based-ERPs-for-Hotels`;
 
     return (
@@ -42,7 +42,7 @@ const BlogERP = ({ blogData}) => {
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
                                     <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogDetails[0].image.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${blogDetails[0].image.url}`}
                                         alt={blogDetails[0].image.name}
                                         width={1024}
                                         height={683}
@@ -102,7 +102,7 @@ const BlogERP = ({ blogData}) => {
                                   <li key={post.id}>
                                     <div className="sidebar__post-image">
                                       <Image
-                                        src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${post.postImage.url}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}${post.postImage.url}`}
                                         alt={post.postTitle}
                                         width={370}
                                         height={334}

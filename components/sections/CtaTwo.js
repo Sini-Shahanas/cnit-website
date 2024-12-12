@@ -9,7 +9,7 @@ const CtaTwo = () => {
     useEffect(() => {
         const fetchCtaData = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/end-banners?populate=*`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/end-banners?populate=*`);
                 const data = await response.json();
                 setCtaData(data.data[0]);
             } catch (err) {
@@ -34,7 +34,7 @@ const CtaTwo = () => {
                 <div className="outer-box wow fadeIn">
                     <div className="image-box">
                         <figure className="image">
-                            <Image src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${ctaData.image.url}`} 
+                            <Image src={`${process.env.NEXT_PUBLIC_API_URL}${ctaData.image.url}`} 
                                     alt={ctaData.title}
                                     width={340}
                                     height={205} />

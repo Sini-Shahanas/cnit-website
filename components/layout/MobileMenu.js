@@ -15,7 +15,7 @@ const MobileMenu = ({ handleRemove }) => {
     const fetchMenuData = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/header-navbar?populate=*`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/header-navbar?populate=*`
         );
         const data = await response.json();
         setMenuData(data?.data?.HeaderData?.menu);

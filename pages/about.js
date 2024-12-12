@@ -11,7 +11,7 @@ export default function Home() {
     const title = "About Us";
     const description = "Cloud Native IT Solutions is an ISO-certified IT company offering innovative services, including ERP systems, custom software development, network infrastructure, cybersecurity, and IoT automation solutions. Empower your business with cutting-edge technology tailored to your needs.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL}/about`;
-    const image =`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}/uploads/site_logo_white_76f0f7b859.png`
+    const image =`${process.env.NEXT_PUBLIC_API_URL}/uploads/site_logo_white_76f0f7b859.png`
 
     return (
         <>

@@ -5,7 +5,7 @@ import ServiceDetails from "../components/sections/ServiceDetails";
 
 export const getServerSideProps = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-details?populate=*`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/service-details?populate=*`);
       const result = await response.json();
 
       const service = result.data?.find((item) => item.title === "Service & Sustainability") || null;

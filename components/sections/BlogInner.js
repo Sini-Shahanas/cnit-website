@@ -7,7 +7,7 @@ const BlogInner = ({ blogs }) => {
   const blogTitle = "Blog";
   const blogDescription = "Explore our latest blogs covering technology, trends, and insights.";
   const blogImage = blogs?.[0]?.image?.url
-                    ? `${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blogs[0].image.url}`
+                    ? `${process.env.NEXT_PUBLIC_API_URL}${blogs[0].image.url}`
                     : defaultImage
   const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog`;
   return (
@@ -42,7 +42,7 @@ const BlogInner = ({ blogs }) => {
                     <figure className="image">
                       <Link href={blog.slug}>
                         <Image 
-                          src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${blog.image.url}`}
+                          src={`${process.env.NEXT_PUBLIC_API_URL}${blog.image.url}`}
                           alt={blog.title || 'Blog Image'}
                           width={370}
                           height={334}

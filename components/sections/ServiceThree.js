@@ -8,7 +8,7 @@ const ServiceThree = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-technicals?populate[Details][populate]=*`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/service-technicals?populate[Details][populate]=*`);
             const data = await response.json();
             
             setSectionTitle(data.data?.[0]?.title || 'Our Technical Partners');
@@ -33,7 +33,7 @@ const ServiceThree = () => {
                                     data-wow-delay={`${index * 200}ms`}>
                                     <div className="inner-box">
                                         <Image className="icon" 
-                                            src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${partner.image.url}`}
+                                            src={`${process.env.NEXT_PUBLIC_API_URL}${partner.image.url}`}
                                             alt={partner.image.title}
                                             width={3000}
                                             height={2000} />

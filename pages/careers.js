@@ -5,7 +5,7 @@ import Careers from '../components/sections/Careers';
 
 export const getServerSideProps = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/careers?populate=*`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/careers?populate=*`);
       const data = await response.json();
   
       return {
