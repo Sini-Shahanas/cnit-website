@@ -64,7 +64,7 @@ const IntroSlider1 = () => {
                     backgroundImage: `url(${getImageUrl(slider)})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    objectFit: 'cover',                   
+                    objectFit: 'cover',
                   }}
                 />
                 <div className="auto-container">
