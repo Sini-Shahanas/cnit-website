@@ -37,34 +37,39 @@ const NavLinks = ({ extraClassName }) => {
           key={menuItem.id}
           className={menuItem.subMenu.length > 0 ? "dropdown" : ""}
         >
-          <Link href={menuItem.link}>{menuItem.menuItem}</Link>
+          <Link href={menuItem.link || "#"}>{menuItem.menuItem}</Link>
 
           {menuItem.subMenu.length > 0 && (
-            <ul>
-              {menuItem.subMenu.map((subMenuItem) => (
+            <ul 
+            className={`sub-menu ${dropdowns[menuItem.id] ? "open" : ""}`}
+            onMouseEnter={() => toggleDropdown(menuItem.id)}
+            onMouseLeave={() => toggleDropdown(menuItem.id)}
+          >
+              {menuItem.subMenu.map((subItem) => (
                 <li
-                  key={subMenuItem.id}
+                  key={subItem.id}
                   className="dropdown"
-                  onMouseEnter={() => toggleDropdown(subMenuItem.id)}
-                  onMouseLeave={() => toggleDropdown(subMenuItem.id)}
+                  onMouseEnter={() => toggleDropdown(subItem.id)}
+                  onMouseLeave={() => toggleDropdown(subItem.id)}
                 >
-                  <Link href={subMenuItem.link}>
-                    {subMenuItem.subServices}
+                  <Link href={subItem.link || "#"}>
+                    {subItem.subServices}
                   </Link>
 
-                  {subMenuItem.subChild && (
+                  {subItem.subChild && (
                     <ul className="sub-dropdown">
-                      {subMenuItem.subChild.map((childItem) => {
-                        const route = childItem.link 
-                        ? childItem.link 
-                        : `/${childItem.childList
+                      {subItem.subChild.map((child) => {
+                        const route = child.link
+                        ? child.link
+                        : `/${child.childList
                             .toLowerCase()
                             .replace(/\s+/g, "-")
                             .replace(/[&]/g, "and")
-                            .replace(/[()]/g, "")}`;
+                            .replace(/[()]/g, "")
+                            .replace(/[^\w-]+/g, "")}`;
                         return (
-                          <li key={childItem.id}>
-                            <Link href={route}>{childItem.childList}</Link>
+                          <li key={child.id}>
+                            <Link href={route}>{child.childList}</Link>
                           </li>
                         );
                       })}

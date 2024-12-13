@@ -2,7 +2,7 @@ import formidable from "formidable";
 import fs from "fs";
 import path from "path";
 import nodemailer from "nodemailer";
-require('dotenv').config({ path: '.env.local' });
+require('dotenv').config({ path: '.env' });
 
 // Set up the upload directory path
 const uploadDir = path.join(process.cwd(), "uploads");

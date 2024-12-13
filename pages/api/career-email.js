@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import { Formidable } from 'formidable';
 import fs from 'fs';
-require('dotenv').config({ path: '.env.local' });
+require('dotenv').config({ path: '.env' });
 
 export const config = {
   api: {
